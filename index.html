@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<title>JeoValid — Jeolojik Veri Doğrulama ve Analiz Uygulaması</title>
+<meta name="description" content="JeoValid; jeologlar ve maden sektörü profesyonelleri için sondaj ve jeolojik veri setlerini doğrulayan, 3D görüntüleyen ve AI destekli analiz eden mobil uygulama.">
+<!-- ❓ Favicon dosyaları hâlâ eski temadan (Hoverex) kalma placeholder. Mobil uygulamadaki gerçek icon.png / yeni-splash.png buraya kopyalanmalı. -->
+<link rel="icon" href="images/cropped-favicon_512x512-3-32x32.png" sizes="32x32">
+<link rel="apple-touch-icon" href="images/cropped-favicon_512x512-3-192x192.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+<link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+
+<!-- ============ NAVBAR ============ -->
+<nav class="navbar navbar-expand-lg hx-navbar">
+  <div class="container">
+    <a class="navbar-brand hx-brand" href="#home"><i class="bi bi-crosshair2"></i> JeoValid</a>
+    <button class="navbar-toggler text-white border-0" type="button" data-bs-toggle="collapse" data-bs-target="#hxNav">
+      <i class="bi bi-list fs-1 text-white"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="hxNav">
+      <ul class="navbar-nav mx-auto">
+        <li class="nav-item"><a class="nav-link active" href="#home">Ana Sayfa</a></li>
+        <li class="nav-item"><a class="nav-link" href="#ozellikler">Özellikler</a></li>
+        <li class="nav-item"><a class="nav-link" href="#nasil-calisir">Nasıl Çalışır</a></li>
+        <li class="nav-item"><a class="nav-link" href="#pro">JeoValid PRO</a></li>
+        <li class="nav-item"><a class="nav-link" href="#faq">SSS</a></li>
+        <li class="nav-item"><a class="nav-link" href="#footer">Destek</a></li>
+      </ul>
+      <div class="d-flex align-items-center gap-3">
+        <a href="#indir" class="hx-btn hx-btn-sm"><i class="bi bi-download"></i> Uygulamayı İndir</a>
+      </div>
+      <!-- ARŞİV — eski şablondan (kullanılmıyor, tasarımdan kaldırıldı ama ileride gerekirse diye saklandı):
+      <select class="hx-lang-select d-none d-lg-inline-block">
+        <option>English</option>
+        <option>Spanish</option>
+      </select>
+      <a href="#" class="hx-btn hx-btn-outline hx-btn-sm d-none d-md-inline-flex">Whitepaper</a>
+      <a href="#" class="hx-btn hx-btn-sm"><i class="bi bi-person"></i> Login</a>
+      -->
+
+    </div>
+  </div>
+</nav>
+
+<!-- ============ HERO ============ -->
+<header id="home" class="hx-hero">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-9">
+        <div class="hx-hero-rotator hx-hero-anim d1" id="heroRotator">
+          <span class="hx-eyebrow" id="heroEyebrow">Sondaj Ekipleri İçin</span>
+          <h1 id="heroHeadline">Jeolojik Verilerinize Profesyonel Bir Güç Katın</h1>
+          <p class="text-muted-hx" id="heroDesc" style="max-width:620px;font-size:1.05rem;">Collar, Survey, Lithology ve Assay verilerini saniyeler içinde doğrula, 3D görüntüle ve raporla.</p>
+        </div>
+
+        <div id="indir" class="d-flex flex-wrap mt-3 hx-hero-anim d2">
+          <!-- ❓ Play Store paket adı (com.jeovalid.app) koddan teyit edildi; App Store için sayısal uygulama ID'si gerekiyor. -->
+          <a href="https://play.google.com/store/apps/details?id=com.jeovalid.app" class="hx-store-btn"><i class="bi bi-google-play fs-4"></i><span><small>Android için</small>Google Play</span></a>
+          <a href="#" class="hx-store-btn"><i class="bi bi-apple fs-4"></i><span><small>iOS için</small>App Store</span></a>
+        </div>
+
+        <div class="hx-goal-card hx-hero-anim d3">
+          <div class="row g-3 text-center">
+            <div class="col-6 col-md-3">
+              <div class="hx-highlight"><i class="bi bi-clipboard2-check"></i><span>Anında Doğrulama</span></div>
+            </div>
+            <div class="col-6 col-md-3">
+              <div class="hx-highlight"><i class="bi bi-boxes"></i><span>3D Görüntüleme</span></div>
+            </div>
+            <div class="col-6 col-md-3">
+              <div class="hx-highlight"><i class="bi bi-cpu"></i><span>AI Destekli Analiz</span></div>
+            </div>
+            <div class="col-6 col-md-3">
+              <div class="hx-highlight"><i class="bi bi-file-earmark-arrow-down"></i><span>DXF Dışa Aktarım</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ============ İSTATİSTİKLER ============ -->
+<!-- ❓ Aşağıdaki değerler (4 / iOS & Android / 3D / AI) koddan doğrulanabilen gerçek özelliklerdir;
+     indirme sayısı, doğrulanan veri seti adedi gibi kullanım rakamlarınız varsa buraya onları koyabilirsiniz. -->
+<section id="istatistikler" class="hx-section hx-section-alt hx-stats">
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-6 col-md-3">
+        <div class="hx-stat text-center">
+          <span class="hx-stat-num">4</span>
+          <span class="hx-stat-label">Desteklenen Veri Seti</span>
+        </div>
+      </div>
+      <div class="col-6 col-md-3">
+        <div class="hx-stat text-center">
+          <span class="hx-stat-num">2</span>
+          <span class="hx-stat-label">Platform: iOS &amp; Android</span>
+        </div>
+      </div>
+      <div class="col-6 col-md-3">
+        <div class="hx-stat text-center">
+          <span class="hx-stat-num">3D</span>
+          <span class="hx-stat-label">Sondaj Görüntüleme</span>
+        </div>
+      </div>
+      <div class="col-6 col-md-3">
+        <div class="hx-stat text-center">
+          <span class="hx-stat-num">AI</span>
+          <span class="hx-stat-label">Destekli Analiz</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ İŞ ORTAKLARI ============ -->
+<!-- ❓ MTA/TMMOB gibi gerçek kurum adları sizin örnekleriniz olarak verildi, ancak gerçek bir iş birliği
+     teyit edilmeden bu tür tanınmış kurumların adını/logosunu "iş ortağımız" diye göstermek yanlış bir
+     ortaklık izlenimi verebilir (itibar/yasal risk). Bu yüzden nötr placeholder kullanıldı — gerçek iş
+     ortaklarınızın adlarını/logolarını onayladığınızda buradaki 6 kutuyu güncelleyin. -->
+<section id="ortaklar" class="hx-section">
+  <div class="container">
+    <div class="text-center mb-5">
+      <span class="hx-eyebrow">İş Birlikleri</span>
+      <h2>Güvenilen İş Ortaklarımız</h2>
+    </div>
+  </div>
+  <div class="hx-partners-marquee">
+    <div class="hx-partners-track">
+      <div class="hx-partner-logo-m">[Kurum Adı 1]</div>
+      <div class="hx-partner-logo-m">[Kurum Adı 2]</div>
+      <div class="hx-partner-logo-m">[Kurum Adı 3]</div>
+      <div class="hx-partner-logo-m">[Kurum Adı 4]</div>
+      <div class="hx-partner-logo-m">[Kurum Adı 5]</div>
+      <div class="hx-partner-logo-m">[Kurum Adı 6]</div>
+      <!-- kesintisiz döngü için aynı logolar tekrarlanıyor -->
+      <div class="hx-partner-logo-m" aria-hidden="true">[Kurum Adı 1]</div>
+      <div class="hx-partner-logo-m" aria-hidden="true">[Kurum Adı 2]</div>
+      <div class="hx-partner-logo-m" aria-hidden="true">[Kurum Adı 3]</div>
+      <div class="hx-partner-logo-m" aria-hidden="true">[Kurum Adı 4]</div>
+      <div class="hx-partner-logo-m" aria-hidden="true">[Kurum Adı 5]</div>
+      <div class="hx-partner-logo-m" aria-hidden="true">[Kurum Adı 6]</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ VERİ TİPLERİ ============ -->
+<section id="veri-tipleri" class="hx-section">
+  <div class="container">
+    <div class="text-center mb-5">
+      <span class="hx-eyebrow">Desteklenen Veri Tipleri</span>
+      <h2>Tüm Sondaj Verileriniz Tek Yerde</h2>
+      <p class="text-muted-hx mx-auto" style="max-width:640px">JeoValid, standart jeolojik sondaj veri setlerinin dördünü de destekler ve her biri için ayrı doğrulama kuralları çalıştırır.</p>
+    </div>
+    <div class="row g-4 text-center">
+      <div class="col-6 col-md-3">
+        <div class="hx-dataset-card" style="--dot:#8B5CF6"><span class="dot"></span><h4>Collar</h4><p class="text-muted-hx small mb-0">Sondaj başlangıç koordinatları</p></div>
+      </div>
+      <div class="col-6 col-md-3">
+        <div class="hx-dataset-card" style="--dot:#06B6D4"><span class="dot"></span><h4>Survey</h4><p class="text-muted-hx small mb-0">Sondaj yörüngesi ölçümleri</p></div>
+      </div>
+      <div class="col-6 col-md-3">
+        <div class="hx-dataset-card" style="--dot:#10B981"><span class="dot"></span><h4>Lithology</h4><p class="text-muted-hx small mb-0">Kayaç / litoloji verileri</p></div>
+      </div>
+      <div class="col-6 col-md-3">
+        <div class="hx-dataset-card" style="--dot:#F97316"><span class="dot"></span><h4>Assay</h4><p class="text-muted-hx small mb-0">Tenör / analiz sonuçları</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ARŞİV — eski Hoverex şablonundaki Token/Funds Allocation (pasta grafik) bölümü.
+     JeoValid için anlamsız olduğundan tasarımdan kaldırıldı, ileride gerekirse diye saklandı.
+     Aktif etmek için main.js içindeki Chart.js pasta grafik kodu ve bu markup birlikte kullanılmalı.
+<section id="pie" class="hx-section">
+  <div class="container">
+    <div class="row g-5">
+      <div class="col-md-6">
+        <h3 class="text-center text-md-start">Token Allocation</h3>
+        <div class="hx-pie-wrap"><canvas class="hx-pie-canvas"></canvas></div>
+        <ul class="hx-legend">
+          <li><span class="dot" style="background:#7d1267"></span>Token Sale <span class="val">30%</span></li>
+          <li><span class="dot" style="background:#9f1e85"></span>Reserve Capital <span class="val">20%</span></li>
+          <li><span class="dot" style="background:#bb3a88"></span>Founders <span class="val">30%</span></li>
+          <li><span class="dot" style="background:#d2538a"></span>Team <span class="val">10%</span></li>
+          <li><span class="dot" style="background:#23293b"></span>Advisors <span class="val">10%</span></li>
+        </ul>
+      </div>
+      <div class="col-md-6">
+        <h3 class="text-center text-md-start">Funds Allocation</h3>
+        <div class="hx-pie-wrap"><canvas class="hx-pie-canvas"></canvas></div>
+        <ul class="hx-legend">
+          <li><span class="dot" style="background:#7d1267"></span>Token Sale <span class="val">30%</span></li>
+          <li><span class="dot" style="background:#9f1e85"></span>Reserve Capital <span class="val">20%</span></li>
+          <li><span class="dot" style="background:#bb3a88"></span>Founders <span class="val">30%</span></li>
+          <li><span class="dot" style="background:#d2538a"></span>Team <span class="val">10%</span></li>
+          <li><span class="dot" style="background:#23293b"></span>Advisors <span class="val">10%</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+-->
+
+<!-- ============ ÖZELLİKLER ============ -->
+<section id="ozellikler" class="hx-section hx-section-alt">
+  <div class="container">
+    <div class="row align-items-center g-5">
+      <div class="col-lg-5">
+        <div class="hx-phone-figure">
+          <div class="hx-phone-mock">
+            <span class="hx-phone-btn vol1"></span>
+            <span class="hx-phone-btn vol2"></span>
+            <span class="hx-phone-btn power"></span>
+            <div class="hx-phone-screen">
+              <img src="images/TemaRenk.jpeg" alt="JeoValid uygulaması Ana Sayfa ekranı" class="hx-phone-real-shot">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-7">
+        <span class="hx-eyebrow">Özellikler</span>
+        <h2>Sahadan Ofise, Tek Uygulamada Doğrulama ve Analiz</h2>
+        <ul class="hx-check-list mt-4">
+          <li>
+            <span class="ico"><i class="bi bi-clipboard2-check"></i></span>
+            <div><strong>Anında Veri Doğrulama</strong>Yüklediğiniz Collar, Survey, Lithology ve Assay verilerindeki yapısal hata ve uyarılar satır bazında tespit edilip raporlanır.</div>
+          </li>
+          <li>
+            <span class="ico"><i class="bi bi-boxes"></i></span>
+            <div><strong>3D Sondaj Görüntüleme</strong>Koordinat ve derinlik verilerinizi 3 boyutlu model olarak inceleyin; litoloji ve tenöre göre renklendirin.</div>
+          </li>
+          <li>
+            <span class="ico"><i class="bi bi-cpu"></i></span>
+            <div><strong>AI Destekli Analiz</strong>Yapay zeka destekli analizlerle veri setlerinizdeki eğilimleri ve anomalileri daha hızlı fark edin.</div>
+          </li>
+          <li>
+            <span class="ico"><i class="bi bi-bar-chart-line"></i></span>
+            <div><strong>Grafik ve Raporlama</strong>İstatistiksel grafikler ve analiz çıktılarıyla verilerinizi görselleştirin.</div>
+          </li>
+          <li>
+            <span class="ico"><i class="bi bi-file-earmark-arrow-down"></i></span>
+            <div><strong>Dışa Aktarım</strong>İşlenen verilerinizi DXF gibi formatlarda dışa aktararak diğer yazılımlarınızla entegre edin.</div>
+          </li>
+          <!-- ❓ Veri işleme modeli (cihazda mı işleniyor, sunucuya mı yükleniyor) henüz teyit edilmedi.
+               Netleşince "Veriler Cihazda Kalır" / "Offline Çalışır" gibi kesin bir ifadeyle güncellenebilir. -->
+          <li>
+            <span class="ico"><i class="bi bi-shield-lock"></i></span>
+            <div><strong>Veri Gizliliği Önceliğimiz</strong>Jeolojik verilerinizin gizliliği ve güvenliği önceliğimizdir; ayrıntılar Gizlilik Politikamızda yer alacaktır.</div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ÖNE ÇIKAN ÖZELLİKLER / NEDEN JEOVALID (slider) ============ -->
+<!-- ARŞİV — statik ikon grid + tek metin yerine aşağıdaki slider kullanılıyor, silinmedi:
+<section id="one-cikanlar" class="hx-section">
+  <div class="container">
+    <div class="row align-items-center g-5">
+      <div class="col-lg-6">
+        <div class="row g-4">
+          <div class="col-6">
+            <div class="hx-icon-box"><span class="ico"><i class="bi bi-clipboard2-check"></i></span><h4>Hata Doğrulama</h4></div>
+          </div>
+          <div class="col-6">
+            <div class="hx-icon-box"><span class="ico"><i class="bi bi-boxes"></i></span><h4>3D Görüntüleme</h4></div>
+          </div>
+          <div class="col-6">
+            <div class="hx-icon-box"><span class="ico"><i class="bi bi-cpu"></i></span><h4>AI Analizi</h4></div>
+          </div>
+          <div class="col-6">
+            <div class="hx-icon-box"><span class="ico"><i class="bi bi-file-earmark-arrow-down"></i></span><h4>DXF Dışa Aktarım</h4></div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <span class="hx-eyebrow">Neden JeoValid?</span>
+        <h2>Karmaşık Veri Setlerinde Kaybolmayın</h2>
+        <p class="text-muted-hx">Sondaj ve jeolojik veri setlerindeki tutarsızlıkları elle kontrol etmek saatler alabilir. JeoValid, bu kontrolleri saniyeler içinde otomatikleştirir.</p>
+        <p class="text-muted-hx">Doğrulanmış veriler üzerinde doğrudan 3D inceleme ve AI destekli analiz yaparak, sahadan rapora giden süreci tek bir uygulamada birleştirir.</p>
+      </div>
+    </div>
+  </div>
+</section>
+-->
+<section id="one-cikanlar" class="hx-section">
+  <div class="container">
+    <div class="text-center mb-5">
+      <span class="hx-eyebrow">Neden JeoValid?</span>
+    </div>
+
+    <div id="nedenCarousel" class="carousel slide hx-reason-carousel" data-bs-ride="carousel" data-bs-interval="4500" data-bs-touch="true">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <div class="row align-items-center g-5">
+            <div class="col-lg-5 text-center">
+              <span class="hx-reason-ico"><i class="bi bi-clipboard2-check"></i></span>
+            </div>
+            <div class="col-lg-7">
+              <h2>Karmaşık Veri Setlerinde Kaybolmayın</h2>
+              <p class="text-muted-hx">Sondaj ve jeolojik veri setlerindeki tutarsızlıkları elle kontrol etmek saatler alabilir. JeoValid, bu kontrolleri saniyeler içinde otomatikleştirir.</p>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="row align-items-center g-5">
+            <div class="col-lg-5 text-center">
+              <span class="hx-reason-ico"><i class="bi bi-boxes"></i></span>
+            </div>
+            <div class="col-lg-7">
+              <h2>3D Görüntüleme ile Netlik</h2>
+              <p class="text-muted-hx">Doğrulanmış veriler üzerinde doğrudan 3D inceleme yaparak litoloji ve tenöre göre renklendirin; sahadan rapora giden süreci tek uygulamada birleştirin.</p>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="row align-items-center g-5">
+            <div class="col-lg-5 text-center">
+              <span class="hx-reason-ico"><i class="bi bi-cpu"></i></span>
+            </div>
+            <div class="col-lg-7">
+              <h2>AI Destekli Analiz</h2>
+              <p class="text-muted-hx">Yapay zeka destekli algoritmalarla veri setlerinizdeki eğilim ve anomalileri elle kontrolden çok daha hızlı tespit edin.</p>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="row align-items-center g-5">
+            <div class="col-lg-5 text-center">
+              <span class="hx-reason-ico"><i class="bi bi-file-earmark-arrow-down"></i></span>
+            </div>
+            <div class="col-lg-7">
+              <h2>Kolay Dışa Aktarım</h2>
+              <p class="text-muted-hx">İşlenen verilerinizi DXF gibi formatlarda dışa aktararak diğer yazılımlarınızla entegre edin.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <button class="hx-reason-arrow prev" type="button" data-bs-target="#nedenCarousel" data-bs-slide="prev">
+        <i class="bi bi-chevron-left"></i>
+        <span class="visually-hidden">Önceki</span>
+      </button>
+      <button class="hx-reason-arrow next" type="button" data-bs-target="#nedenCarousel" data-bs-slide="next">
+        <i class="bi bi-chevron-right"></i>
+        <span class="visually-hidden">Sonraki</span>
+      </button>
+
+      <div class="carousel-indicators hx-reason-dots">
+        <button type="button" data-bs-target="#nedenCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slayt 1"></button>
+        <button type="button" data-bs-target="#nedenCarousel" data-bs-slide-to="1" aria-label="Slayt 2"></button>
+        <button type="button" data-bs-target="#nedenCarousel" data-bs-slide-to="2" aria-label="Slayt 3"></button>
+        <button type="button" data-bs-target="#nedenCarousel" data-bs-slide-to="3" aria-label="Slayt 4"></button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MÜŞTERİ YORUMU (kart slider) ============ -->
+<!-- ❓ Bunlar gerçek müşteri yorumları DEĞİLDİR. Sahte isim/yorum uydurmak yerine 3 yer tutucu kart
+     bırakıldı; gerçek kullanıcı izniyle alınmış yorumlar eklenene kadar bu haliyle yayına alınmamalıdır. -->
+<section id="yorum" class="hx-section hx-section-alt">
+  <div class="container">
+    <div class="text-center mb-5">
+      <span class="hx-eyebrow">Kullanıcılarımız</span>
+      <h2>Müşteri Yorumları</h2>
+    </div>
+  </div>
+
+  <div class="hx-testi-slider" id="testiSlider">
+    <button class="hx-testi-arrow prev" type="button" data-testi-prev aria-label="Önceki yorum">
+      <i class="bi bi-chevron-left"></i>
+    </button>
+    <div class="hx-testi-viewport">
+      <div class="hx-testi-track">
+        <div class="hx-testi-slide">
+          <div class="hx-card hx-testimonial">
+            <i class="bi bi-quote hx-testimonial-quote"></i>
+            <p class="hx-testimonial-text">[Buraya gerçek bir kullanıcı yorumu eklenecek — örn. veri doğrulama sürecinin sahada ne kadar zaman kazandırdığına dair 2-3 cümlelik bir alıntı.]</p>
+            <hr class="hx-testimonial-divider">
+            <div class="hx-testimonial-author">
+              <span class="hx-testimonial-avatar"><i class="bi bi-person-fill"></i></span>
+              <div><strong>[Müşteri Adı 1]</strong><span>[Ünvan / Şirket]</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="hx-testi-slide">
+          <div class="hx-card hx-testimonial">
+            <i class="bi bi-quote hx-testimonial-quote"></i>
+            <p class="hx-testimonial-text">[Buraya gerçek bir kullanıcı yorumu eklenecek — örn. 3D görüntüleme özelliğinin saha çalışmasına katkısına dair bir alıntı.]</p>
+            <hr class="hx-testimonial-divider">
+            <div class="hx-testimonial-author">
+              <span class="hx-testimonial-avatar"><i class="bi bi-person-fill"></i></span>
+              <div><strong>[Müşteri Adı 2]</strong><span>[Ünvan / Şirket]</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="hx-testi-slide">
+          <div class="hx-card hx-testimonial">
+            <i class="bi bi-quote hx-testimonial-quote"></i>
+            <p class="hx-testimonial-text">[Buraya gerçek bir kullanıcı yorumu eklenecek — örn. AI destekli analizin rapor sürecine kattığı hıza dair bir alıntı.]</p>
+            <hr class="hx-testimonial-divider">
+            <div class="hx-testimonial-author">
+              <span class="hx-testimonial-avatar"><i class="bi bi-person-fill"></i></span>
+              <div><strong>[Müşteri Adı 3]</strong><span>[Ünvan / Şirket]</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button class="hx-testi-arrow next" type="button" data-testi-next aria-label="Sonraki yorum">
+      <i class="bi bi-chevron-right"></i>
+    </button>
+  </div>
+
+  <div class="hx-testi-dots" id="testiDots">
+    <button type="button" class="active" data-testi-to="0" aria-label="Yorum 1"></button>
+    <button type="button" data-testi-to="1" aria-label="Yorum 2"></button>
+    <button type="button" data-testi-to="2" aria-label="Yorum 3"></button>
+  </div>
+</section>
+
+<!-- ============ REFERANS PROJELER ============ -->
+<!-- ❓ Verdiğiniz örnekler (Konya-Karapınar, Ege Maden Ocağı, Doğu Anadolu Jeotermal ve bunlara ait
+     350 sondaj / 2 saat gibi rakamlar) gerçek, teyit edilmiş vaka çalışmaları değilse, bunları
+     "JeoValid ile başarıya ulaşan gerçek projeler" olarak yayınlamak yanıltıcı olur (uydurma vaka
+     çalışması / sahte istatistik riski). Bu yüzden nötr placeholder içerik kullanıldı — gerçek,
+     kullanıcı izniyle paylaşılabilecek proje bilgileriniz olduğunda buradaki 3 kartı güncelleyin. -->
+<section id="referanslar" class="hx-section">
+  <div class="container">
+    <div class="text-center mb-5">
+      <span class="hx-eyebrow">Vaka Çalışmaları</span>
+      <h2>JeoValid ile Başarıya Ulaşan Projeler</h2>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-4">
+        <div class="hx-case-card">
+          <div class="hx-case-thumb"><i class="bi bi-image"></i></div>
+          <div class="hx-case-body">
+            <h4>[Proje Adı 1]</h4>
+            <p class="text-muted-hx small">[Proje hakkında kısa açıklama — saha, veri hacmi ve elde edilen sonuç eklenecek.]</p>
+            <a href="#" class="hx-btn hx-btn-sm">İncele</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="hx-case-card">
+          <div class="hx-case-thumb"><i class="bi bi-image"></i></div>
+          <div class="hx-case-body">
+            <h4>[Proje Adı 2]</h4>
+            <p class="text-muted-hx small">[Proje hakkında kısa açıklama — saha, veri hacmi ve elde edilen sonuç eklenecek.]</p>
+            <a href="#" class="hx-btn hx-btn-sm">İncele</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4 mx-auto">
+        <div class="hx-case-card">
+          <div class="hx-case-thumb"><i class="bi bi-image"></i></div>
+          <div class="hx-case-body">
+            <h4>[Proje Adı 3]</h4>
+            <p class="text-muted-hx small">[Proje hakkında kısa açıklama — saha, veri hacmi ve elde edilen sonuç eklenecek.]</p>
+            <a href="#" class="hx-btn hx-btn-sm">İncele</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ARŞİV — eski Hoverex şablonundaki "Global Expansion" harita/hotspot bölümü.
+     JeoValid için anlamsız olduğundan tasarımdan kaldırıldı, ileride gerekirse diye saklandı.
+<section id="expansion" class="hx-section hx-section-alt">
+  <div class="container text-center">
+    <span class="hx-eyebrow">Worldwide</span>
+    <h2>Hoverex Global Expansion</h2>
+    <p class="text-muted-hx mx-auto" style="max-width:640px">HVR provides a simple, quick, safe means of payment with low liquidity risk. Most importantly, it is highly profitable and anonymous.</p>
+    <div class="hx-hotspot-wrap mt-4">
+      <img src="images/image-8.jpg" alt="Hoverex global expansion map">
+      <span class="hx-hotspot" style="top:15%;left:18%;" data-bs-toggle="tooltip" title="Here's how the cryptocurrency market will recover">1</span>
+      <span class="hx-hotspot" style="top:31%;left:11%;" data-bs-toggle="tooltip" title="Countries Where Bitcoin Is Legal &amp; Illegal">2</span>
+      <span class="hx-hotspot" style="top:15%;left:41%;" data-bs-toggle="tooltip" title="Platform starts trading service for self-mining smart contract">3</span>
+      <span class="hx-hotspot" style="top:22%;left:77%;" data-bs-toggle="tooltip" title="New to Bitcoin? Here's what you should know">4</span>
+    </div>
+  </div>
+</section>
+-->
+
+<!-- ============ NASIL ÇALIŞIR ============ -->
+<section id="nasil-calisir" class="hx-section hx-roadmap">
+  <div class="container">
+    <div class="text-center mb-5">
+      <span class="hx-eyebrow">Süreç</span>
+      <h2>Nasıl Çalışır</h2>
+      <p class="text-muted-hx">Verinizi yüklemekten sonucu dışa aktarmaya kadar dört adım.</p>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+        <div class="hx-timeline">
+          <div class="hx-timeline-item"><h5>1. Veri Yükle</h5><p>Collar, Survey, Lithology ve Assay verilerinizi tablo formatında sisteme aktarın.</p></div>
+          <div class="hx-timeline-item"><h5>2. Otomatik Doğrulama</h5><p>JeoValid, veri setinizdeki yapısal hataları ve uyarıları satır bazında tespit eder.</p></div>
+          <div class="hx-timeline-item"><h5>3. İncele ve Analiz Et</h5><p>Verilerinizi 3D olarak görüntüleyin, litoloji/tenöre göre renklendirin, AI analizinden faydalanın.</p></div>
+          <div class="hx-timeline-item"><h5>4. Dışa Aktar</h5><p>Sonuçları DXF gibi formatlarda dışa aktararak diğer yazılımlarınızla kullanın.</p></div>
+        </div>
+        <!-- ARŞİV — eski Hoverex şablonundaki tarihli ICO roadmap içeriği, JeoValid için kullanılmadı, ileride gerekirse diye saklandı:
+        <div class="hx-timeline">
+          <div class="hx-timeline-item"><h5>May 2017</h5><p>Creation of the idea of Hoverex project</p></div>
+          <div class="hx-timeline-item"><h5>August 2017</h5><p>The prototype of Hoverex finished</p></div>
+          <div class="hx-timeline-item"><h5>Q1 2018</h5><p>Start of ICO</p></div>
+          <div class="hx-timeline-item"><h5>Q1 2018</h5><p>Launch of Hoverex</p></div>
+          <div class="hx-timeline-item"><h5>Q2 2018</h5><p>Launch of the education and information «Hoverex» resource</p></div>
+          <div class="hx-timeline-item"><h5>Q4 2018</h5><p>Launch of cryptocurrencies converter</p></div>
+          <div class="hx-timeline-item"><h5>Q2 2019</h5><p>Launch of Hoverex mobile version (iOS/Android)</p></div>
+        </div>
+        -->
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ JEOVALID PRO ============ -->
+<section id="pro" class="hx-section hx-section-alt">
+  <div class="container">
+    <div class="text-center mb-5">
+      <span class="hx-eyebrow">Premium</span>
+      <h2>JeoValid PRO</h2>
+      <p class="text-muted-hx mx-auto" style="max-width:640px">Temel özellikler ücretsizdir. Sınırsız veri seti ve gelişmiş araçlar için JeoValid PRO'ya geçin.</p>
+    </div>
+
+    <div class="row g-4 justify-content-center">
+      <div class="col-md-6 col-lg-3">
+        <div class="hx-plan-card hx-plan-highlight">
+          <span class="hx-plan-badge">%50 Avantajlı</span>
+          <h4>Yıllık</h4>
+          <p class="text-muted-hx small">En çok tercih edilen plan</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="hx-plan-card">
+          <h4>Aylık</h4>
+          <p class="text-muted-hx small">Standart plan</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="hx-plan-card">
+          <h4>Haftalık</h4>
+          <p class="text-muted-hx small">Deneme planı</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="hx-plan-card">
+          <h4>Sınırsız</h4>
+          <p class="text-muted-hx small">Tek seferlik, ömür boyu erişim</p>
+        </div>
+      </div>
+    </div>
+    <!-- ❓ Plan fiyatları mağaza bölgesine göre değişir; sabit fiyat yayınlanmadan güncel fiyatlar için mağaza sayfasına yönlendirme yapılıyor. -->
+    <p class="text-center text-muted-hx small mt-3">Fiyatlar bölgenize göre değişebilir. Güncel fiyatlar için uygulama içi App Store / Google Play sayfasına bakın.</p>
+
+    <div class="row justify-content-center mt-4">
+      <div class="col-lg-8">
+        <ul class="hx-check-list hx-check-list-grid">
+          <li><span class="ico"><i class="bi bi-check-lg"></i></span><div>Sınırsız Veri Seti</div></li>
+          <li><span class="ico"><i class="bi bi-check-lg"></i></span><div>Litoloji &amp; Tenör Boyama</div></li>
+          <li><span class="ico"><i class="bi bi-check-lg"></i></span><div>DXF İçe/Dışa Aktarma</div></li>
+          <li><span class="ico"><i class="bi bi-check-lg"></i></span><div>Tüm Gelişmiş Grafikler</div></li>
+          <li><span class="ico"><i class="bi bi-check-lg"></i></span><div>Ölçüm ve Analiz Araçları</div></li>
+          <li><span class="ico"><i class="bi bi-check-lg"></i></span><div>Reklamsız Deneyim</div></li>
+        </ul>
+      </div>
+    </div>
+    <div class="text-center mt-4">
+      <a href="#indir" class="hx-btn"><i class="bi bi-download"></i> Uygulamayı İndir</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section id="faq" class="hx-section">
+  <div class="container">
+    <div class="text-center mb-5">
+      <span class="hx-eyebrow">Sorularınız mı Var?</span>
+      <h2>Sıkça Sorulan Sorular</h2>
+    </div>
+    <div class="row g-4">
+      <div class="col-lg-6">
+        <div class="accordion hx-accordion" id="faqLeft">
+          <div class="accordion-item">
+            <h2 class="accordion-header"><button class="accordion-button" data-bs-toggle="collapse" data-bs-target="#faqL1">Hangi formatlarda veri yükleyebilirim?</button></h2>
+            <div id="faqL1" class="accordion-collapse collapse show" data-bs-parent="#faqLeft">
+              <div class="accordion-body">Collar, Survey, Lithology ve Assay tiplerindeki tablo/hesap tablosu verilerinizi JeoValid'e yükleyebilirsiniz.</div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header"><button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#faqL2">JeoValid PRO nedir, neler sunar?</button></h2>
+            <div id="faqL2" class="accordion-collapse collapse" data-bs-parent="#faqLeft">
+              <div class="accordion-body">JeoValid PRO; sınırsız veri seti, litoloji &amp; tenör boyama, DXF içe/dışa aktarma, gelişmiş grafikler ve ölçüm/analiz araçları sunan premium pakettir.</div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header"><button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#faqL3">JeoValid PRO üyeliğimi nasıl iptal ederim?</button></h2>
+            <div id="faqL3" class="accordion-collapse collapse" data-bs-parent="#faqLeft">
+              <div class="accordion-body">Aboneliğiniz cihazınızın App Store veya Google Play "Abonelikler" menüsü üzerinden istediğiniz zaman iptal edilebilir.</div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header"><button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#faqL4">Verilerim güvende mi, buluta yükleniyor mu?</button></h2>
+            <!-- ❓ Veri işleme modeli (cihaz üzerinde/offline mi, sunucuya mı yükleniyor) teyit edilince bu cevap netleştirilecek. -->
+            <div id="faqL4" class="accordion-collapse collapse" data-bs-parent="#faqLeft">
+              <div class="accordion-body">Veri gizliliğiniz bizim için önemlidir. Verilerinizin nasıl işlendiğine dair ayrıntılı bilgiyi Gizlilik Politikamızda bulabilirsiniz.</div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header"><button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#faqL5">AI Analiz özelliği ne işe yarar?</button></h2>
+            <div id="faqL5" class="accordion-collapse collapse" data-bs-parent="#faqLeft">
+              <div class="accordion-body">Yapay zeka destekli algoritmalarla jeolojik veri setlerinizdeki eğilim ve anomalileri daha hızlı tespit etmenizi sağlar.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="accordion hx-accordion" id="faqRight">
+          <div class="accordion-item">
+            <h2 class="accordion-header"><button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#faqR1">JeoValid hangi cihazlarda çalışır?</button></h2>
+            <div id="faqR1" class="accordion-collapse collapse" data-bs-parent="#faqRight">
+              <div class="accordion-body">JeoValid, iOS ve Android işletim sistemine sahip akıllı telefonlarda kullanılabilir.</div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header"><button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#faqR2">Kullanmak için hesap oluşturmam gerekiyor mu?</button></h2>
+            <div id="faqR2" class="accordion-collapse collapse" data-bs-parent="#faqRight">
+              <div class="accordion-body">Hayır. JeoValid'i kayıt olmadan, doğrudan cihazınızdan kullanmaya başlayabilirsiniz.</div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header"><button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#faqR3">Verilerimi hangi formatta dışa aktarabilirim?</button></h2>
+            <div id="faqR3" class="accordion-collapse collapse" data-bs-parent="#faqRight">
+              <div class="accordion-body">Doğrulanmış ve analiz edilmiş verilerinizi DXF gibi formatlarda dışa aktararak diğer yazılımlarınızla kullanabilirsiniz.</div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header"><button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#faqR4">Neden konum izni istiyor?</button></h2>
+            <div id="faqR4" class="accordion-collapse collapse" data-bs-parent="#faqRight">
+              <div class="accordion-body">Konum izni, sahadaki jeolojik koordinatların cihaz konumuyla eşleştirilmesi ve kalite kontrol (QA/QC) süreçlerinde kullanılır.</div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header"><button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#faqR5">Bir sorunla karşılaşırsam nasıl destek alabilirim?</button></h2>
+            <!-- ❓ Destek e-posta adresi/iletişim kanalı teyit edilince güncellenecek. -->
+            <div id="faqR5" class="accordion-collapse collapse" data-bs-parent="#faqRight">
+              <div class="accordion-body">Destek ekibimize <a href="#">[destek@jeovalid.com]</a> adresinden ulaşabilirsiniz.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SON ÇAĞRI (CTA) ============ -->
+<section id="son-cta" class="hx-section hx-final-cta">
+  <div class="container text-center">
+    <h2>Jeolojik Verilerinizi Doğrulamaya Bugün Başlayın</h2>
+    <p class="text-muted-hx mx-auto" style="max-width:560px">JeoValid'i indirin, sondaj verilerinizi saniyeler içinde doğrulayın ve 3D olarak inceleyin.</p>
+    <a href="#indir" class="hx-btn hx-btn-lg mt-3"><i class="bi bi-download"></i> Uygulamayı İndir</a>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer id="footer" class="hx-footer">
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-6 col-md-2">
+        <h6>Özellikler</h6>
+        <ul>
+          <li><a href="#ozellikler">Veri Doğrulama</a></li>
+          <li><a href="#ozellikler">3D Görüntüleme</a></li>
+          <li><a href="#ozellikler">AI Analiz</a></li>
+          <li><a href="#ozellikler">DXF Dışa Aktarım</a></li>
+        </ul>
+      </div>
+      <div class="col-6 col-md-2">
+        <h6>JeoValid PRO</h6>
+        <ul>
+          <li><a href="#pro">Planlar</a></li>
+          <li><a href="#pro">Ayrıcalıklar</a></li>
+          <li><a href="#faq">İptal Etme</a></li>
+        </ul>
+      </div>
+      <div class="col-6 col-md-2">
+        <h6>Bağlantılar</h6>
+        <ul>
+          <li><a href="#nasil-calisir">Nasıl Çalışır</a></li>
+          <li><a href="#faq">SSS</a></li>
+          <!-- ❓ Gizlilik Politikası ve Kullanım Koşulları sayfaları henüz oluşturulmadı. -->
+          <li><a href="#">Gizlilik Politikası</a></li>
+          <li><a href="#">Kullanım Koşulları</a></li>
+        </ul>
+      </div>
+      <div class="col-md-6">
+        <h6>Destek</h6>
+        <p class="text-muted-hx">Bir sorun mu yaşıyorsunuz veya önerileriniz mi var? Bize yazın.</p>
+        <!-- ❓ Destek e-posta adresi teyit edilince güncellenecek. -->
+        <p><a href="#" class="text-muted-hx">[destek@jeovalid.com]</a></p>
+        <div id="indir-footer" class="d-flex flex-wrap">
+          <a href="https://play.google.com/store/apps/details?id=com.jeovalid.app" class="hx-store-btn"><i class="bi bi-google-play fs-4"></i><span><small>Android için</small>Google Play</span></a>
+          <a href="#" class="hx-store-btn"><i class="bi bi-apple fs-4"></i><span><small>iOS için</small>App Store</span></a>
+        </div>
+
+        <h6 class="mt-4">Güncellemelerden Haberdar Olun</h6>
+        <p class="text-muted-hx">Yeni özellikler ve geliştirmelerden ilk siz haberdar olun.</p>
+        <!-- ❓ Bu form şu an sadece istemci tarafında (arka uç/e-posta servisi olmadan) çalışıyor;
+             gerçek bir e-posta listesine bağlanması için bir bülten servisi (Mailchimp vb.) entegre edilmeli. -->
+        <form class="hx-subscribe d-flex">
+          <input type="email" class="form-control" placeholder="E-posta adresiniz" required>
+          <button type="submit" class="btn">Abone Ol</button>
+        </form>
+        <div class="hx-subscribe-msg text-muted-hx small mt-2 d-none"></div>
+
+        <!-- ARŞİV — eski Hoverex şablonundaki sosyal medya ikonları.
+             JeoValid'in gerçek sosyal medya hesapları teyit edilince buradan geri getirilebilir:
+        <div class="hx-socials">
+          <a href="#" target="_blank" rel="noopener"><i class="bi bi-facebook"></i></a>
+          <a href="#" target="_blank" rel="noopener"><i class="bi bi-instagram"></i></a>
+          <a href="#" target="_blank" rel="noopener"><i class="bi bi-youtube"></i></a>
+          <a href="#" target="_blank" rel="noopener"><i class="bi bi-twitter-x"></i></a>
+          <a href="#" target="_blank" rel="noopener"><i class="bi bi-linkedin"></i></a>
+        </div>
+        -->
+      </div>
+    </div>
+    <div class="hx-copyright">
+      JeoValid © 2026 Tüm hakları saklıdır.
+    </div>
+  </div>
+</footer>
+
+<a href="#home" class="hx-to-top"><i class="bi bi-arrow-up"></i></a>
+
+<!-- ARŞİV — arşivlenen "Token/Funds Allocation" pasta grafik bölümü aktif edilirse bu script de aktif edilmeli:
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.5.0/chart.umd.min.js"></script>
+-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
+<script src="js/main.js"></script>
+<script>
+  var tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
+  tooltipTriggerList.forEach(function (el) { new bootstrap.Tooltip(el); });
+</script>
+</body>
+</html>

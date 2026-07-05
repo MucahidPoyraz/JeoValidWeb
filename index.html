@@ -5,9 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <title>JeoValid — Jeolojik Veri Doğrulama ve Analiz Uygulaması</title>
 <meta name="description" content="JeoValid; jeologlar ve maden sektörü profesyonelleri için sondaj ve jeolojik veri setlerini doğrulayan, 3D görüntüleyen ve AI destekli analiz eden mobil uygulama.">
-<!-- ❓ Favicon dosyaları hâlâ eski temadan (Hoverex) kalma placeholder. Mobil uygulamadaki gerçek icon.png / yeni-splash.png buraya kopyalanmalı. -->
-<link rel="icon" href="images/cropped-favicon_512x512-3-32x32.png" sizes="32x32">
-<link rel="apple-touch-icon" href="images/cropped-favicon_512x512-3-192x192.png">
+<link rel="icon" href="images/favicon-32x32.png" sizes="32x32">
+<link rel="icon" href="images/favicon-16x16.png" sizes="16x16">
+<link rel="icon" href="images/favicon-192x192.png" sizes="192x192">
+<link rel="apple-touch-icon" href="images/favicon-180x180.png">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;600;700;800&display=swap" rel="stylesheet">
@@ -21,7 +22,7 @@
 <!-- ============ NAVBAR ============ -->
 <nav class="navbar navbar-expand-lg hx-navbar">
   <div class="container">
-    <a class="navbar-brand hx-brand" href="#home"><i class="bi bi-crosshair2"></i> JeoValid</a>
+    <a class="navbar-brand hx-brand" href="#home"><img src="images/jeovalid-logo.webp" alt="JeoValid logosu"> JeoValid</a>
     <button class="navbar-toggler text-white border-0" type="button" data-bs-toggle="collapse" data-bs-target="#hxNav">
       <i class="bi bi-list fs-1 text-white"></i>
     </button>
@@ -676,9 +677,27 @@
   </div>
 </section>
 
+<!-- ============ BÜLTEN ============ -->
+<section id="bulten" class="hx-section hx-newsletter">
+  <div class="container">
+    <div class="hx-newsletter-box text-center mx-auto">
+      <h2>Güncellemelerden Haberdar Olun</h2>
+      <p class="text-muted-hx mx-auto" style="max-width:480px">Yeni özellikler ve geliştirmelerden ilk siz haberdar olun.</p>
+      <!-- ❓ Bu form şu an sadece istemci tarafında (arka uç/e-posta servisi olmadan) çalışıyor;
+           gerçek bir e-posta listesine bağlanması için bir bülten servisi (Mailchimp vb.) entegre edilmeli. -->
+      <form class="hx-subscribe d-flex mx-auto" style="max-width:480px">
+        <input type="email" class="form-control" placeholder="E-posta adresiniz" required>
+        <button type="submit" class="btn">Abone Ol</button>
+      </form>
+      <div class="hx-subscribe-msg text-muted-hx small mt-2 d-none"></div>
+    </div>
+  </div>
+</section>
+
 <!-- ============ FOOTER ============ -->
 <footer id="footer" class="hx-footer">
   <div class="container">
+    <a href="#home" class="hx-brand hx-footer-brand mb-4"><img src="images/jeovalid-logo.webp" alt="JeoValid logosu"> JeoValid</a>
     <div class="row g-4">
       <div class="col-6 col-md-2">
         <h6>Özellikler</h6>
@@ -716,16 +735,6 @@
           <a href="https://play.google.com/store/apps/details?id=com.jeovalid.app" class="hx-store-btn"><i class="bi bi-google-play fs-4"></i><span><small>Android için</small>Google Play</span></a>
           <a href="#" class="hx-store-btn"><i class="bi bi-apple fs-4"></i><span><small>iOS için</small>App Store</span></a>
         </div>
-
-        <h6 class="mt-4">Güncellemelerden Haberdar Olun</h6>
-        <p class="text-muted-hx">Yeni özellikler ve geliştirmelerden ilk siz haberdar olun.</p>
-        <!-- ❓ Bu form şu an sadece istemci tarafında (arka uç/e-posta servisi olmadan) çalışıyor;
-             gerçek bir e-posta listesine bağlanması için bir bülten servisi (Mailchimp vb.) entegre edilmeli. -->
-        <form class="hx-subscribe d-flex">
-          <input type="email" class="form-control" placeholder="E-posta adresiniz" required>
-          <button type="submit" class="btn">Abone Ol</button>
-        </form>
-        <div class="hx-subscribe-msg text-muted-hx small mt-2 d-none"></div>
 
         <!-- ARŞİV — eski Hoverex şablonundaki sosyal medya ikonları.
              JeoValid'in gerçek sosyal medya hesapları teyit edilince buradan geri getirilebilir:

@@ -471,6 +471,8 @@ section{ position:relative; }
   font-size:1.3rem; font-weight:800; color:#fff !important;
 }
 .hx-brand i{ color:var(--hx-cyan); }
+.hx-brand img{ height:34px; width:auto; }
+.hx-footer-brand{ display:flex; }
 
 .hx-highlight{
   display:flex; flex-direction:column; align-items:center; gap:.4rem;
@@ -662,6 +664,11 @@ section{ position:relative; }
   border-bottom:1px solid var(--hx-border);
 }
 .hx-final-cta h2{ margin-bottom:.5rem; }
+
+/* ---------------- Bülten ---------------- */
+.hx-newsletter-box{ max-width:560px; }
+.hx-newsletter-box h2{ margin-bottom:.5rem; }
+.hx-newsletter-box .hx-subscribe{ margin-top:1.5rem; }
 
 /* ---------------- İş Ortakları ---------------- */
 .hx-partners-strip{

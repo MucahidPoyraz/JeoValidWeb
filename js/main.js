@@ -133,7 +133,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function testiBaseOffset() {
       var vw = testiViewport.clientWidth;
-      var sw = testiSlides[0].getBoundingClientRect().width;
+      var sw = testiSlides[0].offsetWidth;
       return (vw - sw) / 2 - testiIndex * sw;
     }
     function renderTesti() {

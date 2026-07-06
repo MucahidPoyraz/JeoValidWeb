@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<title>İletişim — JeoValid</title>
+<meta name="description" content="Sorularınız veya geri bildirimleriniz için JeoValid ekibiyle iletişime geçin.">
+<link rel="icon" href="images/favicon-32x32.png" sizes="32x32">
+<link rel="icon" href="images/favicon-16x16.png" sizes="16x16">
+<link rel="icon" href="images/favicon-192x192.png" sizes="192x192">
+<link rel="apple-touch-icon" href="images/favicon-180x180.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+<link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+
+<!-- ============ NAVBAR ============ -->
+<nav class="navbar navbar-expand-lg hx-navbar">
+  <div class="container">
+    <a class="navbar-brand hx-brand" href="index.html#home"><img src="images/jeovalid-logo.webp" alt="JeoValid logosu"> JeoValid</a>
+    <button class="navbar-toggler text-white border-0" type="button" data-bs-toggle="collapse" data-bs-target="#hxNav">
+      <i class="bi bi-list fs-1 text-white"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="hxNav">
+      <ul class="navbar-nav mx-auto">
+        <li class="nav-item"><a class="nav-link" href="index.html#home">Ana Sayfa</a></li>
+        <li class="nav-item"><a class="nav-link" href="about.html">Hakkımızda</a></li>
+        <li class="nav-item"><a class="nav-link" href="features.html">Özellikler</a></li>
+        <li class="nav-item"><a class="nav-link" href="nasil-calisir.html">Nasıl Çalışır</a></li>
+        <li class="nav-item"><a class="nav-link" href="pro.html">JeoValid PRO</a></li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Kaynaklar</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="getting-started.html">Başlangıç Rehberi</a></li>
+            <li><a class="dropdown-item" href="wiki.html">Bilgi Bankası</a></li>
+            <li><a class="dropdown-item" href="community.html">Topluluk</a></li>
+          </ul>
+        </li>
+        <li class="nav-item"><a class="nav-link" href="sss.html">SSS</a></li>
+        <li class="nav-item"><a class="nav-link active" href="contact.html">İletişim</a></li>
+      </ul>
+      <div class="d-flex align-items-center gap-3">
+        <a href="index.html#indir" class="hx-btn hx-btn-sm"><i class="bi bi-download"></i> Uygulamayı İndir</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- ============ HERO ============ -->
+<header class="hx-page-hero">
+  <div class="container">
+    <span class="hx-eyebrow">İletişim</span>
+    <h1>Bize Ulaşın</h1>
+    <p class="text-muted-hx">Sorularınız veya geri bildirimleriniz için buradayız.</p>
+  </div>
+</header>
+
+<!-- ============ FORM + BİLGİLER ============ -->
+<section class="hx-section">
+  <div class="container">
+    <div class="row g-5">
+      <div class="col-lg-7">
+        <span class="hx-eyebrow">Mesaj Gönder</span>
+        <h2 class="mb-4">Formu Doldurun, Size Dönelim</h2>
+        <!-- ❓ Form şu an çalışmıyor; gönderim aksiyonu (backend/e-posta servisi) entegre edilene kadar yalnızca görsel amaçlıdır. -->
+        <form>
+          <div class="row g-3">
+            <div class="col-md-6">
+              <label class="hx-form-label" for="cfName">Ad Soyad</label>
+              <input type="text" id="cfName" class="hx-form-control" placeholder="Adınız Soyadınız">
+            </div>
+            <div class="col-md-6">
+              <label class="hx-form-label" for="cfEmail">E-posta</label>
+              <input type="email" id="cfEmail" class="hx-form-control" placeholder="ornek@eposta.com">
+            </div>
+            <div class="col-12">
+              <label class="hx-form-label" for="cfSubject">Konu</label>
+              <input type="text" id="cfSubject" class="hx-form-control" placeholder="Mesajınızın konusu">
+            </div>
+            <div class="col-12">
+              <label class="hx-form-label" for="cfMessage">Mesaj</label>
+              <textarea id="cfMessage" class="hx-form-control" placeholder="Mesajınızı buraya yazın..."></textarea>
+            </div>
+            <div class="col-12">
+              <button type="button" class="hx-btn"><i class="bi bi-send"></i> Gönder</button>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="col-lg-5">
+        <span class="hx-eyebrow">İletişim Bilgileri</span>
+        <h2 class="mb-4">Doğrudan Ulaşın</h2>
+
+        <div class="hx-contact-info-item">
+          <span class="ico"><i class="bi bi-envelope"></i></span>
+          <div>
+            <h6>E-posta</h6>
+            <a href="mailto:destek@jeovalid.com">destek@jeovalid.com</a>
+          </div>
+        </div>
+        <div class="hx-contact-info-item">
+          <span class="ico"><i class="bi bi-telephone"></i></span>
+          <div>
+            <h6>Telefon</h6>
+            <a href="tel:+905XXXXXXXXX">+90 5XX XXX XX XX</a>
+          </div>
+        </div>
+        <div class="hx-contact-info-item">
+          <span class="ico"><i class="bi bi-geo-alt"></i></span>
+          <div>
+            <h6>Adres</h6>
+            <p>[Mahalle, Cadde No], [İlçe / İl], Türkiye</p>
+          </div>
+        </div>
+
+        <div class="hx-socials mt-2">
+          <a href="#" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+          <a href="#" target="_blank" rel="noopener" aria-label="Twitter / X"><i class="bi bi-twitter-x"></i></a>
+          <a href="#" target="_blank" rel="noopener" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+          <a href="#" target="_blank" rel="noopener" aria-label="GitHub"><i class="bi bi-github"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ HARİTA ============ -->
+<section class="hx-section hx-section-alt">
+  <div class="container">
+    <!-- ❓ Gerçek ofis/adres bilgisi teyit edildiğinde bu alan bir Google Maps iframe'i ile değiştirilebilir. -->
+    <div class="hx-map-placeholder">
+      <i class="bi bi-geo-alt-fill"></i>
+      <div>
+        <strong class="d-block mb-1">Harita Önizlemesi</strong>
+        <span class="small">Adresimiz onaylandığında burada etkileşimli bir harita yer alacaktır.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="hx-footer">
+  <div class="container">
+    <a href="index.html#home" class="hx-brand hx-footer-brand mb-4"><img src="images/jeovalid-logo.webp" alt="JeoValid logosu"> JeoValid</a>
+    <div class="row g-4">
+      <div class="col-6 col-md-2">
+        <h6>Özellikler</h6>
+        <ul>
+          <li><a href="features.html#veri-dogrulama">Veri Doğrulama</a></li>
+          <li><a href="features.html#3d-goruntuleme">3D Görüntüleme</a></li>
+          <li><a href="features.html#ai-analiz">AI Analiz</a></li>
+          <li><a href="features.html#dxf-aktarim">DXF Dışa Aktarım</a></li>
+          <li><a href="veri-tipleri.html">Veri Tipleri</a></li>
+        </ul>
+      </div>
+      <div class="col-6 col-md-2">
+        <h6>JeoValid PRO</h6>
+        <ul>
+          <li><a href="pro.html#planlar">Planlar</a></li>
+          <li><a href="pro.html#dahil-olanlar">Ayrıcalıklar</a></li>
+          <li><a href="pro.html#faq">İptal Etme</a></li>
+        </ul>
+      </div>
+      <div class="col-6 col-md-2">
+        <h6>Bağlantılar</h6>
+        <ul>
+          <li><a href="about.html">Hakkımızda</a></li>
+          <li><a href="nasil-calisir.html">Nasıl Çalışır</a></li>
+          <li><a href="neden-jeovalid.html">Neden JeoValid</a></li>
+          <li><a href="sss.html">SSS</a></li>
+          <li><a href="wiki.html">Bilgi Bankası</a></li>
+          <li><a href="community.html">Topluluk</a></li>
+          <li><a href="privacy.html">Gizlilik Politikası</a></li>
+        </ul>
+      </div>
+      <div class="col-md-6">
+        <h6>Destek</h6>
+        <p class="text-muted-hx">Bir sorun mu yaşıyorsunuz veya önerileriniz mi var? Bize yazın.</p>
+        <p><a href="mailto:destek@jeovalid.com" class="text-muted-hx">destek@jeovalid.com</a></p>
+        <div class="d-flex flex-wrap">
+          <a href="https://play.google.com/store/apps/details?id=com.jeovalid.app" class="hx-store-btn"><i class="bi bi-google-play fs-4"></i><span><small>Android için</small>Google Play</span></a>
+          <a href="#" class="hx-store-btn"><i class="bi bi-apple fs-4"></i><span><small>iOS için</small>App Store</span></a>
+        </div>
+      </div>
+    </div>
+    <div class="hx-copyright">
+      JeoValid © 2026 Tüm hakları saklıdır.
+    </div>
+  </div>
+</footer>
+
+<a href="#" class="hx-to-top"><i class="bi bi-arrow-up"></i></a>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

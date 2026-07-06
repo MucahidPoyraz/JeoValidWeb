@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<title>Desteklenen Veri Tipleri — JeoValid</title>
+<meta name="description" content="JeoValid'in desteklediği Collar, Survey, Lithology ve Assay veri tiplerinin yapısını, beklenen alanlarını ve doğrulama kurallarını inceleyin.">
+<link rel="icon" href="images/favicon-32x32.png" sizes="32x32">
+<link rel="icon" href="images/favicon-16x16.png" sizes="16x16">
+<link rel="icon" href="images/favicon-192x192.png" sizes="192x192">
+<link rel="apple-touch-icon" href="images/favicon-180x180.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+<link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+
+<!-- ============ NAVBAR ============ -->
+<nav class="navbar navbar-expand-lg hx-navbar">
+  <div class="container">
+    <a class="navbar-brand hx-brand" href="index.html#home"><img src="images/jeovalid-logo.webp" alt="JeoValid logosu"> JeoValid</a>
+    <button class="navbar-toggler text-white border-0" type="button" data-bs-toggle="collapse" data-bs-target="#hxNav">
+      <i class="bi bi-list fs-1 text-white"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="hxNav">
+      <ul class="navbar-nav mx-auto">
+        <li class="nav-item"><a class="nav-link" href="index.html#home">Ana Sayfa</a></li>
+        <li class="nav-item"><a class="nav-link" href="about.html">Hakkımızda</a></li>
+        <li class="nav-item"><a class="nav-link active" href="features.html">Özellikler</a></li>
+        <li class="nav-item"><a class="nav-link" href="nasil-calisir.html">Nasıl Çalışır</a></li>
+        <li class="nav-item"><a class="nav-link" href="pro.html">JeoValid PRO</a></li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Kaynaklar</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="getting-started.html">Başlangıç Rehberi</a></li>
+            <li><a class="dropdown-item" href="wiki.html">Bilgi Bankası</a></li>
+            <li><a class="dropdown-item" href="community.html">Topluluk</a></li>
+          </ul>
+        </li>
+        <li class="nav-item"><a class="nav-link" href="sss.html">SSS</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">İletişim</a></li>
+      </ul>
+      <div class="d-flex align-items-center gap-3">
+        <a href="index.html#indir" class="hx-btn hx-btn-sm"><i class="bi bi-download"></i> Uygulamayı İndir</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- ============ HERO ============ -->
+<header class="hx-page-hero">
+  <div class="container">
+    <span class="hx-eyebrow">Veri Modeli</span>
+    <h1>Sondaj Verileriniz İçin Doğru Yapı</h1>
+    <p class="text-muted-hx">JeoValid, standart jeolojik sondaj veri setlerinin dördünü de destekler ve her biri için ayrı doğrulama kuralları çalıştırır.</p>
+  </div>
+</header>
+
+<!-- ============ GENEL BAKIŞ ============ -->
+<section class="hx-section">
+  <div class="container">
+    <div class="text-center mb-5">
+      <span class="hx-eyebrow">Genel Bakış</span>
+      <h2>Tüm Sondaj Verileriniz Tek Yerde</h2>
+      <p class="text-muted-hx mx-auto" style="max-width:640px">Aşağıdaki dört veri tipi birbiriyle "Hole ID" (sondaj kimliği) üzerinden ilişkilendirilir ve birlikte 3D modelinizi oluşturur.</p>
+    </div>
+    <div class="row g-4 text-center">
+      <div class="col-6 col-md-3">
+        <div class="hx-dataset-card" style="--dot:#8B5CF6"><span class="dot"></span><h4>Collar</h4><p class="text-muted-hx small mb-0">Sondaj başlangıç koordinatları</p></div>
+      </div>
+      <div class="col-6 col-md-3">
+        <div class="hx-dataset-card" style="--dot:#06B6D4"><span class="dot"></span><h4>Survey</h4><p class="text-muted-hx small mb-0">Sondaj yörüngesi ölçümleri</p></div>
+      </div>
+      <div class="col-6 col-md-3">
+        <div class="hx-dataset-card" style="--dot:#10B981"><span class="dot"></span><h4>Lithology</h4><p class="text-muted-hx small mb-0">Kayaç / litoloji verileri</p></div>
+      </div>
+      <div class="col-6 col-md-3">
+        <div class="hx-dataset-card" style="--dot:#F97316"><span class="dot"></span><h4>Assay</h4><p class="text-muted-hx small mb-0">Tenör / analiz sonuçları</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ VERİ TİPİ DETAYLARI ============ -->
+<section class="hx-section hx-section-alt">
+  <div class="container">
+
+    <div class="row align-items-center g-5 hx-feature-row" id="collar">
+      <div class="col-lg-5">
+        <div class="hx-feature-panel"><span class="ico" style="color:#8B5CF6"><i class="bi bi-geo-alt"></i></span></div>
+      </div>
+      <div class="col-lg-7">
+        <span class="hx-feature-num">01 — Collar</span>
+        <h2>Sondaj Başlangıç Koordinatları</h2>
+        <p class="text-muted-hx">Collar verisi, her sondajın sahadaki başlangıç noktasını ve genel özelliklerini tanımlar. Diğer üç veri tipi de sondaj kimliği üzerinden Collar verisine bağlanır.</p>
+        <p class="text-muted-hx small mb-1"><strong>Tipik alanlar:</strong> Hole ID, X / Y / Z koordinatları, Toplam Derinlik (Total Depth), başlangıç azimut/eğim değeri.</p>
+        <ul class="hx-check-list mt-4">
+          <li><span class="ico"><i class="bi bi-check-lg"></i></span><div>Yinelenen veya boş sondaj kimliklerini tespit eder</div></li>
+          <li><span class="ico"><i class="bi bi-check-lg"></i></span><div>Eksik veya hatalı koordinat/derinlik değerlerini işaretler</div></li>
+          <li><span class="ico"><i class="bi bi-check-lg"></i></span><div>Survey, Lithology ve Assay verileriyle kimlik eşleşmesini kontrol eder</div></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="row align-items-center g-5 hx-feature-row flex-lg-row-reverse" id="survey">
+      <div class="col-lg-5">
+        <div class="hx-feature-panel"><span class="ico" style="color:#06B6D4"><i class="bi bi-compass"></i></span></div>
+      </div>
+      <div class="col-lg-7">
+        <span class="hx-feature-num">02 — Survey</span>
+        <h2>Sondaj Yörüngesi Ölçümleri</h2>
+        <p class="text-muted-hx">Survey verisi, sondajın derinlik boyunca izlediği yörüngeyi (azimut ve eğim ölçümleri) tanımlar. JeoValid bu ölçümleri kullanarak sondajın 3D güzergahını hesaplar.</p>
+        <p class="text-muted-hx small mb-1"><strong>Tipik alanlar:</strong> Hole ID, Ölçüm Derinliği (Depth), Azimut, Eğim (Dip / Inclination).</p>
+        <ul class="hx-check-list mt-4">
+          <li><span class="ico"><i class="bi bi-check-lg"></i></span><div>Derinlik ölçümlerinin artan sırada olup olmadığını kontrol eder</div></li>
+          <li><span class="ico"><i class="bi bi-check-lg"></i></span><div>Azimut (0–360°) ve eğim (−90° / 90°) aralık kontrolü yapar</div></li>
+          <li><span class="ico"><i class="bi bi-check-lg"></i></span><div>Collar'daki toplam derinliği aşan ölçümleri uyarır</div></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="row align-items-center g-5 hx-feature-row" id="lithology">
+      <div class="col-lg-5">
+        <div class="hx-feature-panel"><span class="ico" style="color:#10B981"><i class="bi bi-layers"></i></span></div>
+      </div>
+      <div class="col-lg-7">
+        <span class="hx-feature-num">03 — Lithology</span>
+        <h2>Kayaç / Litoloji Verileri</h2>
+        <p class="text-muted-hx">Lithology verisi, sondaj boyunca hangi derinlik aralığında hangi kayaç/litoloji biriminin bulunduğunu tanımlar. 3D modelde renklendirme bu veriye göre yapılır.</p>
+        <p class="text-muted-hx small mb-1"><strong>Tipik alanlar:</strong> Hole ID, "From" / "To" derinlik aralığı, litoloji kodu veya açıklaması.</p>
+        <ul class="hx-check-list mt-4">
+          <li><span class="ico"><i class="bi bi-check-lg"></i></span><div>Derinlik aralıklarındaki çakışma veya boşlukları tespit eder</div></li>
+          <li><span class="ico"><i class="bi bi-check-lg"></i></span><div>Collar'daki toplam derinliği aşan aralıkları işaretler</div></li>
+          <li><span class="ico"><i class="bi bi-check-lg"></i></span><div>Tanımsız veya boş litoloji kodlarını raporlar</div></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="row align-items-center g-5 hx-feature-row flex-lg-row-reverse" id="assay">
+      <div class="col-lg-5">
+        <div class="hx-feature-panel"><span class="ico" style="color:#F97316"><i class="bi bi-droplet"></i></span></div>
+      </div>
+      <div class="col-lg-7">
+        <span class="hx-feature-num">04 — Assay</span>
+        <h2>Tenör / Analiz Sonuçları</h2>
+        <p class="text-muted-hx">Assay verisi, laboratuvar analizleri sonucunda elde edilen element/tenör değerlerini derinlik aralıklarıyla ilişkilendirir. 3D modelde tenöre göre renklendirme bu veriden beslenir.</p>
+        <p class="text-muted-hx small mb-1"><strong>Tipik alanlar:</strong> Hole ID, "From" / "To" derinlik aralığı, element/tenör değeri, birim, dedeksiyon limiti işaretleri.</p>
+        <ul class="hx-check-list mt-4">
+          <li><span class="ico"><i class="bi bi-check-lg"></i></span><div>Derinlik aralıklarındaki çakışmaları kontrol eder</div></li>
+          <li><span class="ico"><i class="bi bi-check-lg"></i></span><div>Negatif veya eksik tenör değerlerini işaretler</div></li>
+          <li><span class="ico"><i class="bi bi-check-lg"></i></span><div>Birim tutarsızlıklarını (ör. ppm / % karışıklığı) raporlar</div></li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============ İLGİLİ SAYFALAR ============ -->
+<section class="hx-section">
+  <div class="container">
+    <div class="text-center mb-5">
+      <span class="hx-eyebrow">Devamı</span>
+      <h2>Verinizle Devam Edin</h2>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-6">
+        <div class="hx-start-card">
+          <span class="ico"><i class="bi bi-signpost-2"></i></span>
+          <h3>Nasıl Çalışır?</h3>
+          <p class="text-muted-hx">Veri yüklemeden dışa aktarıma kadar tüm süreci adım adım görün.</p>
+          <a href="nasil-calisir.html" class="hx-btn hx-btn-sm">Süreci İncele</a>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="hx-start-card">
+          <span class="ico"><i class="bi bi-clipboard2-check"></i></span>
+          <h3>Doğrulama Özelliği</h3>
+          <p class="text-muted-hx">Bu veri tipleri üzerinde çalışan doğrulama motorunu daha yakından inceleyin.</p>
+          <a href="features.html#veri-dogrulama" class="hx-btn hx-btn-sm">Özelliği Görüntüle</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SON ÇAĞRI (CTA) ============ -->
+<section class="hx-section hx-final-cta">
+  <div class="container text-center">
+    <h2>Jeolojik Verilerinizi Doğrulamaya Bugün Başlayın</h2>
+    <p class="text-muted-hx mx-auto" style="max-width:560px">JeoValid'i indirin, sondaj verilerinizi saniyeler içinde doğrulayın ve 3D olarak inceleyin.</p>
+    <a href="index.html#indir" class="hx-btn hx-btn-lg mt-3"><i class="bi bi-download"></i> Uygulamayı İndir</a>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="hx-footer">
+  <div class="container">
+    <a href="index.html#home" class="hx-brand hx-footer-brand mb-4"><img src="images/jeovalid-logo.webp" alt="JeoValid logosu"> JeoValid</a>
+    <div class="row g-4">
+      <div class="col-6 col-md-2">
+        <h6>Özellikler</h6>
+        <ul>
+          <li><a href="features.html#veri-dogrulama">Veri Doğrulama</a></li>
+          <li><a href="features.html#3d-goruntuleme">3D Görüntüleme</a></li>
+          <li><a href="features.html#ai-analiz">AI Analiz</a></li>
+          <li><a href="features.html#dxf-aktarim">DXF Dışa Aktarım</a></li>
+          <li><a href="veri-tipleri.html">Veri Tipleri</a></li>
+        </ul>
+      </div>
+      <div class="col-6 col-md-2">
+        <h6>JeoValid PRO</h6>
+        <ul>
+          <li><a href="pro.html#planlar">Planlar</a></li>
+          <li><a href="pro.html#dahil-olanlar">Ayrıcalıklar</a></li>
+          <li><a href="pro.html#faq">İptal Etme</a></li>
+        </ul>
+      </div>
+      <div class="col-6 col-md-2">
+        <h6>Bağlantılar</h6>
+        <ul>
+          <li><a href="about.html">Hakkımızda</a></li>
+          <li><a href="nasil-calisir.html">Nasıl Çalışır</a></li>
+          <li><a href="neden-jeovalid.html">Neden JeoValid</a></li>
+          <li><a href="sss.html">SSS</a></li>
+          <li><a href="wiki.html">Bilgi Bankası</a></li>
+          <li><a href="community.html">Topluluk</a></li>
+          <li><a href="privacy.html">Gizlilik Politikası</a></li>
+        </ul>
+      </div>
+      <div class="col-md-6">
+        <h6>Destek</h6>
+        <p class="text-muted-hx">Bir sorun mu yaşıyorsunuz veya önerileriniz mi var? Bize yazın.</p>
+        <p><a href="mailto:destek@jeovalid.com" class="text-muted-hx">destek@jeovalid.com</a></p>
+        <div class="d-flex flex-wrap">
+          <a href="https://play.google.com/store/apps/details?id=com.jeovalid.app" class="hx-store-btn"><i class="bi bi-google-play fs-4"></i><span><small>Android için</small>Google Play</span></a>
+          <a href="#" class="hx-store-btn"><i class="bi bi-apple fs-4"></i><span><small>iOS için</small>App Store</span></a>
+        </div>
+      </div>
+    </div>
+    <div class="hx-copyright">
+      JeoValid © 2026 Tüm hakları saklıdır.
+    </div>
+  </div>
+</footer>
+
+<a href="#" class="hx-to-top"><i class="bi bi-arrow-up"></i></a>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

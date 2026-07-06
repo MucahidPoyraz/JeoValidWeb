@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<title>JeoValid Dokümantasyonu — Bilgi Bankası</title>
+<meta name="description" content="JeoValid uygulamasının tüm özellikleri, ekranları, ayarları ve kullanım ipuçları için kapsamlı dokümantasyon.">
+<link rel="icon" href="images/favicon-32x32.png" sizes="32x32">
+<link rel="icon" href="images/favicon-16x16.png" sizes="16x16">
+<link rel="icon" href="images/favicon-192x192.png" sizes="192x192">
+<link rel="apple-touch-icon" href="images/favicon-180x180.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+<link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+
+<!-- ============ NAVBAR ============ -->
+<nav class="navbar navbar-expand-lg hx-navbar">
+  <div class="container">
+    <a class="navbar-brand hx-brand" href="index.html#home"><img src="images/jeovalid-logo.webp" alt="JeoValid logosu"> JeoValid</a>
+    <button class="navbar-toggler text-white border-0" type="button" data-bs-toggle="collapse" data-bs-target="#hxNav">
+      <i class="bi bi-list fs-1 text-white"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="hxNav">
+      <ul class="navbar-nav mx-auto">
+        <li class="nav-item"><a class="nav-link" href="index.html#home">Ana Sayfa</a></li>
+        <li class="nav-item"><a class="nav-link" href="about.html">Hakkımızda</a></li>
+        <li class="nav-item"><a class="nav-link" href="features.html">Özellikler</a></li>
+        <li class="nav-item"><a class="nav-link" href="nasil-calisir.html">Nasıl Çalışır</a></li>
+        <li class="nav-item"><a class="nav-link" href="pro.html">JeoValid PRO</a></li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Kaynaklar</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="getting-started.html">Başlangıç Rehberi</a></li>
+            <li><a class="dropdown-item active" href="wiki.html">Bilgi Bankası</a></li>
+            <li><a class="dropdown-item" href="community.html">Topluluk</a></li>
+          </ul>
+        </li>
+        <li class="nav-item"><a class="nav-link" href="sss.html">SSS</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">İletişim</a></li>
+      </ul>
+      <div class="d-flex align-items-center gap-3">
+        <a href="index.html#indir" class="hx-btn hx-btn-sm"><i class="bi bi-download"></i> Uygulamayı İndir</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- ============ DOKÜMANTASYON ARAÇ ÇUBUĞU ============ -->
+<section class="hx-wiki-toolbar">
+  <div class="container d-flex flex-wrap align-items-center justify-content-between gap-3">
+    <div class="d-flex align-items-center gap-2">
+      <i class="bi bi-journal-text" style="color:var(--hx-cyan);font-size:1.4rem;"></i>
+      <h4>JeoValid Dokümantasyonu</h4>
+    </div>
+    <div class="d-flex align-items-center gap-3 flex-wrap">
+      <div class="hx-search-box hx-search-box-inline">
+        <i class="bi bi-search"></i>
+        <input type="text" placeholder="Makale ara..." aria-label="Dokümantasyonda ara">
+      </div>
+      <button class="hx-btn hx-btn-outline hx-btn-sm d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#docsOffcanvas" aria-controls="docsOffcanvas">
+        <i class="bi bi-list"></i> Menü
+      </button>
+      <!-- ❓ Admin girişi henüz bağlanmadı; şimdilik yalnızca görsel bir bağlantıdır. -->
+      <a href="#" class="hx-btn hx-btn-outline hx-btn-sm"><i class="bi bi-box-arrow-in-right"></i> Giriş Yap</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ DOKÜMAN GÖVDESİ ============ -->
+<section class="hx-section" style="padding-top:0;">
+    <div class="hx-docs-layout">
+
+      <!-- ============ SOL: AĞAÇ MENÜ (masaüstü) ============ -->
+      <aside class="hx-docs-sidebar d-none d-lg-block">
+        <nav class="hx-docs-nav">
+
+          <div class="hx-docs-cat">
+            <button class="hx-docs-cat-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#dCat1" aria-expanded="true">
+              <span><i class="bi bi-rocket-takeoff me-2"></i>Başlangıç Rehberi</span>
+              <i class="bi bi-chevron-right chev"></i>
+            </button>
+            <div class="collapse show" id="dCat1">
+              <ul class="hx-docs-sublist">
+                <li><a href="#" class="active">Uygulamayı İndir ve Kur</a></li>
+                <li><a href="#">Kayıt Ol veya Giriş Yap</a></li>
+                <li><a href="#">İlk Veri Yükleme</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="hx-docs-cat">
+            <button class="hx-docs-cat-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#dCat2" aria-expanded="false">
+              <span><i class="bi bi-cloud-upload me-2"></i>Veri Yükleme ve Doğrulama</span>
+              <i class="bi bi-chevron-right chev"></i>
+            </button>
+            <div class="collapse" id="dCat2">
+              <ul class="hx-docs-sublist">
+                <li><a href="#">Collar Verisi Yükleme</a></li>
+                <li><a href="#">Survey Verisi Yükleme</a></li>
+                <li><a href="#">Lithology Verisi Yükleme</a></li>
+                <li><a href="#">Assay Verisi Yükleme</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="hx-docs-cat">
+            <button class="hx-docs-cat-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#dCat3" aria-expanded="false">
+              <span><i class="bi bi-boxes me-2"></i>3D Görüntüleme</span>
+              <i class="bi bi-chevron-right chev"></i>
+            </button>
+            <div class="collapse" id="dCat3">
+              <ul class="hx-docs-sublist">
+                <li><a href="#">3D Harita Kullanımı</a></li>
+                <li><a href="#">Sondaj Yolu İnceleme</a></li>
+                <li><a href="#">Katman Görüntüleme</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="hx-docs-cat">
+            <button class="hx-docs-cat-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#dCat4" aria-expanded="false">
+              <span><i class="bi bi-cpu me-2"></i>AI Analiz ve Raporlama</span>
+              <i class="bi bi-chevron-right chev"></i>
+            </button>
+            <div class="collapse" id="dCat4">
+              <ul class="hx-docs-sublist">
+                <li><a href="#">AI Analiz Başlatma</a></li>
+                <li><a href="#">Rapor Oluşturma</a></li>
+                <li><a href="#">Grafik Yorumlama</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="hx-docs-cat">
+            <button class="hx-docs-cat-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#dCat5" aria-expanded="false">
+              <span><i class="bi bi-file-earmark-arrow-down me-2"></i>DXF Dışa Aktarım</span>
+              <i class="bi bi-chevron-right chev"></i>
+            </button>
+            <div class="collapse" id="dCat5">
+              <ul class="hx-docs-sublist">
+                <li><a href="#">DXF Formatına Aktarma</a></li>
+                <li><a href="#">Aktarım Ayarları</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="hx-docs-cat">
+            <button class="hx-docs-cat-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#dCat6" aria-expanded="false">
+              <span><i class="bi bi-question-circle me-2"></i>SSS</span>
+              <i class="bi bi-chevron-right chev"></i>
+            </button>
+            <div class="collapse" id="dCat6">
+              <ul class="hx-docs-sublist">
+                <li><a href="#">Fiyatlandırma ve Abonelik</a></li>
+                <li><a href="#">Veri Gizliliği ve Güvenlik</a></li>
+                <li><a href="#">Teknik Sorunlar</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="hx-docs-cat">
+            <button class="hx-docs-cat-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#dCat7" aria-expanded="false">
+              <span><i class="bi bi-code-slash me-2"></i>Geliştirici API</span>
+              <i class="bi bi-chevron-right chev"></i>
+            </button>
+            <div class="collapse" id="dCat7">
+              <ul class="hx-docs-sublist">
+                <li><a href="#">API Anahtarı Alma</a></li>
+                <li><a href="#">API Endpoint'leri</a></li>
+                <li><a href="#">Örnek Kodlar</a></li>
+              </ul>
+            </div>
+          </div>
+
+        </nav>
+      </aside>
+
+      <!-- ============ SAĞ: MAKALE + İÇİNDEKİLER ============ -->
+      <div class="hx-docs-content">
+
+          <div class="hx-docs-article-col">
+            <article>
+              <h1>Uygulamayı İndir ve Kur</h1>
+              <div class="hx-docs-meta">
+                <span class="author"><span class="hx-docs-author-avatar">A</span> Admin</span>
+                <span>15 Mart 2026</span>
+                <span><i class="bi bi-clock"></i> 5 dk okuma</span>
+              </div>
+
+              <p>Bu rehber, JeoValid uygulamasını cihazınıza indirip ilk kurulumu tamamlamanız için gereken adımları anlatır. Uygulamayı kaydolmadan da deneyebilir, dilediğiniz zaman hesap oluşturabilirsiniz. Genel bir bakış için <a href="getting-started.html">Başlangıç Merkezi</a> sayfamıza da göz atabilirsiniz.</p>
+
+              <h2 id="sistem-gereksinimleri">Sistem Gereksinimleri</h2>
+              <p>JeoValid'i sorunsuz kullanabilmek için cihazınızın aşağıdaki asgari gereksinimleri karşılaması önerilir:</p>
+              <ul>
+                <li>Android 8.0 (Oreo) veya üzeri</li>
+                <li>iOS 14 veya üzeri</li>
+                <li>En az 200 MB boş depolama alanı</li>
+                <li>Veri setlerini içe/dışa aktarmak için internet bağlantısı</li>
+              </ul>
+
+              <h2 id="indirme">Uygulamayı İndirme</h2>
+              <p>JeoValid, Android ve iOS cihazlar için resmi uygulama mağazalarında yayındadır.</p>
+
+              <h3 id="android-icin">Android için</h3>
+              <p>Google Play Store üzerinden "JeoValid" araması yaparak veya aşağıdaki butona dokunarak uygulama sayfasına ulaşabilirsiniz.</p>
+              <p><a href="https://play.google.com/store/apps/details?id=com.jeovalid.app" class="hx-store-btn"><i class="bi bi-google-play fs-4"></i><span><small>Android için</small>Google Play</span></a></p>
+
+              <h3 id="ios-icin">iOS için</h3>
+              <p>App Store üzerinden "JeoValid" araması yaparak veya aşağıdaki butona dokunarak uygulama sayfasına ulaşabilirsiniz.</p>
+              <p><a href="#" class="hx-store-btn"><i class="bi bi-apple fs-4"></i><span><small>iOS için</small>App Store</span></a></p>
+
+              <div class="hx-about-img my-4">
+                <img src="https://placehold.co/900x420/152A47/38BDF8?text=Uygulama+Ma%C4%9Faza+Sayfas%C4%B1" alt="JeoValid uygulama mağazası sayfası (yer tutucu)" loading="lazy">
+              </div>
+
+              <h2 id="kurulum">Kurulumu Tamamlama</h2>
+              <p>İndirme tamamlandıktan sonra kuruluma başlamak için şu adımları izleyin:</p>
+              <ol>
+                <li>İndirilen uygulamayı açın.</li>
+                <li>Konum ve depolama gibi kullanım izinlerini onaylayın.</li>
+                <li>Dil ve ölçü birimi tercihinizi seçin.</li>
+                <li>Kurulum tamamlandığında ana ekrana yönlendirilirsiniz.</li>
+              </ol>
+
+              <div class="hx-about-img my-4">
+                <img src="https://placehold.co/900x420/0F766E/ffffff?text=Kurulum+%2F+%C4%B0lk+A%C3%A7%C4%B1l%C4%B1%C5%9F+Ekran%C4%B1" alt="Kurulum ve ilk açılış ekranı (yer tutucu)" loading="lazy">
+              </div>
+
+              <h2 id="ilk-acilis">İlk Açılış Ayarları</h2>
+              <p>İlk açılışta Ayarlar ekranından dil, birim sistemi ve tema tercihlerinizi belirleyebilirsiniz. Bu tercihler dilediğiniz zaman değiştirilebilir ve cihazınızda örnekteki gibi bir yapılandırma olarak saklanır:</p>
+              <div class="hx-code-block">
+                <span class="lang">json</span>
+                <pre><code>{
+  "dil": "tr-TR",
+  "birim": "metrik",
+  "tema": "koyu",
+  "otomatik_yedekleme": true
+}</code></pre>
+              </div>
+
+              <h2 id="sorun-mu-yasiyorsunuz">Sorun mu Yaşıyorsunuz?</h2>
+              <p>Kurulum sırasında bir sorunla karşılaşırsanız SSS kategorisindeki <a href="#">Teknik Sorunlar</a> makalesine göz atabilir ya da sorunuzu doğrudan <a href="community.html">Forum topluluğumuza</a> sorabilirsiniz.</p>
+
+              <div class="hx-helpful">
+                <strong>Bu makale yardımcı oldu mu?</strong>
+                <div class="hx-helpful-actions">
+                  <button type="button" class="hx-helpful-btn"><i class="bi bi-hand-thumbs-up"></i> Evet</button>
+                  <button type="button" class="hx-helpful-btn"><i class="bi bi-hand-thumbs-down"></i> Hayır</button>
+                </div>
+              </div>
+
+              <h2 class="mb-4" style="font-size:1.15rem;">İlgili Makaleler</h2>
+              <div class="row g-3">
+                <div class="col-md-4">
+                  <a href="#" class="hx-related-card">
+                    <h6>Kayıt Ol veya Giriş Yap</h6>
+                    <p>Hesap oluşturma ve giriş adımlarını öğrenin.</p>
+                  </a>
+                </div>
+                <div class="col-md-4">
+                  <a href="#" class="hx-related-card">
+                    <h6>İlk Veri Yükleme</h6>
+                    <p>İlk Collar veya Survey veri setinizi nasıl yükleyeceğinizi görün.</p>
+                  </a>
+                </div>
+                <div class="col-md-4">
+                  <a href="#" class="hx-related-card">
+                    <h6>Teknik Sorunlar</h6>
+                    <p>Kurulum ve kullanım sırasında karşılaşılan yaygın sorunlar.</p>
+                  </a>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <!-- ============ SAĞ: İÇİNDEKİLER (TOC) ============ -->
+          <nav class="hx-docs-toc d-none d-xl-block" aria-label="Bu makalede">
+            <h6>Bu Makalede</h6>
+            <a href="#sistem-gereksinimleri">Sistem Gereksinimleri</a>
+            <a href="#indirme">Uygulamayı İndirme</a>
+            <a href="#kurulum">Kurulumu Tamamlama</a>
+            <a href="#ilk-acilis">İlk Açılış Ayarları</a>
+            <a href="#sorun-mu-yasiyorsunuz">Sorun mu Yaşıyorsunuz?</a>
+          </nav>
+
+      </div>
+
+    </div>
+</section>
+
+<!-- ============ MOBİL AĞAÇ MENÜ (offcanvas, üstten açılır) ============ -->
+<div class="offcanvas offcanvas-top hx-docs-offcanvas" tabindex="-1" id="docsOffcanvas" aria-labelledby="docsOffcanvasLabel">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="docsOffcanvasLabel">İçindekiler</h5>
+    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Kapat"></button>
+  </div>
+  <div class="offcanvas-body">
+    <nav class="hx-docs-nav">
+
+      <div class="hx-docs-cat">
+        <button class="hx-docs-cat-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#dCat1M" aria-expanded="true">
+          <span><i class="bi bi-rocket-takeoff me-2"></i>Başlangıç Rehberi</span>
+          <i class="bi bi-chevron-right chev"></i>
+        </button>
+        <div class="collapse show" id="dCat1M">
+          <ul class="hx-docs-sublist">
+            <li><a href="#" class="active">Uygulamayı İndir ve Kur</a></li>
+            <li><a href="#">Kayıt Ol veya Giriş Yap</a></li>
+            <li><a href="#">İlk Veri Yükleme</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="hx-docs-cat">
+        <button class="hx-docs-cat-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#dCat2M" aria-expanded="false">
+          <span><i class="bi bi-cloud-upload me-2"></i>Veri Yükleme ve Doğrulama</span>
+          <i class="bi bi-chevron-right chev"></i>
+        </button>
+        <div class="collapse" id="dCat2M">
+          <ul class="hx-docs-sublist">
+            <li><a href="#">Collar Verisi Yükleme</a></li>
+            <li><a href="#">Survey Verisi Yükleme</a></li>
+            <li><a href="#">Lithology Verisi Yükleme</a></li>
+            <li><a href="#">Assay Verisi Yükleme</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="hx-docs-cat">
+        <button class="hx-docs-cat-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#dCat3M" aria-expanded="false">
+          <span><i class="bi bi-boxes me-2"></i>3D Görüntüleme</span>
+          <i class="bi bi-chevron-right chev"></i>
+        </button>
+        <div class="collapse" id="dCat3M">
+          <ul class="hx-docs-sublist">
+            <li><a href="#">3D Harita Kullanımı</a></li>
+            <li><a href="#">Sondaj Yolu İnceleme</a></li>
+            <li><a href="#">Katman Görüntüleme</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="hx-docs-cat">
+        <button class="hx-docs-cat-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#dCat4M" aria-expanded="false">
+          <span><i class="bi bi-cpu me-2"></i>AI Analiz ve Raporlama</span>
+          <i class="bi bi-chevron-right chev"></i>
+        </button>
+        <div class="collapse" id="dCat4M">
+          <ul class="hx-docs-sublist">
+            <li><a href="#">AI Analiz Başlatma</a></li>
+            <li><a href="#">Rapor Oluşturma</a></li>
+            <li><a href="#">Grafik Yorumlama</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="hx-docs-cat">
+        <button class="hx-docs-cat-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#dCat5M" aria-expanded="false">
+          <span><i class="bi bi-file-earmark-arrow-down me-2"></i>DXF Dışa Aktarım</span>
+          <i class="bi bi-chevron-right chev"></i>
+        </button>
+        <div class="collapse" id="dCat5M">
+          <ul class="hx-docs-sublist">
+            <li><a href="#">DXF Formatına Aktarma</a></li>
+            <li><a href="#">Aktarım Ayarları</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="hx-docs-cat">
+        <button class="hx-docs-cat-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#dCat6M" aria-expanded="false">
+          <span><i class="bi bi-question-circle me-2"></i>SSS</span>
+          <i class="bi bi-chevron-right chev"></i>
+        </button>
+        <div class="collapse" id="dCat6M">
+          <ul class="hx-docs-sublist">
+            <li><a href="#">Fiyatlandırma ve Abonelik</a></li>
+            <li><a href="#">Veri Gizliliği ve Güvenlik</a></li>
+            <li><a href="#">Teknik Sorunlar</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="hx-docs-cat">
+        <button class="hx-docs-cat-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#dCat7M" aria-expanded="false">
+          <span><i class="bi bi-code-slash me-2"></i>Geliştirici API</span>
+          <i class="bi bi-chevron-right chev"></i>
+        </button>
+        <div class="collapse" id="dCat7M">
+          <ul class="hx-docs-sublist">
+            <li><a href="#">API Anahtarı Alma</a></li>
+            <li><a href="#">API Endpoint'leri</a></li>
+            <li><a href="#">Örnek Kodlar</a></li>
+          </ul>
+        </div>
+      </div>
+
+    </nav>
+  </div>
+</div>
+
+<!-- ============ FOOTER ============ -->
+<footer class="hx-footer">
+  <div class="container">
+    <a href="index.html#home" class="hx-brand hx-footer-brand mb-4"><img src="images/jeovalid-logo.webp" alt="JeoValid logosu"> JeoValid</a>
+    <div class="row g-4">
+      <div class="col-6 col-md-2">
+        <h6>Özellikler</h6>
+        <ul>
+          <li><a href="features.html#veri-dogrulama">Veri Doğrulama</a></li>
+          <li><a href="features.html#3d-goruntuleme">3D Görüntüleme</a></li>
+          <li><a href="features.html#ai-analiz">AI Analiz</a></li>
+          <li><a href="features.html#dxf-aktarim">DXF Dışa Aktarım</a></li>
+          <li><a href="veri-tipleri.html">Veri Tipleri</a></li>
+        </ul>
+      </div>
+      <div class="col-6 col-md-2">
+        <h6>JeoValid PRO</h6>
+        <ul>
+          <li><a href="pro.html#planlar">Planlar</a></li>
+          <li><a href="pro.html#dahil-olanlar">Ayrıcalıklar</a></li>
+          <li><a href="pro.html#faq">İptal Etme</a></li>
+        </ul>
+      </div>
+      <div class="col-6 col-md-2">
+        <h6>Bağlantılar</h6>
+        <ul>
+          <li><a href="about.html">Hakkımızda</a></li>
+          <li><a href="nasil-calisir.html">Nasıl Çalışır</a></li>
+          <li><a href="neden-jeovalid.html">Neden JeoValid</a></li>
+          <li><a href="sss.html">SSS</a></li>
+          <li><a href="wiki.html">Bilgi Bankası</a></li>
+          <li><a href="community.html">Topluluk</a></li>
+          <li><a href="privacy.html">Gizlilik Politikası</a></li>
+        </ul>
+      </div>
+      <div class="col-md-6">
+        <h6>Destek</h6>
+        <p class="text-muted-hx">Bir sorun mu yaşıyorsunuz veya önerileriniz mi var? Bize yazın.</p>
+        <p><a href="mailto:destek@jeovalid.com" class="text-muted-hx">destek@jeovalid.com</a></p>
+        <div class="d-flex flex-wrap">
+          <a href="https://play.google.com/store/apps/details?id=com.jeovalid.app" class="hx-store-btn"><i class="bi bi-google-play fs-4"></i><span><small>Android için</small>Google Play</span></a>
+          <a href="#" class="hx-store-btn"><i class="bi bi-apple fs-4"></i><span><small>iOS için</small>App Store</span></a>
+        </div>
+      </div>
+    </div>
+    <div class="hx-copyright">
+      JeoValid © 2026 Tüm hakları saklıdır.
+    </div>
+  </div>
+</footer>
+
+<a href="#" class="hx-to-top"><i class="bi bi-arrow-up"></i></a>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

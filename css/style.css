@@ -871,3 +871,546 @@ section{ position:relative; }
   background:rgba(255,255,255,.2); border:0;
 }
 .hx-testi-dots button.active{ background:var(--hx-gradient); width:26px; border-radius:20px; transition:width .3s ease; }
+
+/* ==========================================================================
+   İç sayfalar (Hakkımızda, İletişim, Gizlilik, Bilgi Bankası, Topluluk)
+   ========================================================================== */
+
+/* ---------------- Sayfa içi hero ---------------- */
+.hx-page-hero{
+  position:relative;
+  padding:9.5rem 0 4.5rem;
+  text-align:center;
+  background:
+    linear-gradient(180deg, rgba(5,5,15,.6) 0%, rgba(5,5,15,.88) 75%, var(--hx-bg) 100%),
+    url('../images/header_bg.jpg') center / cover no-repeat;
+}
+.hx-page-hero h1{ margin-bottom:1rem; }
+.hx-page-hero p{ max-width:640px; margin-left:auto; margin-right:auto; font-size:1.05rem; }
+@media (max-width:767.98px){ .hx-page-hero{ padding:8rem 0 3.5rem; } }
+
+/* ---------------- Hakkımızda: hikaye / vizyon ---------------- */
+.hx-about-img{
+  border-radius:16px;
+  overflow:hidden;
+  border:1px solid var(--hx-border);
+}
+.hx-about-img img{ width:100%; height:100%; object-fit:cover; display:block; }
+
+/* Ekip kartları */
+.hx-team-card{
+  background:var(--hx-bg-card);
+  border:1px solid var(--hx-border);
+  border-radius:16px;
+  padding:2rem 1.5rem;
+  text-align:center;
+  height:100%;
+}
+.hx-team-avatar{
+  width:110px; height:110px;
+  border-radius:50%;
+  margin:0 auto 1.25rem;
+  overflow:hidden;
+  border:3px solid var(--hx-border);
+}
+.hx-team-avatar img{ width:100%; height:100%; object-fit:cover; display:block; }
+.hx-team-card h5{ margin-bottom:.2rem; font-size:1.05rem; }
+.hx-team-role{ display:block; color:var(--hx-cyan); font-size:.85rem; font-weight:700; margin-bottom:.75rem; }
+.hx-team-socials{ display:flex; justify-content:center; gap:.5rem; margin-top:.9rem; }
+.hx-team-socials a{
+  width:34px; height:34px; border-radius:50%;
+  border:1px solid var(--hx-border);
+  display:flex; align-items:center; justify-content:center;
+  color:#fff; font-size:.85rem;
+}
+.hx-team-socials a:hover{ background:var(--hx-gradient); border-color:transparent; }
+
+/* ---------------- İletişim ---------------- */
+.hx-form-label{ font-size:.85rem; font-weight:700; color:#dfe3ee; margin-bottom:.45rem; display:block; }
+.hx-form-control{
+  width:100%;
+  background:var(--hx-bg-card);
+  border:1px solid var(--hx-border);
+  color:#fff;
+  border-radius:12px;
+  padding:.8rem 1.1rem;
+  font-family:var(--hx-font);
+  font-size:.95rem;
+}
+.hx-form-control::placeholder{ color:var(--hx-text-muted); }
+.hx-form-control:focus{ outline:none; border-color:var(--hx-pink); box-shadow:none; background:var(--hx-bg-card); color:#fff; }
+textarea.hx-form-control{ resize:vertical; min-height:140px; }
+
+.hx-contact-info-item{ display:flex; gap:1.1rem; align-items:flex-start; margin-bottom:1.75rem; }
+.hx-contact-info-item .ico{
+  flex:none; width:48px; height:48px; border-radius:50%;
+  background:var(--hx-gradient); display:flex; align-items:center; justify-content:center;
+  font-size:1.2rem; color:#fff;
+}
+.hx-contact-info-item h6{ margin-bottom:.25rem; color:#fff; font-size:.95rem; }
+.hx-contact-info-item p, .hx-contact-info-item a{ margin:0; color:var(--hx-text-muted); font-size:.92rem; }
+.hx-contact-info-item a:hover{ color:var(--hx-pink); }
+
+.hx-map-placeholder{
+  height:320px;
+  border-radius:16px;
+  border:1px solid var(--hx-border);
+  background:var(--hx-bg-card);
+  display:flex; flex-direction:column; align-items:center; justify-content:center; gap:.75rem;
+  color:var(--hx-text-muted);
+  text-align:center;
+}
+.hx-map-placeholder i{ font-size:2.5rem; color:var(--hx-cyan); }
+
+/* ---------------- Gizlilik Politikası ---------------- */
+.hx-legal-toc{
+  background:var(--hx-bg-card);
+  border:1px solid var(--hx-border);
+  border-radius:16px;
+  padding:1.5rem 1.75rem;
+  position:sticky;
+  top:110px;
+}
+.hx-legal-toc h6{ color:#fff; font-size:.85rem; letter-spacing:1px; text-transform:uppercase; margin-bottom:1rem; }
+.hx-legal-toc a{ display:block; padding:.5rem 0; color:var(--hx-text-muted); font-size:.9rem; border-bottom:1px solid var(--hx-border); }
+.hx-legal-toc a:last-child{ border-bottom:0; }
+.hx-legal-toc a:hover{ color:var(--hx-pink); }
+
+.hx-legal-section{ margin-bottom:2.75rem; scroll-margin-top:110px; }
+.hx-legal-section:last-child{ margin-bottom:0; }
+.hx-legal-section h3{ font-size:1.3rem; margin-bottom:1rem; color:var(--hx-cyan); }
+.hx-legal-section p{ color:var(--hx-text-muted); margin-bottom:1rem; }
+.hx-legal-section ul{ color:var(--hx-text-muted); padding-left:1.2rem; margin-bottom:1rem; }
+.hx-legal-section li{ margin-bottom:.5rem; }
+.hx-legal-updated{ color:var(--hx-text-muted); font-size:.88rem; }
+
+/* ---------------- Bilgi Bankası (Wiki) ---------------- */
+.hx-search-box{ max-width:640px; margin:0 auto; position:relative; }
+.hx-search-box input{
+  width:100%;
+  padding:1rem 1.5rem 1rem 3.3rem;
+  border-radius:50px;
+  background:var(--hx-bg-card);
+  border:1px solid var(--hx-border);
+  color:#fff;
+  font-family:var(--hx-font);
+  font-size:1rem;
+}
+.hx-search-box input::placeholder{ color:var(--hx-text-muted); }
+.hx-search-box input:focus{ outline:none; border-color:var(--hx-pink); }
+.hx-search-box i{
+  position:absolute; left:1.35rem; top:50%; transform:translateY(-50%);
+  color:var(--hx-text-muted); font-size:1.1rem;
+}
+
+.hx-wiki-cat{
+  background:var(--hx-bg-card);
+  border:1px solid var(--hx-border);
+  border-radius:16px;
+  padding:2.25rem 1.25rem;
+  text-align:center;
+  height:100%;
+  display:block;
+  transition:transform .25s ease, border-color .25s ease;
+}
+.hx-wiki-cat:hover{ transform:translateY(-4px); border-color:var(--hx-cyan); }
+.hx-wiki-cat .ico{
+  width:60px; height:60px; margin:0 auto 1.1rem;
+  border-radius:50%;
+  background:var(--hx-gradient);
+  display:flex; align-items:center; justify-content:center;
+  font-size:1.5rem; color:#fff;
+}
+.hx-wiki-cat h5{ font-size:1rem; margin-bottom:.4rem; color:#fff; }
+.hx-wiki-cat p{ font-size:.85rem; margin:0; }
+
+.hx-article-list{ list-style:none; padding:0; margin:0; }
+.hx-article-list li{
+  display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:.5rem 1rem;
+  padding:1.15rem 0;
+  border-bottom:1px solid var(--hx-border);
+}
+.hx-article-list li:last-child{ border-bottom:0; }
+.hx-article-list a.hx-article-title{ color:#fff; font-weight:700; font-size:.95rem; }
+.hx-article-list a.hx-article-title:hover{ color:var(--hx-pink); }
+.hx-article-meta{ font-size:.8rem; color:var(--hx-text-muted); white-space:nowrap; }
+
+/* ---------------- Topluluk / Forum ---------------- */
+.hx-forum-cat{
+  display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:1rem;
+  background:var(--hx-bg-card);
+  border:1px solid var(--hx-border);
+  border-radius:16px;
+  padding:1.5rem 1.75rem;
+  margin-bottom:1rem;
+}
+.hx-forum-cat-left{ display:flex; align-items:center; gap:1.1rem; }
+.hx-forum-cat .ico{
+  flex:none; width:48px; height:48px; border-radius:50%;
+  background:var(--hx-gradient); display:flex; align-items:center; justify-content:center;
+  font-size:1.2rem; color:#fff;
+}
+.hx-forum-cat h5{ margin:0 0 .2rem; font-size:1rem; color:#fff; }
+.hx-forum-cat p{ margin:0; font-size:.85rem; }
+.hx-forum-cat-count{ font-size:.85rem; color:var(--hx-cyan); font-weight:700; white-space:nowrap; }
+
+.hx-forum-table{ width:100%; border-collapse:separate; border-spacing:0 .6rem; }
+.hx-forum-table th{
+  text-align:left; font-size:.75rem; text-transform:uppercase; letter-spacing:1px;
+  color:var(--hx-text-muted); padding:0 1.1rem .75rem; font-weight:700;
+}
+.hx-forum-table td{
+  padding:1.1rem; background:var(--hx-bg-card); border-top:1px solid var(--hx-border); border-bottom:1px solid var(--hx-border);
+  font-size:.9rem; vertical-align:middle;
+}
+.hx-forum-table tr td:first-child{ border-left:1px solid var(--hx-border); border-radius:12px 0 0 12px; }
+.hx-forum-table tr td:last-child{ border-right:1px solid var(--hx-border); border-radius:0 12px 12px 0; }
+.hx-forum-table a{ color:#fff; font-weight:700; }
+.hx-forum-table a:hover{ color:var(--hx-pink); }
+.hx-forum-table .muted{ color:var(--hx-text-muted); }
+
+/* Konu detay sayfası */
+.hx-topic-post{
+  background:var(--hx-bg-card);
+  border:1px solid var(--hx-border);
+  border-radius:16px;
+  padding:1.85rem;
+  margin-bottom:1.25rem;
+}
+.hx-topic-post-header{ display:flex; align-items:center; gap:.9rem; margin-bottom:1.1rem; }
+.hx-topic-avatar{
+  width:44px; height:44px; border-radius:50%; flex:none;
+  background:var(--hx-gradient); display:flex; align-items:center; justify-content:center;
+  color:#fff; font-weight:800; font-size:1rem;
+}
+.hx-topic-post-meta strong{ display:block; color:#fff; font-size:.94rem; }
+.hx-topic-post-meta span{ font-size:.78rem; color:var(--hx-text-muted); }
+.hx-topic-post-body p{ color:#dfe3ee; margin-bottom:1rem; }
+.hx-topic-post-body p:last-child{ margin-bottom:0; }
+.hx-like-btn{
+  display:inline-flex; align-items:center; gap:.45rem;
+  background:transparent; border:1px solid var(--hx-border); color:var(--hx-text-muted);
+  border-radius:50px; padding:.45rem 1.1rem; font-size:.85rem; font-weight:700;
+  transition:border-color .2s ease, color .2s ease;
+}
+.hx-like-btn:hover{ border-color:var(--hx-pink); color:var(--hx-pink); }
+
+/* ---------------- Özellikler (detay sayfası) ---------------- */
+.hx-feature-panel{
+  background:var(--hx-bg-card);
+  border:1px solid var(--hx-border);
+  border-radius:20px;
+  min-height:260px;
+  display:flex; align-items:center; justify-content:center;
+}
+.hx-feature-panel .ico{
+  width:120px; height:120px;
+  border-radius:50%;
+  background:var(--hx-gradient);
+  display:flex; align-items:center; justify-content:center;
+  font-size:3rem; color:#fff;
+  box-shadow:0 25px 45px -15px rgba(20,184,166,.45);
+}
+.hx-feature-num{
+  display:inline-block;
+  font-size:.8rem; font-weight:800; letter-spacing:2px;
+  color:var(--hx-text-muted);
+  margin-bottom:.5rem;
+}
+.hx-feature-row{ margin-bottom:5rem; }
+.hx-feature-row:last-child{ margin-bottom:0; }
+@media (max-width:991.98px){ .hx-feature-row{ margin-bottom:3.5rem; } }
+.hx-feature-panel{ overflow:visible; position:relative; }
+.hx-feature-panel img{ width:100%; height:100%; object-fit:cover; display:block; border-radius:20px; }
+.hx-feature-panel .hx-store-btn{ margin:0; }
+
+/* ---------------- Video / görsel anlatım (learning tarzı) ---------------- */
+
+/* Büyük tanıtım videosu bloğu (sayfa üstü) */
+.hx-video-hero{
+  position:relative;
+  border-radius:20px;
+  overflow:hidden;
+  aspect-ratio:16/9;
+  background:linear-gradient(155deg,#1c2942,#0a1220);
+  border:1px solid var(--hx-border);
+  display:flex; align-items:center; justify-content:center;
+}
+.hx-video-hero img{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; opacity:.5; }
+.hx-video-hero::after{
+  content:''; position:absolute; inset:0;
+  background:linear-gradient(180deg, transparent 45%, rgba(5,9,20,.9) 100%);
+}
+.hx-video-play{
+  position:relative; z-index:2;
+  width:88px; height:88px; border-radius:50%;
+  background:var(--hx-gradient);
+  display:flex; align-items:center; justify-content:center;
+  font-size:2rem; color:#fff; padding-left:6px;
+  box-shadow:0 25px 45px -15px rgba(20,184,166,.55);
+}
+.hx-video-caption{
+  position:absolute; left:1.5rem; bottom:1.25rem; right:1.5rem; z-index:2;
+  display:flex; align-items:center; justify-content:space-between; gap:1rem; flex-wrap:wrap;
+}
+.hx-video-caption strong{ color:#fff; font-size:1.05rem; display:block; }
+.hx-video-caption span{ color:var(--hx-text-muted); font-size:.85rem; }
+.hx-video-badge{
+  display:inline-flex; align-items:center; gap:.4rem;
+  font-size:.72rem; font-weight:700; letter-spacing:.5px; text-transform:uppercase;
+  color:#fff; background:rgba(255,255,255,.12); border:1px solid rgba(255,255,255,.25);
+  padding:.35rem .75rem; border-radius:20px; white-space:nowrap;
+}
+
+/* Küçük görsel/video önizleme (özellik ve adım panellerinde) */
+.hx-media-thumb{ position:relative; width:100%; height:100%; }
+.hx-media-thumb img{ width:100%; height:100%; object-fit:cover; display:block; }
+.hx-media-play{
+  position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);
+  width:60px; height:60px; border-radius:50%;
+  background:rgba(10,15,30,.55); backdrop-filter:blur(3px);
+  border:2px solid rgba(255,255,255,.7);
+  display:flex; align-items:center; justify-content:center;
+  color:#fff; font-size:1.3rem; padding-left:4px;
+}
+.hx-media-duration{
+  position:absolute; right:.75rem; bottom:.75rem; z-index:2;
+  background:rgba(5,9,20,.75); color:#fff; font-size:.72rem; font-weight:700;
+  padding:.25rem .6rem; border-radius:6px; letter-spacing:.5px;
+}
+
+/* Büyük, öne çıkan adım / özellik numarası rozeti */
+.hx-step-badge{
+  position:absolute; top:-16px; left:-16px; z-index:3;
+  width:52px; height:52px; border-radius:50%;
+  background:var(--hx-gradient);
+  display:flex; align-items:center; justify-content:center;
+  font-size:1.2rem; font-weight:800; color:#fff;
+  box-shadow:0 12px 25px -8px rgba(20,184,166,.6);
+  border:4px solid var(--hx-bg);
+}
+@media (max-width:575.98px){
+  .hx-video-play{ width:64px; height:64px; font-size:1.5rem; }
+  .hx-step-badge{ width:42px; height:42px; font-size:1rem; top:-12px; left:-12px; }
+}
+
+/* ---------------- Başlangıç Merkezi ---------------- */
+.hx-start-card{
+  background:var(--hx-bg-card);
+  border:1px solid var(--hx-border);
+  border-radius:16px;
+  padding:2.5rem 1.75rem;
+  text-align:center;
+  height:100%;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+}
+.hx-start-card .ico{
+  width:70px; height:70px;
+  border-radius:50%;
+  background:var(--hx-gradient);
+  display:flex; align-items:center; justify-content:center;
+  font-size:1.75rem; color:#fff;
+  margin-bottom:1.25rem;
+  flex:none;
+}
+.hx-start-card h3{ font-size:1.15rem; margin-bottom:.6rem; }
+.hx-start-card p{ flex:1; margin-bottom:1.5rem; }
+
+/* ==========================================================================
+   Wiki / Bilgi Bankası — dokümantasyon arayüzü
+   ========================================================================== */
+
+/* Üst araç çubuğu (arama + giriş) */
+.hx-wiki-toolbar{
+  padding:7.5rem 0 1.5rem;
+  border-bottom:1px solid var(--hx-border);
+  background:var(--hx-bg-alt);
+}
+.hx-wiki-toolbar h4{ margin:0; font-size:1.2rem; }
+@media (max-width:767.98px){ .hx-wiki-toolbar{ padding-top:6.5rem; } }
+
+.hx-search-box.hx-search-box-inline{ max-width:260px; margin:0; }
+.hx-search-box.hx-search-box-inline input{ padding:.55rem 1rem .55rem 2.6rem; font-size:.85rem; border-radius:50px; }
+.hx-search-box.hx-search-box-inline i{ left:1rem; font-size:.95rem; }
+
+/* Üç sütunlu doküman düzeni: ağaç menü | makale | içindekiler */
+/* Tam genişlikte (edge-to-edge) 3 sütun: sol menü ve sağ İçindekiler tarayıcı
+   kenarına bitişik durur, ortadaki makale sütunu kalan tüm genişliği kullanır.
+   Bootstrap .container kasıtlı olarak kaldırıldı (bkz. wiki.html). position:sticky
+   kullanılır — bu sayede kaydırırken footer'ın üzerine binmeden, kendi üst
+   sınırının bittiği yerde akışa geri döner; ayrıca içerik taştığında sayfanın
+   kendisiyle birlikte kayar, ayrı bir iç kaydırma çubuğu oluşmaz. */
+.hx-docs-layout{ display:flex; align-items:flex-start; padding:3rem 0 5rem; width:100%; }
+.hx-docs-sidebar{
+  flex:0 0 230px; width:230px;
+  position:sticky; top:110px;
+  padding:0 1rem 2rem 1.75rem;
+}
+.hx-docs-content{ flex:1; min-width:0; display:flex; align-items:flex-start; padding:0 1.75rem; }
+.hx-docs-article-col{ flex:1; min-width:0; max-width:900px; margin:0 auto; }
+
+/* İçindekiler — ince, kutusuz "bu sayfada" listesi */
+.hx-docs-toc{
+  flex:0 0 200px; width:200px;
+  position:sticky; top:110px;
+  border-left:2px solid var(--hx-border);
+  padding:0 1.75rem 2rem 1.1rem;
+}
+.hx-docs-toc h6{ font-size:.7rem; font-weight:800; letter-spacing:1.5px; text-transform:uppercase; color:var(--hx-text-muted); margin-bottom:.9rem; }
+.hx-docs-toc a{ display:block; font-size:.83rem; line-height:1.35; color:var(--hx-text-muted); padding:.32rem 0; }
+.hx-docs-toc a:hover{ color:var(--hx-pink); }
+
+/* Ağaç menü (kategori / makale) */
+.hx-docs-nav{ list-style:none; padding:0; margin:0; }
+.hx-docs-cat{ margin-bottom:.35rem; }
+.hx-docs-cat-toggle{
+  display:flex; align-items:center; justify-content:space-between;
+  width:100%; background:transparent; border:0; text-align:left;
+  padding:.65rem .75rem; border-radius:10px;
+  color:#fff; font-weight:700; font-size:.88rem;
+}
+.hx-docs-cat-toggle:hover{ background:rgba(255,255,255,.05); }
+.hx-docs-cat-toggle .chev{ transition:transform .2s ease; font-size:.72rem; color:var(--hx-text-muted); flex:none; }
+.hx-docs-cat-toggle[aria-expanded="true"] .chev{ transform:rotate(90deg); }
+.hx-docs-sublist{
+  list-style:none; margin:.15rem 0 .6rem 1.05rem; padding:.1rem 0 .1rem .85rem;
+  border-left:1px solid var(--hx-border);
+}
+.hx-docs-sublist a{ display:block; padding:.45rem .7rem; border-radius:8px; color:var(--hx-text-muted); font-size:.85rem; }
+.hx-docs-sublist a:hover{ color:#fff; background:rgba(255,255,255,.05); }
+.hx-docs-sublist a.active{ color:var(--hx-pink); background:rgba(210,83,138,.1); font-weight:700; }
+
+.hx-docs-offcanvas{ background:var(--hx-bg-alt); color:#fff; max-height:88vh; }
+.hx-docs-offcanvas .offcanvas-header{ border-bottom:1px solid var(--hx-border); }
+.hx-docs-offcanvas .offcanvas-title{ color:#fff; font-weight:800; }
+
+/* Makale başlığı / meta */
+.hx-docs-meta{
+  display:flex; flex-wrap:wrap; align-items:center; gap:.5rem 1.25rem;
+  color:var(--hx-text-muted); font-size:.85rem;
+  margin-bottom:2rem; padding-bottom:1.5rem;
+  border-bottom:1px solid var(--hx-border);
+}
+.hx-docs-meta .author{ display:flex; align-items:center; gap:.6rem; }
+.hx-docs-author-avatar{
+  width:32px; height:32px; border-radius:50%; flex:none;
+  background:var(--hx-gradient); color:#fff; font-weight:800; font-size:.75rem;
+  display:flex; align-items:center; justify-content:center;
+}
+
+.hx-docs-content article h2{ font-size:1.4rem; margin:2.5rem 0 1rem; scroll-margin-top:110px; }
+.hx-docs-content article h3{ font-size:1.1rem; margin:1.75rem 0 .85rem; scroll-margin-top:110px; }
+.hx-docs-content article p{ color:var(--hx-text-muted); margin-bottom:1.1rem; }
+.hx-docs-content article ul,
+.hx-docs-content article ol{ color:var(--hx-text-muted); padding-left:1.2rem; margin-bottom:1.25rem; }
+.hx-docs-content article li{ margin-bottom:.5rem; }
+.hx-docs-content article > *:first-child{ margin-top:0; }
+
+.hx-code-block{
+  background:#0a1220;
+  border:1px solid var(--hx-border);
+  border-radius:12px;
+  padding:1.25rem 1.5rem;
+  overflow-x:auto;
+  margin:0 0 1.5rem;
+}
+.hx-code-block .lang{ display:block; font-size:.7rem; font-weight:700; text-transform:uppercase; letter-spacing:1px; color:var(--hx-text-muted); margin-bottom:.75rem; }
+.hx-code-block pre{ margin:0; }
+.hx-code-block code{ font-family:'Courier New', monospace; font-size:.85rem; color:#dfe3ee; white-space:pre-wrap; word-break:break-word; }
+
+/* "Yardımcı oldu mu" kutusu */
+.hx-helpful{
+  display:flex; flex-wrap:wrap; align-items:center; gap:1rem;
+  background:var(--hx-bg-card); border:1px solid var(--hx-border); border-radius:16px;
+  padding:1.5rem; margin:2.5rem 0;
+}
+.hx-helpful strong{ color:#fff; font-size:.92rem; }
+.hx-helpful-actions{ display:flex; gap:.75rem; margin-left:auto; }
+.hx-helpful-btn{
+  display:inline-flex; align-items:center; gap:.5rem;
+  background:transparent; border:1px solid var(--hx-border); color:#fff;
+  border-radius:50px; padding:.5rem 1.25rem; font-weight:700; font-size:.85rem;
+}
+.hx-helpful-btn:hover{ border-color:var(--hx-cyan); color:var(--hx-cyan); }
+
+/* İlgili makale kartları */
+.hx-related-card{
+  display:block; height:100%;
+  background:var(--hx-bg-card); border:1px solid var(--hx-border); border-radius:16px;
+  padding:1.5rem;
+  transition:border-color .2s ease, transform .2s ease;
+}
+.hx-related-card:hover{ border-color:var(--hx-cyan); transform:translateY(-3px); }
+.hx-related-card h6{ color:#fff; font-size:.95rem; margin-bottom:.5rem; }
+.hx-related-card p{ color:var(--hx-text-muted); font-size:.85rem; margin-bottom:0; }
+
+/* ==========================================================================
+   JeoValid PRO — Fiyatlandırma sayfası
+   ========================================================================== */
+
+/* Plan kartları: fiyat bloğu ve dahil özellik listesi */
+.hx-plan-card{ display:flex; flex-direction:column; }
+.hx-plan-price{ font-size:2.5rem; font-weight:800; line-height:1; margin:.75rem 0 .15rem; }
+.hx-plan-price .cur{ font-size:1.25rem; font-weight:700; vertical-align:top; margin-right:.15rem; }
+.hx-plan-highlight .hx-plan-price{
+  background:var(--hx-gradient-gold); -webkit-background-clip:text; background-clip:text; color:transparent;
+}
+.hx-plan-period{ display:block; font-size:.82rem; color:var(--hx-text-muted); font-weight:600; margin-bottom:1rem; }
+.hx-plan-note{ font-size:.78rem; color:var(--hx-text-muted); min-height:2.4em; margin-bottom:1rem; }
+.hx-plan-features{ list-style:none; padding:0; margin:0 0 1.5rem; text-align:left; flex:1; }
+.hx-plan-features li{ display:flex; gap:.55rem; align-items:flex-start; font-size:.85rem; color:#dfe3ee; margin-bottom:.65rem; }
+.hx-plan-features li i{ color:var(--hx-cyan); margin-top:.2rem; flex:none; }
+.hx-plan-card .hx-btn{ width:100%; justify-content:center; margin-top:auto; }
+
+.hx-plan-disclaimer{
+  display:flex; align-items:flex-start; gap:.85rem;
+  background:var(--hx-bg-card); border:1px solid var(--hx-border); border-radius:14px;
+  padding:1.1rem 1.4rem; font-size:.85rem; color:var(--hx-text-muted);
+  max-width:760px; margin:2.75rem auto 0;
+}
+.hx-plan-disclaimer i{ color:var(--hx-gold); font-size:1.2rem; flex:none; margin-top:.1rem; }
+
+/* Güven rozetleri */
+.hx-trust-row{ display:flex; flex-wrap:wrap; justify-content:center; gap:1.5rem 2.75rem; margin-top:3rem; }
+.hx-trust-item{ display:flex; align-items:center; gap:.65rem; font-size:.85rem; font-weight:600; color:#dfe3ee; }
+.hx-trust-item i{ font-size:1.35rem; color:var(--hx-cyan); }
+
+/* Fiyata dahil olan özellik kartları */
+.hx-pro-feature-card{
+  background:var(--hx-bg-card); border:1px solid var(--hx-border); border-radius:16px;
+  padding:2rem 1.5rem; height:100%;
+  transition:transform .25s ease, border-color .25s ease;
+}
+.hx-pro-feature-card:hover{ transform:translateY(-4px); border-color:var(--hx-cyan); }
+.hx-pro-feature-card .ico{
+  width:56px; height:56px; border-radius:14px; margin-bottom:1.15rem;
+  background:var(--hx-gradient); display:flex; align-items:center; justify-content:center;
+  font-size:1.4rem; color:#fff;
+}
+.hx-pro-feature-card h4{ font-size:1.05rem; margin-bottom:.5rem; }
+.hx-pro-feature-card p{ margin:0; }
+
+/* Ücretsiz / PRO karşılaştırma tablosu */
+.hx-compare-wrap{ overflow-x:auto; }
+.hx-compare-table{ width:100%; min-width:600px; border-collapse:separate; border-spacing:0 .5rem; }
+.hx-compare-table th{
+  text-align:center; font-size:.78rem; text-transform:uppercase; letter-spacing:1px;
+  color:var(--hx-text-muted); padding:0 1.25rem .75rem; font-weight:700;
+}
+.hx-compare-table th:first-child{ text-align:left; }
+.hx-compare-table td{
+  padding:1rem 1.25rem; background:var(--hx-bg-card);
+  border-top:1px solid var(--hx-border); border-bottom:1px solid var(--hx-border);
+  font-size:.9rem; text-align:center; vertical-align:middle; color:#dfe3ee;
+}
+.hx-compare-table td:first-child{
+  border-left:1px solid var(--hx-border); border-radius:12px 0 0 12px;
+  text-align:left; font-weight:700; color:#fff;
+}
+.hx-compare-table td:last-child{ border-right:1px solid var(--hx-border); border-radius:0 12px 12px 0; }
+.hx-compare-table td.pro-col{ background:rgba(56,189,248,.07); }
+.hx-compare-table .yes{ color:var(--hx-cyan); font-size:1.2rem; }
+.hx-compare-table .no{ color:var(--hx-text-muted); font-size:1.2rem; opacity:.45; }
+@media (max-width:767.98px){ .hx-compare-table{ min-width:520px; } }

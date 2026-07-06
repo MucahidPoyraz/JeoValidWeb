@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<title>Kontrol Paneli — JeoValid Admin</title>
+<link rel="icon" href="../images/favicon-32x32.png" sizes="32x32">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+<link href="../css/style.css" rel="stylesheet">
+<link href="css/admin.css" rel="stylesheet">
+</head>
+<body class="admin-body">
+
+<div class="admin-backdrop"></div>
+<div class="admin-wrapper">
+
+  <!-- ============ SIDEBAR ============ -->
+  <aside class="admin-sidebar" id="adminSidebar">
+    <div class="admin-sidebar-brand">
+      <a href="index.html" class="admin-brand"><img src="../images/jeovalid-logo.webp" alt="JeoValid logosu"><span>JeoValid<small>Admin Panel</small></span></a>
+      <button class="admin-sidebar-close d-lg-none" aria-label="Menüyü kapat"><i class="bi bi-x-lg"></i></button>
+    </div>
+
+    <div class="admin-sidebar-user">
+      <div class="admin-avatar">MY</div>
+      <div class="flex-grow-1 overflow-hidden">
+        <div class="admin-sidebar-user-name">Mehmet Yılmaz</div>
+        <div class="admin-sidebar-user-role"><span class="dot"></span> Süper Yönetici</div>
+      </div>
+    </div>
+
+    <nav class="admin-nav">
+      <span class="admin-nav-label">Genel</span>
+      <ul class="admin-nav-list">
+        <li><a href="index.html" data-page="index.html" class="admin-nav-link"><i class="bi bi-speedometer2 bi-nav-ico"></i><span class="label">Kontrol Paneli</span></a></li>
+      </ul>
+
+      <span class="admin-nav-label">Yönetim</span>
+      <ul class="admin-nav-list">
+        <li><a href="kullanicilar.html" data-page="kullanicilar.html" class="admin-nav-link"><i class="bi bi-people bi-nav-ico"></i><span class="label">Kullanıcılar</span><span class="admin-nav-badge">2.847</span></a></li>
+
+        <li>
+          <a href="#" class="admin-nav-link" data-bs-toggle="collapse" data-bs-target="#menuVeri" data-page="veri-setleri.html" aria-expanded="false">
+            <i class="bi bi-database bi-nav-ico"></i><span class="label">Veri Setleri</span><i class="bi bi-chevron-right chevron"></i>
+          </a>
+          <div class="collapse" id="menuVeri">
+            <ul class="admin-subnav">
+              <li><a href="veri-setleri.html#tumu" data-page="veri-setleri.html#tumu">Tümü</a></li>
+              <li><a href="veri-setleri.html#collar" data-page="veri-setleri.html#collar">Collar</a></li>
+              <li><a href="veri-setleri.html#survey" data-page="veri-setleri.html#survey">Survey</a></li>
+              <li><a href="veri-setleri.html#lithology" data-page="veri-setleri.html#lithology">Lithology</a></li>
+              <li><a href="veri-setleri.html#assay" data-page="veri-setleri.html#assay">Assay</a></li>
+            </ul>
+          </div>
+        </li>
+
+        <li>
+          <a href="#" class="admin-nav-link" data-bs-toggle="collapse" data-bs-target="#menuIcerik" data-page="icerik.html" aria-expanded="false">
+            <i class="bi bi-file-earmark-richtext bi-nav-ico"></i><span class="label">İçerik Yönetimi</span><i class="bi bi-chevron-right chevron"></i>
+          </a>
+          <div class="collapse" id="menuIcerik">
+            <ul class="admin-subnav">
+              <li><a href="icerik.html#ozellikler" data-page="icerik.html#ozellikler">Özellikler</a></li>
+              <li><a href="icerik.html#sss" data-page="icerik.html#sss">SSS</a></li>
+              <li><a href="icerik.html#vaka" data-page="icerik.html#vaka">Vaka Çalışmaları</a></li>
+              <li><a href="icerik.html#ortaklar" data-page="icerik.html#ortaklar">İş Ortakları</a></li>
+              <li><a href="icerik.html#yorumlar" data-page="icerik.html#yorumlar">Müşteri Yorumları</a></li>
+            </ul>
+          </div>
+        </li>
+
+        <li>
+          <a href="#" class="admin-nav-link" data-bs-toggle="collapse" data-bs-target="#menuPro" data-page="pro.html" aria-expanded="false">
+            <i class="bi bi-gem bi-nav-ico"></i><span class="label">JeoValid PRO</span><i class="bi bi-chevron-right chevron"></i>
+          </a>
+          <div class="collapse" id="menuPro">
+            <ul class="admin-subnav">
+              <li><a href="pro.html#planlar" data-page="pro.html#planlar">Planlar</a></li>
+              <li><a href="pro.html#abonelikler" data-page="pro.html#abonelikler">Abonelikler</a></li>
+            </ul>
+          </div>
+        </li>
+
+        <li>
+          <a href="#" class="admin-nav-link" data-bs-toggle="collapse" data-bs-target="#menuMesaj" data-page="mesajlar.html" aria-expanded="false">
+            <i class="bi bi-envelope bi-nav-ico"></i><span class="label">Mesajlar</span><span class="admin-nav-badge admin-nav-badge-danger">23</span><i class="bi bi-chevron-right chevron"></i>
+          </a>
+          <div class="collapse" id="menuMesaj">
+            <ul class="admin-subnav">
+              <li><a href="mesajlar.html#iletisim" data-page="mesajlar.html#iletisim">İletişim Formu</a></li>
+              <li><a href="mesajlar.html#bulten" data-page="mesajlar.html#bulten">Bülten Aboneleri</a></li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+
+      <span class="admin-nav-label">Sistem</span>
+      <ul class="admin-nav-list">
+        <li>
+          <a href="#" class="admin-nav-link" data-bs-toggle="collapse" data-bs-target="#menuAyar" data-page="ayarlar.html" aria-expanded="false">
+            <i class="bi bi-gear bi-nav-ico"></i><span class="label">Ayarlar</span><i class="bi bi-chevron-right chevron"></i>
+          </a>
+          <div class="collapse" id="menuAyar">
+            <ul class="admin-subnav">
+              <li><a href="ayarlar.html#profil" data-page="ayarlar.html#profil">Profil</a></li>
+              <li><a href="ayarlar.html#site" data-page="ayarlar.html#site">Site Ayarları</a></li>
+              <li><a href="ayarlar.html#bildirimler" data-page="ayarlar.html#bildirimler">Bildirimler</a></li>
+              <li><a href="ayarlar.html#guvenlik" data-page="ayarlar.html#guvenlik">Güvenlik</a></li>
+            </ul>
+          </div>
+        </li>
+        <li><a href="../index.html" class="admin-nav-link" target="_blank"><i class="bi bi-box-arrow-up-right bi-nav-ico"></i><span class="label">Siteyi Görüntüle</span></a></li>
+        <li><a href="login.html" class="admin-nav-link" style="color:#f87171;"><i class="bi bi-box-arrow-right bi-nav-ico"></i><span class="label">Çıkış Yap</span></a></li>
+      </ul>
+    </nav>
+
+    <div class="admin-sidebar-footer">JeoValid Admin v1.0</div>
+  </aside>
+
+  <!-- ============ CONTENT ============ -->
+  <div class="admin-content">
+
+    <!-- ============ TOPBAR ============ -->
+    <header class="admin-topbar">
+      <button class="admin-topbar-btn admin-mobile-toggle" aria-label="Menüyü aç"><i class="bi bi-list"></i></button>
+      <button class="admin-topbar-btn admin-desktop-toggle" aria-label="Menüyü daralt"><i class="bi bi-layout-sidebar"></i></button>
+
+      <div class="admin-topbar-search">
+        <i class="bi bi-search"></i>
+        <input type="text" placeholder="Kullanıcı, veri seti, mesaj ara...">
+      </div>
+
+      <div class="admin-topbar-right">
+        <a href="../index.html" target="_blank" class="admin-topbar-btn d-none d-md-inline-flex" title="Siteyi Görüntüle"><i class="bi bi-globe2"></i></a>
+
+        <div class="dropdown">
+          <button class="admin-topbar-btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="bi bi-bell"></i><span class="admin-badge-dot">5</span>
+          </button>
+          <div class="dropdown-menu dropdown-menu-end admin-dropdown-menu" style="width:340px;">
+            <h6 class="dropdown-header">Bildirimler</h6>
+            <a class="dropdown-item" href="mesajlar.html#iletisim">
+              <span class="admin-notif-ico" style="background:#0F766E;"><i class="bi bi-envelope"></i></span>
+              <span><strong class="d-block">Yeni iletişim mesajı</strong><span class="admin-row-sub">Ahmet Demir bir mesaj gönderdi · 12 dk önce</span></span>
+            </a>
+            <a class="dropdown-item" href="kullanicilar.html">
+              <span class="admin-notif-ico" style="background:#0284C7;"><i class="bi bi-person-plus"></i></span>
+              <span><strong class="d-block">Yeni kullanıcı kaydı</strong><span class="admin-row-sub">Elif Şahin uygulamaya katıldı · 40 dk önce</span></span>
+            </a>
+            <a class="dropdown-item" href="pro.html#abonelikler">
+              <span class="admin-notif-ico" style="background:linear-gradient(90deg,#B8860B,#FFD700);"><i class="bi bi-gem"></i></span>
+              <span><strong class="d-block">Yeni PRO abonelik</strong><span class="admin-row-sub">Kaya Maden A.Ş. yıllık plana geçti · 2 sa önce</span></span>
+            </a>
+            <a class="dropdown-item" href="veri-setleri.html#assay">
+              <span class="admin-notif-ico" style="background:#F97316;"><i class="bi bi-exclamation-triangle"></i></span>
+              <span><strong class="d-block">Doğrulama uyarısı</strong><span class="admin-row-sub">Assay_KaraDere_07.xlsx'de 3 uyarı bulundu · 3 sa önce</span></span>
+            </a>
+            <a class="dropdown-item" href="mesajlar.html#bulten">
+              <span class="admin-notif-ico" style="background:#8B5CF6;"><i class="bi bi-envelope-paper"></i></span>
+              <span><strong class="d-block">Bülten aboneliği</strong><span class="admin-row-sub">14 yeni abone eklendi · Bugün</span></span>
+            </a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item justify-content-center fw-bold" href="mesajlar.html">Tüm bildirimleri gör</a>
+          </div>
+        </div>
+
+        <div class="dropdown">
+          <button class="admin-topbar-btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="bi bi-envelope"></i><span class="admin-badge-dot">23</span>
+          </button>
+          <div class="dropdown-menu dropdown-menu-end admin-dropdown-menu" style="width:320px;">
+            <h6 class="dropdown-header">Son Mesajlar</h6>
+            <a class="dropdown-item" href="mesajlar.html#iletisim">
+              <span class="admin-avatar sm">AD</span>
+              <span><strong class="d-block">Ahmet Demir</strong><span class="admin-row-sub">DXF dışa aktarımda sorun yaşıyorum...</span></span>
+            </a>
+            <a class="dropdown-item" href="mesajlar.html#iletisim">
+              <span class="admin-avatar sm">EŞ</span>
+              <span><strong class="d-block">Elif Şahin</strong><span class="admin-row-sub">PRO plana nasıl geçebilirim?</span></span>
+            </a>
+            <a class="dropdown-item" href="mesajlar.html#iletisim">
+              <span class="admin-avatar sm">CK</span>
+              <span><strong class="d-block">Can Korkmaz</strong><span class="admin-row-sub">3D görüntülemede litoloji renkleri...</span></span>
+            </a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item justify-content-center fw-bold" href="mesajlar.html#iletisim">Tüm mesajları gör</a>
+          </div>
+        </div>
+
+        <div class="dropdown">
+          <button class="admin-user-btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <span class="admin-avatar sm">MY</span>
+            <span class="d-none d-sm-block text-start">
+              <span class="name d-block">Mehmet Yılmaz</span>
+              <span class="role d-block">Süper Yönetici</span>
+            </span>
+            <i class="bi bi-chevron-down small d-none d-sm-inline"></i>
+          </button>
+          <div class="dropdown-menu dropdown-menu-end admin-dropdown-menu" style="width:230px;">
+            <a class="dropdown-item" href="ayarlar.html#profil"><i class="bi bi-person"></i> Profilim</a>
+            <a class="dropdown-item" href="ayarlar.html#site"><i class="bi bi-gear"></i> Site Ayarları</a>
+            <a class="dropdown-item" href="ayarlar.html#guvenlik"><i class="bi bi-shield-lock"></i> Güvenlik</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="login.html" style="color:#f87171;"><i class="bi bi-box-arrow-right" style="color:#f87171;"></i> Çıkış Yap</a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- ============ MAIN ============ -->
+    <main class="admin-main">
+
+      <div class="admin-page-header">
+        <div>
+          <div class="admin-breadcrumb"><a href="index.html">Yönetim</a><span class="sep">/</span>Kontrol Paneli</div>
+          <h1 class="admin-page-title">Hoş geldin, Mehmet 👋 <span class="text-muted-hx d-block d-sm-inline">İşte JeoValid'in bugünkü durumu.</span></h1>
+        </div>
+        <div class="d-flex gap-2">
+          <button class="admin-btn admin-btn-outline"><i class="bi bi-download"></i> Rapor İndir</button>
+          <a href="kullanicilar.html" class="admin-btn"><i class="bi bi-plus-lg"></i> Kullanıcı Ekle</a>
+        </div>
+      </div>
+
+      <!-- STAT CARDS -->
+      <div class="row g-3 mb-3">
+        <div class="col-6 col-lg-3">
+          <div class="admin-stat-card">
+            <span class="admin-stat-ico"><i class="bi bi-people"></i></span>
+            <div>
+              <div class="admin-stat-label">Toplam Kullanıcı</div>
+              <div class="admin-stat-value">2.847</div>
+              <div class="admin-stat-trend up"><i class="bi bi-arrow-up-short"></i> %12,4 bu ay</div>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-lg-3">
+          <div class="admin-stat-card">
+            <span class="admin-stat-ico" style="background:linear-gradient(90deg,#B8860B,#FFD700);"><i class="bi bi-gem"></i></span>
+            <div>
+              <div class="admin-stat-label">Aktif PRO Abone</div>
+              <div class="admin-stat-value">486</div>
+              <div class="admin-stat-trend up"><i class="bi bi-arrow-up-short"></i> %8,2 bu ay</div>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-lg-3">
+          <div class="admin-stat-card">
+            <span class="admin-stat-ico" style="background:linear-gradient(90deg,#0284C7,#38BDF8);"><i class="bi bi-database-check"></i></span>
+            <div>
+              <div class="admin-stat-label">Doğrulanan Veri Seti</div>
+              <div class="admin-stat-value">15.920</div>
+              <div class="admin-stat-trend up"><i class="bi bi-arrow-up-short"></i> Bugün +24</div>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-lg-3">
+          <div class="admin-stat-card">
+            <span class="admin-stat-ico" style="background:linear-gradient(90deg,#DC2626,#F97316);"><i class="bi bi-envelope-open"></i></span>
+            <div>
+              <div class="admin-stat-label">Bekleyen Mesaj</div>
+              <div class="admin-stat-value">23</div>
+              <div class="admin-stat-trend down"><i class="bi bi-arrow-down-short"></i> İlgi bekliyor</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CHARTS -->
+      <div class="row g-3 mb-3">
+        <div class="col-lg-8">
+          <div class="admin-card h-100">
+            <div class="admin-card-header">
+              <h2 class="admin-card-title"><i class="bi bi-graph-up"></i>Haftalık Aktivite</h2>
+              <span class="pill pill-info"><i class="bi bi-calendar3"></i> Son 7 gün</span>
+            </div>
+            <div style="height:280px;"><canvas id="weeklyValidationChart"></canvas></div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="admin-card h-100">
+            <div class="admin-card-header">
+              <h2 class="admin-card-title"><i class="bi bi-pie-chart"></i>Veri Tipi Dağılımı</h2>
+            </div>
+            <div style="height:280px;"><canvas id="datasetTypeChart"></canvas></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row g-3 mb-3">
+        <div class="col-lg-5">
+          <div class="admin-card h-100">
+            <div class="admin-card-header">
+              <h2 class="admin-card-title"><i class="bi bi-cash-coin"></i>PRO Abonelik Trendi</h2>
+            </div>
+            <div style="height:230px;"><canvas id="revenueChart"></canvas></div>
+          </div>
+        </div>
+
+        <div class="col-lg-4">
+          <div class="admin-card h-100">
+            <div class="admin-card-header">
+              <h2 class="admin-card-title"><i class="bi bi-activity"></i>Son Etkinlikler</h2>
+            </div>
+            <ul class="admin-activity">
+              <li>
+                <span class="admin-activity-ico" style="background:#0F766E;"><i class="bi bi-check2"></i></span>
+                <div><strong class="d-block small">Collar_Sondaj12.xlsx doğrulandı</strong><span class="admin-row-sub">Elif Şahin · 8 dk önce</span></div>
+              </li>
+              <li>
+                <span class="admin-activity-ico" style="background:linear-gradient(90deg,#B8860B,#FFD700);"><i class="bi bi-gem"></i></span>
+                <div><strong class="d-block small">Kaya Maden A.Ş. PRO'ya geçti</strong><span class="admin-row-sub">Yıllık plan · 1 sa önce</span></div>
+              </li>
+              <li>
+                <span class="admin-activity-ico" style="background:#DC2626;"><i class="bi bi-x"></i></span>
+                <div><strong class="d-block small">Assay_KaraDere_07.xlsx hata verdi</strong><span class="admin-row-sub">3 satırda uyumsuzluk · 3 sa önce</span></div>
+              </li>
+              <li>
+                <span class="admin-activity-ico" style="background:#0284C7;"><i class="bi bi-person-plus"></i></span>
+                <div><strong class="d-block small">Yeni kullanıcı: Can Korkmaz</strong><span class="admin-row-sub">Android · 5 sa önce</span></div>
+              </li>
+              <li>
+                <span class="admin-activity-ico" style="background:#8B5CF6;"><i class="bi bi-file-earmark-arrow-down"></i></span>
+                <div><strong class="d-block small">DXF dışa aktarımı tamamlandı</strong><span class="admin-row-sub">Survey_DoguAnadolu · 6 sa önce</span></div>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="col-lg-3">
+          <div class="admin-card h-100">
+            <div class="admin-card-header">
+              <h2 class="admin-card-title"><i class="bi bi-envelope"></i>Yeni Mesajlar</h2>
+            </div>
+            <div class="admin-msg-item unread">
+              <div><div class="admin-msg-subject">Ahmet Demir</div><div class="admin-msg-excerpt">DXF dışa aktarımda sorun...</div></div>
+            </div>
+            <div class="admin-msg-item unread">
+              <div><div class="admin-msg-subject">Elif Şahin</div><div class="admin-msg-excerpt">PRO plana nasıl geçerim?</div></div>
+            </div>
+            <div class="admin-msg-item">
+              <div><div class="admin-msg-subject">Can Korkmaz</div><div class="admin-msg-excerpt">Litoloji renklendirme...</div></div>
+            </div>
+            <a href="mesajlar.html#iletisim" class="admin-btn admin-btn-outline admin-btn-sm w-100 justify-content-center mt-2">Tümünü Gör</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- QUICK LINKS -->
+      <div class="row g-3">
+        <div class="col-6 col-md-3">
+          <a href="veri-setleri.html" class="admin-card d-block text-center h-100">
+            <div class="admin-stat-ico mx-auto mb-2" style="background:#8B5CF6;"><i class="bi bi-signpost-split"></i></div>
+            <strong class="d-block">Collar Verileri</strong><span class="admin-row-sub">5.108 kayıt</span>
+          </a>
+        </div>
+        <div class="col-6 col-md-3">
+          <a href="veri-setleri.html#survey" class="admin-card d-block text-center h-100">
+            <div class="admin-stat-ico mx-auto mb-2" style="background:#06B6D4;"><i class="bi bi-compass"></i></div>
+            <strong class="d-block">Survey Verileri</strong><span class="admin-row-sub">4.298 kayıt</span>
+          </a>
+        </div>
+        <div class="col-6 col-md-3">
+          <a href="veri-setleri.html#lithology" class="admin-card d-block text-center h-100">
+            <div class="admin-stat-ico mx-auto mb-2" style="background:#10B981;"><i class="bi bi-layers"></i></div>
+            <strong class="d-block">Lithology Verileri</strong><span class="admin-row-sub">3.662 kayıt</span>
+          </a>
+        </div>
+        <div class="col-6 col-md-3">
+          <a href="veri-setleri.html#assay" class="admin-card d-block text-center h-100">
+            <div class="admin-stat-ico mx-auto mb-2" style="background:#F97316;"><i class="bi bi-clipboard-data"></i></div>
+            <strong class="d-block">Assay Verileri</strong><span class="admin-row-sub">2.852 kayıt</span>
+          </a>
+        </div>
+      </div>
+
+    </main>
+
+    <footer class="text-center py-4 text-muted-hx small">JeoValid Admin Panel © 2026 — Statik demo arayüzdür.</footer>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.5.0/chart.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
+<script src="js/admin.js"></script>
+</body>
+</html>

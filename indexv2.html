@@ -19,43 +19,55 @@
 </head>
 <body>
 
-<!-- ============ NAVBAR ============ -->
-<nav class="navbar navbar-expand-lg hx-navbar">
+<!-- ============ NAVBAR (v2 — iki katmanlı, ortalanmış menü) ============ -->
+<nav class="navbar navbar-expand-lg hx-navbar hx-navbar-v2">
   <div class="container">
-    <a class="navbar-brand hx-brand" href="#home"><img src="images/jeovalid-logo.webp" alt="JeoValid logosu"> JeoValid</a>
-    <button class="navbar-toggler text-white border-0" type="button" data-bs-toggle="collapse" data-bs-target="#hxNav">
-      <i class="bi bi-list fs-1 text-white"></i>
-    </button>
-    <div class="collapse navbar-collapse" id="hxNav">
-      <ul class="navbar-nav mx-auto">
-        <li class="nav-item"><a class="nav-link active" href="#home">Ana Sayfa</a></li>
-        <li class="nav-item"><a class="nav-link" href="about.html">Hakkımızda</a></li>
-        <li class="nav-item"><a class="nav-link" href="features.html">Özellikler</a></li>
-        <li class="nav-item"><a class="nav-link" href="nasil-calisir.html">Nasıl Çalışır</a></li>
-        <li class="nav-item"><a class="nav-link" href="pro.html">JeoValid PRO</a></li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Kaynaklar</a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="getting-started.html">Başlangıç Rehberi</a></li>
-            <li><a class="dropdown-item" href="wiki.html">Bilgi Bankası</a></li>
-            <li><a class="dropdown-item" href="community.html">Topluluk</a></li>
-          </ul>
-        </li>
-        <li class="nav-item"><a class="nav-link" href="sss.html">SSS</a></li>
-        <li class="nav-item"><a class="nav-link" href="contact.html">İletişim</a></li>
-      </ul>
-      <div class="d-flex align-items-center gap-3">
-        <a href="#indir" class="hx-btn hx-btn-sm"><i class="bi bi-download"></i> Uygulamayı İndir</a>
+    <div class="hx-navbar-v2-inner w-100">
+      <div class="hx-navbar-v2-top">
+        <a class="navbar-brand hx-brand" href="#home"><img src="images/jeovalid-logo.webp" alt="JeoValid logosu"> JeoValid</a>
+        <div class="d-flex align-items-center gap-2 gap-md-3">
+          <button class="hx-icon-btn" type="button" data-bs-toggle="collapse" data-bs-target="#navSearchV2" aria-expanded="false" aria-controls="navSearchV2" aria-label="Ara">
+            <i class="bi bi-search"></i>
+          </button>
+          <div class="collapse collapse-horizontal" id="navSearchV2">
+            <div class="hx-search-box hx-search-box-inline">
+              <i class="bi bi-search"></i>
+              <input type="text" placeholder="Sitede ara..." aria-label="Sitede ara">
+            </div>
+          </div>
+          <a href="#" class="hx-login-link" aria-label="Giriş Yap">
+            <i class="bi bi-person-circle"></i><span class="d-none d-md-inline">Giriş Yap</span>
+          </a>
+          <a href="#indir" class="hx-btn hx-btn-sm d-none d-md-inline-flex">
+            <i class="bi bi-download"></i> Uygulamayı İndir
+          </a>
+          <button class="navbar-toggler text-white border-0" type="button" data-bs-toggle="collapse" data-bs-target="#hxNav">
+            <i class="bi bi-list fs-1 text-white"></i>
+          </button>
+        </div>
       </div>
-      <!-- ARŞİV — eski şablondan (kullanılmıyor, tasarımdan kaldırıldı ama ileride gerekirse diye saklandı):
-      <select class="hx-lang-select d-none d-lg-inline-block">
-        <option>English</option>
-        <option>Spanish</option>
-      </select>
-      <a href="#" class="hx-btn hx-btn-outline hx-btn-sm d-none d-md-inline-flex">Whitepaper</a>
-      <a href="#" class="hx-btn hx-btn-sm"><i class="bi bi-person"></i> Login</a>
-      -->
-
+      <div class="collapse navbar-collapse hx-navbar-v2-bottom" id="hxNav">
+        <ul class="navbar-nav mx-auto">
+          <li class="nav-item"><a class="nav-link active" href="#home">Ana Sayfa</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">Hakkımızda</a></li>
+          <li class="nav-item"><a class="nav-link" href="features.html">Özellikler</a></li>
+          <li class="nav-item"><a class="nav-link" href="nasil-calisir.html">Nasıl Çalışır</a></li>
+          <li class="nav-item"><a class="nav-link" href="pro.html">JeoValid PRO</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Kaynaklar</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="getting-started.html">Başlangıç Rehberi</a></li>
+              <li><a class="dropdown-item" href="wiki.html">Bilgi Bankası</a></li>
+              <li><a class="dropdown-item" href="community.html">Topluluk</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="sss.html">SSS</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">İletişim</a></li>
+        </ul>
+        <div class="d-flex d-md-none">
+          <a href="#indir" class="hx-btn hx-btn-sm"><i class="bi bi-download"></i> Uygulamayı İndir</a>
+        </div>
+      </div>
     </div>
   </div>
 </nav>

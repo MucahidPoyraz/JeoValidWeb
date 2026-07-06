@@ -74,11 +74,11 @@ section{ position:relative; }
   border-radius:50px;
   font-weight:700;
   font-size:.95rem;
-  border:2px solid transparent;
+  border:none;
   background:var(--hx-gradient);
   color:#fff !important;
   transition:transform .25s ease, box-shadow .25s ease, opacity .25s ease;
-  box-shadow:0 10px 25px -8px rgba(210,83,138,.6);
+  box-shadow:0 10px 25px -8px rgba(20,184,166,.55);
 }
 .hx-btn:hover{ transform:translateY(-3px); opacity:.92; color:#fff !important; }
 
@@ -87,7 +87,7 @@ section{ position:relative; }
   border:2px solid rgba(255,255,255,.25);
   box-shadow:none;
 }
-.hx-btn-outline:hover{ border-color:var(--hx-pink); background:rgba(210,83,138,.08); }
+.hx-btn-outline:hover{ border-color:var(--hx-cyan); background:rgba(20,184,166,.08); }
 
 .hx-btn-sm{ padding:.55rem 1.3rem; font-size:.82rem; }
 
@@ -122,7 +122,12 @@ section{ position:relative; }
   border-radius:10px;
 }
 .hx-navbar .dropdown-item{ color:#dfe3ee; font-size:.9rem; }
-.hx-navbar .dropdown-item:hover{ background:rgba(210,83,138,.12); color:var(--hx-pink); }
+.hx-navbar .dropdown-item:hover{ background:rgba(20,184,166,.12); color:var(--hx-cyan); }
+
+/* Navbar'daki CTA butonu: büyük hero/bölüm butonlarındaki geniş parıltı gölgesi
+   dar navbar şeridinin altındaki kesin sınır çizgisinden taşıp bulanık bir iz
+   bırakıyordu; burada daha dar ve düşük bir gölgeyle sınırlandırılıyor. */
+.hx-navbar .hx-btn{ box-shadow:0 4px 12px -4px rgba(20,184,166,.45); }
 
 @media (max-width:991.98px){
   .hx-navbar .navbar-collapse{
@@ -137,6 +142,65 @@ section{ position:relative; }
   .hx-navbar .nav-link{ padding:.6rem 0 !important; }
   .hx-navbar .d-flex{ flex-wrap:wrap; }
 }
+
+/* ---------------- Navbar varyantları: indexv2 / indexv3 deneme yerleşimleri ---------------- */
+
+/* v2 — iki katmanlı navbar: üst satırda logo + arama/giriş/indir ikonları,
+   alt satırda ortalanmış menü. */
+.hx-navbar-v2-top{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:1rem;
+}
+.hx-navbar-v2-bottom{ margin-top:.85rem; }
+@media (max-width:991.98px){
+  .hx-navbar-v2-bottom{ margin-top:0; }
+}
+@media (max-width:767.98px){
+  .hx-navbar-v2-top{ flex-direction:column; align-items:stretch; gap:.6rem; }
+  .hx-navbar-v2-top > .d-flex{ justify-content:flex-end; }
+}
+
+/* v3 — ayna düzen: menü solda, arama/giriş/indir ikonları ortada, logo en sağda. */
+.hx-navbar-v3 .navbar-nav{ margin-right:0; }
+.hx-navbar-v3-actions{
+  display:flex; align-items:center; gap:.5rem;
+}
+@media (min-width:992px){
+  .hx-navbar-v3-actions{ gap:.75rem; }
+}
+@media (max-width:767.98px){
+  .hx-navbar-v3 .container{ flex-direction:column; align-items:stretch; row-gap:.6rem; }
+  .hx-navbar-v3-actions{ justify-content:flex-end; }
+}
+
+/* v2 / v3 ortak: dairesel ikon butonlar (arama, indir), giriş yap linki */
+.hx-icon-btn{
+  width:40px; height:40px; flex:0 0 auto;
+  display:inline-flex; align-items:center; justify-content:center;
+  border-radius:50%;
+  background:rgba(255,255,255,.06);
+  border:1px solid var(--hx-border);
+  color:#fff; font-size:1.05rem;
+  transition:background .2s ease, border-color .2s ease, color .2s ease, transform .2s ease;
+}
+.hx-icon-btn:hover{ background:rgba(20,184,166,.15); border-color:var(--hx-cyan); color:var(--hx-cyan); }
+
+.hx-icon-btn-accent{
+  background:var(--hx-gradient);
+  border:none;
+  box-shadow:0 4px 12px -4px rgba(20,184,166,.45);
+}
+.hx-icon-btn-accent:hover{ color:#fff; transform:translateY(-2px); }
+
+.hx-login-link{
+  display:inline-flex; align-items:center; gap:.4rem;
+  color:#fff !important; font-weight:600; font-size:.9rem; opacity:.85;
+  white-space:nowrap;
+}
+.hx-login-link:hover{ color:var(--hx-cyan) !important; opacity:1; }
+.hx-login-link i{ font-size:1.2rem; }
 
 .hx-lang-select{
   background:transparent;
@@ -336,14 +400,14 @@ section{ position:relative; }
   background:var(--hx-gradient);
   color:#fff; font-weight:700; font-size:.85rem;
   display:flex; align-items:center; justify-content:center;
-  box-shadow:0 0 0 6px rgba(210,83,138,.25);
+  box-shadow:0 0 0 6px rgba(20,184,166,.25);
   cursor:pointer;
   animation:hx-pulse 2.4s infinite;
 }
 @keyframes hx-pulse{
-  0%{ box-shadow:0 0 0 0 rgba(210,83,138,.45); }
-  70%{ box-shadow:0 0 0 14px rgba(210,83,138,0); }
-  100%{ box-shadow:0 0 0 0 rgba(210,83,138,0); }
+  0%{ box-shadow:0 0 0 0 rgba(20,184,166,.45); }
+  70%{ box-shadow:0 0 0 14px rgba(20,184,166,0); }
+  100%{ box-shadow:0 0 0 0 rgba(20,184,166,0); }
 }
 
 /* ---------------- Icon grid (benefits) ---------------- */
@@ -397,7 +461,7 @@ section{ position:relative; }
   background:transparent; color:#fff; font-weight:700; font-size:.95rem;
   box-shadow:none;
 }
-.hx-accordion .accordion-button:not(.collapsed){ color:var(--hx-pink); background:rgba(210,83,138,.08); }
+.hx-accordion .accordion-button:not(.collapsed){ color:var(--hx-cyan); background:rgba(20,184,166,.08); }
 .hx-accordion .accordion-button::after{ filter:invert(1); }
 .hx-accordion .accordion-body{ color:var(--hx-text-muted); font-size:.92rem; }
 
@@ -454,7 +518,7 @@ section{ position:relative; }
   display:flex; align-items:center; justify-content:center;
   opacity:0; visibility:hidden; transform:translateY(10px);
   transition:all .3s ease;
-  box-shadow:0 10px 25px -8px rgba(210,83,138,.6);
+  box-shadow:0 10px 25px -8px rgba(20,184,166,.55);
 }
 .hx-to-top.show{ opacity:1; visibility:visible; transform:translateY(0); }
 
@@ -872,6 +936,91 @@ section{ position:relative; }
 }
 .hx-testi-dots button.active{ background:var(--hx-gradient); width:26px; border-radius:20px; transition:width .3s ease; }
 
+/* ---------------- Ana Banner Slider (arka plan görselli, başlıklı) ---------------- */
+.hx-banner-slider{ position:relative; }
+.hx-banner-slide{
+  position:relative;
+  min-height:460px;
+  display:flex;
+  align-items:center;
+  background-size:cover;
+  background-position:center;
+}
+.hx-banner-overlay{
+  position:absolute; inset:0;
+  background:linear-gradient(90deg, rgba(5,9,20,.93) 0%, rgba(5,9,20,.8) 45%, rgba(5,9,20,.4) 100%);
+}
+.hx-banner-content{ position:relative; z-index:1; max-width:620px; }
+.hx-banner-content .hx-eyebrow{ margin-bottom:.75rem; }
+.hx-banner-content h2{ font-size:clamp(1.9rem,4vw,2.7rem); line-height:1.2; margin-bottom:1rem; }
+.hx-banner-content p{ margin-bottom:1.75rem; }
+
+.hx-banner-arrow{
+  position:absolute; top:50%; transform:translateY(-50%);
+  width:48px; height:48px; border-radius:50%;
+  background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.25);
+  color:#fff; display:flex; align-items:center; justify-content:center;
+  font-size:1.15rem; z-index:2; opacity:.85;
+  transition:opacity .2s ease, border-color .2s ease, background .2s ease;
+}
+.hx-banner-arrow.prev{ left:1.5rem; }
+.hx-banner-arrow.next{ right:1.5rem; }
+.hx-banner-arrow:hover{ opacity:1; border-color:var(--hx-cyan); background:rgba(255,255,255,.15); }
+
+.hx-banner-dots{ position:absolute; bottom:1.5rem; left:50%; transform:translateX(-50%); margin:0; gap:.5rem; z-index:2; }
+.hx-banner-dots [data-bs-target]{
+  width:9px; height:9px; border-radius:50%; padding:0;
+  background:rgba(255,255,255,.35); opacity:1; border:0; text-indent:-9999px;
+}
+.hx-banner-dots [data-bs-target].active{ background:var(--hx-gradient); width:26px; border-radius:20px; transition:width .3s ease; }
+
+@media (max-width:767.98px){
+  .hx-banner-slide{ min-height:560px; text-align:center; }
+  .hx-banner-content{ max-width:100%; margin:0 auto; }
+  .hx-banner-arrow{ display:none; }
+}
+
+/* ---------------- Karşılama modalı (yenilikler + hızlı gezinme) ---------------- */
+.hx-modal .modal-content{
+  background:var(--hx-bg-card);
+  border:1px solid var(--hx-border);
+  border-radius:20px;
+  color:#fff;
+}
+.hx-modal .modal-header{ border-bottom:1px solid var(--hx-border); padding:1.5rem 1.75rem 1rem; }
+.hx-modal .modal-header .btn-close{ filter:invert(1) grayscale(100%) brightness(200%); opacity:.7; }
+.hx-modal .modal-header .btn-close:hover{ opacity:1; }
+.hx-modal .modal-title{ font-weight:800; font-size:1.3rem; }
+.hx-modal .modal-body{ padding:1.5rem 1.75rem; }
+.hx-modal .modal-footer{ border-top:1px solid var(--hx-border); padding:1rem 1.75rem 1.5rem; }
+
+.hx-modal-section-title{
+  font-size:.76rem; font-weight:800; letter-spacing:1.5px; text-transform:uppercase;
+  color:var(--hx-cyan); margin-bottom:.9rem;
+}
+
+.hx-modal-news-list{ list-style:none; padding:0; margin:0 0 2rem; }
+.hx-modal-news-list li{ display:flex; gap:.85rem; align-items:flex-start; padding:.55rem 0; }
+.hx-modal-news-list .ico{
+  width:36px; height:36px; border-radius:10px; flex:none;
+  background:var(--hx-gradient); display:flex; align-items:center; justify-content:center;
+  color:#fff; font-size:1rem;
+}
+.hx-modal-news-list strong{ display:block; color:#fff; font-size:.92rem; }
+.hx-modal-news-list span{ color:var(--hx-text-muted); font-size:.83rem; }
+
+.hx-modal-nav-grid{ display:grid; grid-template-columns:repeat(3, 1fr); gap:.75rem; }
+.hx-modal-nav-item{
+  display:flex; flex-direction:column; align-items:center; gap:.5rem;
+  background:var(--hx-bg); border:1px solid var(--hx-border); border-radius:14px;
+  padding:1.1rem .5rem; text-align:center; color:#fff; text-decoration:none;
+  transition:border-color .2s ease, transform .2s ease, color .2s ease;
+}
+.hx-modal-nav-item:hover{ border-color:var(--hx-cyan); color:#fff; transform:translateY(-3px); }
+.hx-modal-nav-item i{ font-size:1.3rem; color:var(--hx-cyan); }
+.hx-modal-nav-item span{ font-size:.8rem; font-weight:700; }
+@media (max-width:575.98px){ .hx-modal-nav-grid{ grid-template-columns:repeat(2, 1fr); } }
+
 /* ==========================================================================
    İç sayfalar (Hakkımızda, İletişim, Gizlilik, Bilgi Bankası, Topluluk)
    ========================================================================== */
@@ -1280,7 +1429,7 @@ textarea.hx-form-control{ resize:vertical; min-height:140px; }
 }
 .hx-docs-sublist a{ display:block; padding:.45rem .7rem; border-radius:8px; color:var(--hx-text-muted); font-size:.85rem; }
 .hx-docs-sublist a:hover{ color:#fff; background:rgba(255,255,255,.05); }
-.hx-docs-sublist a.active{ color:var(--hx-pink); background:rgba(210,83,138,.1); font-weight:700; }
+.hx-docs-sublist a.active{ color:var(--hx-cyan); background:rgba(20,184,166,.1); font-weight:700; }
 
 .hx-docs-offcanvas{ background:var(--hx-bg-alt); color:#fff; max-height:88vh; }
 .hx-docs-offcanvas .offcanvas-header{ border-bottom:1px solid var(--hx-border); }

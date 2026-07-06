@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<title>Veri Setleri — JeoValid Admin</title>
+<link rel="icon" href="../images/favicon-32x32.png" sizes="32x32">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+<link href="https://cdn.datatables.net/1.13.8/css/dataTables.bootstrap5.min.css" rel="stylesheet">
+<link href="../css/style.css" rel="stylesheet">
+<link href="css/admin.css" rel="stylesheet">
+</head>
+<body class="admin-body">
+
+<div class="admin-backdrop"></div>
+<div class="admin-wrapper">
+
+  <!-- ============ SIDEBAR ============ -->
+  <aside class="admin-sidebar" id="adminSidebar">
+    <div class="admin-sidebar-brand">
+      <a href="index.html" class="admin-brand"><img src="../images/jeovalid-logo.webp" alt="JeoValid logosu"><span>JeoValid<small>Admin Panel</small></span></a>
+      <button class="admin-sidebar-close d-lg-none" aria-label="Menüyü kapat"><i class="bi bi-x-lg"></i></button>
+    </div>
+
+    <div class="admin-sidebar-user">
+      <div class="admin-avatar">MY</div>
+      <div class="flex-grow-1 overflow-hidden">
+        <div class="admin-sidebar-user-name">Mehmet Yılmaz</div>
+        <div class="admin-sidebar-user-role"><span class="dot"></span> Süper Yönetici</div>
+      </div>
+    </div>
+
+    <nav class="admin-nav">
+      <span class="admin-nav-label">Genel</span>
+      <ul class="admin-nav-list">
+        <li><a href="index.html" data-page="index.html" class="admin-nav-link"><i class="bi bi-speedometer2 bi-nav-ico"></i><span class="label">Kontrol Paneli</span></a></li>
+      </ul>
+
+      <span class="admin-nav-label">Yönetim</span>
+      <ul class="admin-nav-list">
+        <li><a href="kullanicilar.html" data-page="kullanicilar.html" class="admin-nav-link"><i class="bi bi-people bi-nav-ico"></i><span class="label">Kullanıcılar</span><span class="admin-nav-badge">2.847</span></a></li>
+
+        <li>
+          <a href="#" class="admin-nav-link" data-bs-toggle="collapse" data-bs-target="#menuVeri" data-page="veri-setleri.html" aria-expanded="false">
+            <i class="bi bi-database bi-nav-ico"></i><span class="label">Veri Setleri</span><i class="bi bi-chevron-right chevron"></i>
+          </a>
+          <div class="collapse" id="menuVeri">
+            <ul class="admin-subnav">
+              <li><a href="veri-setleri.html#tumu" data-page="veri-setleri.html#tumu">Tümü</a></li>
+              <li><a href="veri-setleri.html#collar" data-page="veri-setleri.html#collar">Collar</a></li>
+              <li><a href="veri-setleri.html#survey" data-page="veri-setleri.html#survey">Survey</a></li>
+              <li><a href="veri-setleri.html#lithology" data-page="veri-setleri.html#lithology">Lithology</a></li>
+              <li><a href="veri-setleri.html#assay" data-page="veri-setleri.html#assay">Assay</a></li>
+            </ul>
+          </div>
+        </li>
+
+        <li>
+          <a href="#" class="admin-nav-link" data-bs-toggle="collapse" data-bs-target="#menuIcerik" data-page="icerik.html" aria-expanded="false">
+            <i class="bi bi-file-earmark-richtext bi-nav-ico"></i><span class="label">İçerik Yönetimi</span><i class="bi bi-chevron-right chevron"></i>
+          </a>
+          <div class="collapse" id="menuIcerik">
+            <ul class="admin-subnav">
+              <li><a href="icerik.html#ozellikler" data-page="icerik.html#ozellikler">Özellikler</a></li>
+              <li><a href="icerik.html#sss" data-page="icerik.html#sss">SSS</a></li>
+              <li><a href="icerik.html#vaka" data-page="icerik.html#vaka">Vaka Çalışmaları</a></li>
+              <li><a href="icerik.html#ortaklar" data-page="icerik.html#ortaklar">İş Ortakları</a></li>
+              <li><a href="icerik.html#yorumlar" data-page="icerik.html#yorumlar">Müşteri Yorumları</a></li>
+            </ul>
+          </div>
+        </li>
+
+        <li>
+          <a href="#" class="admin-nav-link" data-bs-toggle="collapse" data-bs-target="#menuPro" data-page="pro.html" aria-expanded="false">
+            <i class="bi bi-gem bi-nav-ico"></i><span class="label">JeoValid PRO</span><i class="bi bi-chevron-right chevron"></i>
+          </a>
+          <div class="collapse" id="menuPro">
+            <ul class="admin-subnav">
+              <li><a href="pro.html#planlar" data-page="pro.html#planlar">Planlar</a></li>
+              <li><a href="pro.html#abonelikler" data-page="pro.html#abonelikler">Abonelikler</a></li>
+            </ul>
+          </div>
+        </li>
+
+        <li>
+          <a href="#" class="admin-nav-link" data-bs-toggle="collapse" data-bs-target="#menuMesaj" data-page="mesajlar.html" aria-expanded="false">
+            <i class="bi bi-envelope bi-nav-ico"></i><span class="label">Mesajlar</span><span class="admin-nav-badge admin-nav-badge-danger">23</span><i class="bi bi-chevron-right chevron"></i>
+          </a>
+          <div class="collapse" id="menuMesaj">
+            <ul class="admin-subnav">
+              <li><a href="mesajlar.html#iletisim" data-page="mesajlar.html#iletisim">İletişim Formu</a></li>
+              <li><a href="mesajlar.html#bulten" data-page="mesajlar.html#bulten">Bülten Aboneleri</a></li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+
+      <span class="admin-nav-label">Sistem</span>
+      <ul class="admin-nav-list">
+        <li>
+          <a href="#" class="admin-nav-link" data-bs-toggle="collapse" data-bs-target="#menuAyar" data-page="ayarlar.html" aria-expanded="false">
+            <i class="bi bi-gear bi-nav-ico"></i><span class="label">Ayarlar</span><i class="bi bi-chevron-right chevron"></i>
+          </a>
+          <div class="collapse" id="menuAyar">
+            <ul class="admin-subnav">
+              <li><a href="ayarlar.html#profil" data-page="ayarlar.html#profil">Profil</a></li>
+              <li><a href="ayarlar.html#site" data-page="ayarlar.html#site">Site Ayarları</a></li>
+              <li><a href="ayarlar.html#bildirimler" data-page="ayarlar.html#bildirimler">Bildirimler</a></li>
+              <li><a href="ayarlar.html#guvenlik" data-page="ayarlar.html#guvenlik">Güvenlik</a></li>
+            </ul>
+          </div>
+        </li>
+        <li><a href="../index.html" class="admin-nav-link" target="_blank"><i class="bi bi-box-arrow-up-right bi-nav-ico"></i><span class="label">Siteyi Görüntüle</span></a></li>
+        <li><a href="login.html" class="admin-nav-link" style="color:#f87171;"><i class="bi bi-box-arrow-right bi-nav-ico"></i><span class="label">Çıkış Yap</span></a></li>
+      </ul>
+    </nav>
+
+    <div class="admin-sidebar-footer">JeoValid Admin v1.0</div>
+  </aside>
+
+  <!-- ============ CONTENT ============ -->
+  <div class="admin-content">
+
+    <!-- ============ TOPBAR ============ -->
+    <header class="admin-topbar">
+      <button class="admin-topbar-btn admin-mobile-toggle" aria-label="Menüyü aç"><i class="bi bi-list"></i></button>
+      <button class="admin-topbar-btn admin-desktop-toggle" aria-label="Menüyü daralt"><i class="bi bi-layout-sidebar"></i></button>
+
+      <div class="admin-topbar-search">
+        <i class="bi bi-search"></i>
+        <input type="text" placeholder="Kullanıcı, veri seti, mesaj ara...">
+      </div>
+
+      <div class="admin-topbar-right">
+        <a href="../index.html" target="_blank" class="admin-topbar-btn d-none d-md-inline-flex" title="Siteyi Görüntüle"><i class="bi bi-globe2"></i></a>
+        <div class="dropdown">
+          <button class="admin-topbar-btn" type="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-bell"></i><span class="admin-badge-dot">5</span></button>
+          <div class="dropdown-menu dropdown-menu-end admin-dropdown-menu" style="width:320px;">
+            <h6 class="dropdown-header">Bildirimler</h6>
+            <a class="dropdown-item" href="#assay"><span class="admin-notif-ico" style="background:#F97316;"><i class="bi bi-exclamation-triangle"></i></span><span><strong class="d-block">Doğrulama uyarısı</strong><span class="admin-row-sub">Assay_KaraDere_07.xlsx'de 3 uyarı · 3 sa önce</span></span></a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item justify-content-center fw-bold" href="mesajlar.html">Tüm bildirimleri gör</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <button class="admin-user-btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <span class="admin-avatar sm">MY</span>
+            <span class="d-none d-sm-block text-start"><span class="name d-block">Mehmet Yılmaz</span><span class="role d-block">Süper Yönetici</span></span>
+            <i class="bi bi-chevron-down small d-none d-sm-inline"></i>
+          </button>
+          <div class="dropdown-menu dropdown-menu-end admin-dropdown-menu" style="width:230px;">
+            <a class="dropdown-item" href="ayarlar.html#profil"><i class="bi bi-person"></i> Profilim</a>
+            <a class="dropdown-item" href="ayarlar.html#guvenlik"><i class="bi bi-shield-lock"></i> Güvenlik</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="login.html" style="color:#f87171;"><i class="bi bi-box-arrow-right" style="color:#f87171;"></i> Çıkış Yap</a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- ============ MAIN ============ -->
+    <main class="admin-main">
+
+      <div class="admin-page-header">
+        <div>
+          <div class="admin-breadcrumb"><a href="index.html">Yönetim</a><span class="sep">/</span>Veri Setleri</div>
+          <h1 class="admin-page-title">Veri Setleri</h1>
+        </div>
+        <div class="d-flex gap-2">
+          <button class="admin-btn admin-btn-outline"><i class="bi bi-download"></i> Dışa Aktar</button>
+          <button class="admin-btn"><i class="bi bi-upload"></i> Yeni Veri Seti Yükle</button>
+        </div>
+      </div>
+
+      <!-- MINI STATS -->
+      <div class="row g-3 mb-3">
+        <div class="col-6 col-lg-3">
+          <div class="admin-mini-stat"><span class="dot" style="background:#8B5CF6;"></span><div><div class="val">5.108</div><div class="lbl">Collar Kayıtları</div></div></div>
+        </div>
+        <div class="col-6 col-lg-3">
+          <div class="admin-mini-stat"><span class="dot" style="background:#06B6D4;"></span><div><div class="val">4.298</div><div class="lbl">Survey Kayıtları</div></div></div>
+        </div>
+        <div class="col-6 col-lg-3">
+          <div class="admin-mini-stat"><span class="dot" style="background:#10B981;"></span><div><div class="val">3.662</div><div class="lbl">Lithology Kayıtları</div></div></div>
+        </div>
+        <div class="col-6 col-lg-3">
+          <div class="admin-mini-stat"><span class="dot" style="background:#F97316;"></span><div><div class="val">2.852</div><div class="lbl">Assay Kayıtları</div></div></div>
+        </div>
+      </div>
+
+      <div class="admin-card">
+        <ul class="nav admin-tabs nav-tabs mb-3" role="tablist">
+          <li class="nav-item"><button class="nav-link active" data-bs-toggle="tab" data-bs-target="#tumu" type="button">Tümü</button></li>
+          <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#collar" type="button"><span class="dot" style="background:#8B5CF6;"></span>Collar</button></li>
+          <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#survey" type="button"><span class="dot" style="background:#06B6D4;"></span>Survey</button></li>
+          <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#lithology" type="button"><span class="dot" style="background:#10B981;"></span>Lithology</button></li>
+          <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#assay" type="button"><span class="dot" style="background:#F97316;"></span>Assay</button></li>
+        </ul>
+
+        <div class="tab-content">
+          <!-- TÜMÜ -->
+          <div class="tab-pane fade show active" id="tumu" role="tabpanel">
+            <div class="admin-table-wrap">
+              <table class="admin-table admin-datatable" style="width:100%;">
+                <thead><tr><th>Dosya Adı</th><th>Tip</th><th>Kullanıcı</th><th>Satır</th><th>Durum</th><th>Yüklenme Tarihi</th><th>İşlemler</th></tr></thead>
+                <tbody>
+                  <tr><td><i class="bi bi-file-earmark-spreadsheet me-1 text-muted-hx"></i>Collar_Sondaj12.xlsx</td><td><span class="pill pill-purple">Collar</span></td><td>Elif Şahin</td><td>842</td><td><span class="pill pill-success"><i class="bi bi-check-circle"></i> Doğrulandı</span></td><td>05.01.2026</td><td><div class="admin-table-actions"><button class="admin-icon-action"><i class="bi bi-eye"></i></button><button class="admin-icon-action"><i class="bi bi-download"></i></button><button class="admin-icon-action danger"><i class="bi bi-trash"></i></button></div></td></tr>
+                  <tr><td><i class="bi bi-file-earmark-spreadsheet me-1 text-muted-hx"></i>Survey_DoguAnadolu.csv</td><td><span class="pill pill-info">Survey</span></td><td>Ayşe Kaya</td><td>1.204</td><td><span class="pill pill-success"><i class="bi bi-check-circle"></i> Doğrulandı</span></td><td>04.01.2026</td><td><div class="admin-table-actions"><button class="admin-icon-action"><i class="bi bi-eye"></i></button><button class="admin-icon-action"><i class="bi bi-download"></i></button><button class="admin-icon-action danger"><i class="bi bi-trash"></i></button></div></td></tr>
+                  <tr><td><i class="bi bi-file-earmark-spreadsheet me-1 text-muted-hx"></i>Assay_KaraDere_07.xlsx</td><td><span class="pill" style="background:rgba(249,115,22,.15);color:#fb923c;">Assay</span></td><td>Can Korkmaz</td><td>318</td><td><span class="pill pill-warning"><i class="bi bi-exclamation-triangle"></i> Uyarı (3)</span></td><td>03.01.2026</td><td><div class="admin-table-actions"><button class="admin-icon-action"><i class="bi bi-eye"></i></button><button class="admin-icon-action"><i class="bi bi-download"></i></button><button class="admin-icon-action danger"><i class="bi bi-trash"></i></button></div></td></tr>
+                  <tr><td><i class="bi bi-file-earmark-spreadsheet me-1 text-muted-hx"></i>Lithology_KonyaKarapinar.xlsx</td><td><span class="pill" style="background:rgba(16,185,129,.15);color:#34d399;">Lithology</span></td><td>Zeynep Arslan</td><td>676</td><td><span class="pill pill-success"><i class="bi bi-check-circle"></i> Doğrulandı</span></td><td>02.01.2026</td><td><div class="admin-table-actions"><button class="admin-icon-action"><i class="bi bi-eye"></i></button><button class="admin-icon-action"><i class="bi bi-download"></i></button><button class="admin-icon-action danger"><i class="bi bi-trash"></i></button></div></td></tr>
+                  <tr><td><i class="bi bi-file-earmark-spreadsheet me-1 text-muted-hx"></i>Collar_EgeMadenOcagi.csv</td><td><span class="pill pill-purple">Collar</span></td><td>Mustafa Çelik</td><td>412</td><td><span class="pill pill-danger"><i class="bi bi-x-circle"></i> Hata (2)</span></td><td>31.12.2025</td><td><div class="admin-table-actions"><button class="admin-icon-action"><i class="bi bi-eye"></i></button><button class="admin-icon-action"><i class="bi bi-download"></i></button><button class="admin-icon-action danger"><i class="bi bi-trash"></i></button></div></td></tr>
+                  <tr><td><i class="bi bi-file-earmark-spreadsheet me-1 text-muted-hx"></i>Survey_KaraDere.xlsx</td><td><span class="pill pill-info">Survey</span></td><td>Fatma Aydın</td><td>958</td><td><span class="pill pill-success"><i class="bi bi-check-circle"></i> Doğrulandı</span></td><td>29.12.2025</td><td><div class="admin-table-actions"><button class="admin-icon-action"><i class="bi bi-eye"></i></button><button class="admin-icon-action"><i class="bi bi-download"></i></button><button class="admin-icon-action danger"><i class="bi bi-trash"></i></button></div></td></tr>
+                  <tr><td><i class="bi bi-file-earmark-spreadsheet me-1 text-muted-hx"></i>Assay_EgeMaden_02.csv</td><td><span class="pill" style="background:rgba(249,115,22,.15);color:#fb923c;">Assay</span></td><td>Emre Yıldız</td><td>221</td><td><span class="pill pill-success"><i class="bi bi-check-circle"></i> Doğrulandı</span></td><td>27.12.2025</td><td><div class="admin-table-actions"><button class="admin-icon-action"><i class="bi bi-eye"></i></button><button class="admin-icon-action"><i class="bi bi-download"></i></button><button class="admin-icon-action danger"><i class="bi bi-trash"></i></button></div></td></tr>
+                  <tr><td><i class="bi bi-file-earmark-spreadsheet me-1 text-muted-hx"></i>Lithology_DoguAnadolu.xlsx</td><td><span class="pill" style="background:rgba(16,185,129,.15);color:#34d399;">Lithology</span></td><td>Selin Doğan</td><td>530</td><td><span class="pill pill-warning"><i class="bi bi-exclamation-triangle"></i> Uyarı (1)</span></td><td>24.12.2025</td><td><div class="admin-table-actions"><button class="admin-icon-action"><i class="bi bi-eye"></i></button><button class="admin-icon-action"><i class="bi bi-download"></i></button><button class="admin-icon-action danger"><i class="bi bi-trash"></i></button></div></td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- COLLAR -->
+          <div class="tab-pane fade" id="collar" role="tabpanel">
+            <div class="admin-table-wrap">
+              <table class="admin-table admin-datatable" style="width:100%;">
+                <thead><tr><th>Dosya Adı</th><th>Kullanıcı</th><th>Satır</th><th>Durum</th><th>Yüklenme Tarihi</th><th>İşlemler</th></tr></thead>
+                <tbody>
+                  <tr><td><i class="bi bi-file-earmark-spreadsheet me-1 text-muted-hx"></i>Collar_Sondaj12.xlsx</td><td>Elif Şahin</td><td>842</td><td><span class="pill pill-success"><i class="bi bi-check-circle"></i> Doğrulandı</span></td><td>05.01.2026</td><td><div class="admin-table-actions"><button class="admin-icon-action"><i class="bi bi-eye"></i></button><button class="admin-icon-action"><i class="bi bi-download"></i></button><button class="admin-icon-action danger"><i class="bi bi-trash"></i></button></div></td></tr>
+                  <tr><td><i class="bi bi-file-earmark-spreadsheet me-1 text-muted-hx"></i>Collar_EgeMadenOcagi.csv</td><td>Mustafa Çelik</td><td>412</td><td><span class="pill pill-danger"><i class="bi bi-x-circle"></i> Hata (2)</span></td><td>31.12.2025</td><td><div class="admin-table-actions"><button class="admin-icon-action"><i class="bi bi-eye"></i></button><button class="admin-icon-action"><i class="bi bi-download"></i></button><button class="admin-icon-action danger"><i class="bi bi-trash"></i></button></div></td></tr>
+                  <tr><td><i class="bi bi-file-earmark-spreadsheet me-1 text-muted-hx"></i>Collar_KonyaKarapinar.xlsx</td><td>Zeynep Arslan</td><td>603</td><td><span class="pill pill-success"><i class="bi bi-check-circle"></i> Doğrulandı</span></td><td>28.12.2025</td><td><div class="admin-table-actions"><button class="admin-icon-action"><i class="bi bi-eye"></i></button><button class="admin-icon-action"><i class="bi bi-download"></i></button><button class="admin-icon-action danger"><i class="bi bi-trash"></i></button></div></td></tr>
+                  <tr><td><i class="bi bi-file-earmark-spreadsheet me-1 text-muted-hx"></i>Collar_KaraDere.csv</td><td>Ahmet Demir</td><td>275</td><td><span class="pill pill-success"><i class="bi bi-check-circle"></i> Doğrulandı</span></td><td>20.12.2025</td><td><div class="admin-table-actions"><button class="admin-icon-action"><i class="bi bi-eye"></i></button><button class="admin-icon-action"><i class="bi bi-download"></i></button><button class="admin-icon-action danger"><i class="bi bi-trash"></i></button></div></td></tr>
+                  <tr><td><i class="bi bi-file-earmark-spreadsheet me-1 text-muted-hx"></i>Collar_DoguAnadolu.xlsx</td><td>Burak Aksoy</td><td>918</td><td><span class="pill pill-warning"><i class="bi bi-exclamation-triangle"></i> Uyarı (1)</span></td><td>15.12.2025</td><td><div class="admin-table-actions"><button class="admin-icon-action"><i class="bi bi-eye"></i></button><button class="admin-icon-action"><i class="bi bi-download"></i></button><button class="admin-icon-action danger"><i class="bi bi-trash"></i></button></div></td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- SURVEY -->
+          <div class="tab-pane fade" id="survey" role="tabpanel">
+            <div class="admin-table-wrap">
+              <table class="admin-table admin-datatable" style="width:100%;">
+                <thead><tr><th>Dosya Adı</th><th>Kullanıcı</th><th>Satır</th><th>Durum</th><th>Yüklenme Tarihi</th><th>İşlemler</th></tr></thead>
+                <tbody>
+                  <tr><td><i class="bi bi-file-earmark-spreadsheet me-1 text-muted-hx"></i>Survey_DoguAnadolu.csv</td><td>Ayşe Kaya</td><td>1.204</td><td><span class="pill pill-success"><i class="bi bi-check-circle"></i> Doğrulandı</span></td><td>04.01.2026</td><td><div class="admin-table-actions"><button class="admin-icon-action"><i class="bi bi-eye"></i></button><button class="admin-icon-action"><i class="bi bi-download"></i></button><button class="admin-icon-action danger"><i class="bi bi-trash"></i></button></div></td></tr>
+                  <tr><td><i class="bi bi-file-earmark-spreadsheet me-1 text-muted-hx"></i>Survey_KaraDere.xlsx</td><td>Fatma Aydın</td><td>958</td><td><span class="pill pill-success"><i class="bi bi-check-circle"></i> Doğrulandı</span></td><td>29.12.2025</td><td><div class="admin-table-actions"><button class="admin-icon-action"><i class="bi bi-eye"></i></button><button class="admin-icon-action"><i class="bi bi-download"></i></button><button class="admin-icon-action danger"><i class="bi bi-trash"></i></button></div></td></tr>
+                  <tr><td><i class="bi bi-file-earmark-spreadsheet me-1 text-muted-hx"></i>Survey_EgeMaden.csv</td><td>Onur Polat</td><td>487</td><td><span class="pill pill-warning"><i class="bi bi-exclamation-triangle"></i> Uyarı (2)</span></td><td>18.12.2025</td><td><div class="admin-table-actions"><button class="admin-icon-action"><i class="bi bi-eye"></i></button><button class="admin-icon-action"><i class="bi bi-download"></i></button><button class="admin-icon-action danger"><i class="bi bi-trash"></i></button></div></td></tr>
+                  <tr><td><i class="bi bi-file-earmark-spreadsheet me-1 text-muted-hx"></i>Survey_KonyaKarapinar.xlsx</td><td>Gizem Kurt</td><td>649</td><td><span class="pill pill-success"><i class="bi bi-check-circle"></i> Doğrulandı</span></td><td>10.12.2025</td><td><div class="admin-table-actions"><button class="admin-icon-action"><i class="bi bi-eye"></i></button><button class="admin-icon-action"><i class="bi bi-download"></i></button><button class="admin-icon-action danger"><i class="bi bi-trash"></i></button></div></td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- LITHOLOGY -->
+          <div class="tab-pane fade" id="lithology" role="tabpanel">
+            <div class="admin-table-wrap">
+              <table class="admin-table admin-datatable" style="width:100%;">
+                <thead><tr><th>Dosya Adı</th><th>Kullanıcı</th><th>Satır</th><th>Durum</th><th>Yüklenme Tarihi</th><th>İşlemler</th></tr></thead>
+                <tbody>
+                  <tr><td><i class="bi bi-file-earmark-spreadsheet me-1 text-muted-hx"></i>Lithology_KonyaKarapinar.xlsx</td><td>Zeynep Arslan</td><td>676</td><td><span class="pill pill-success"><i class="bi bi-check-circle"></i> Doğrulandı</span></td><td>02.01.2026</td><td><div class="admin-table-actions"><button class="admin-icon-action"><i class="bi bi-eye"></i></button><button class="admin-icon-action"><i class="bi bi-download"></i></button><button class="admin-icon-action danger"><i class="bi bi-trash"></i></button></div></td></tr>
+                  <tr><td><i class="bi bi-file-earmark-spreadsheet me-1 text-muted-hx"></i>Lithology_DoguAnadolu.xlsx</td><td>Selin Doğan</td><td>530</td><td><span class="pill pill-warning"><i class="bi bi-exclamation-triangle"></i> Uyarı (1)</span></td><td>24.12.2025</td><td><div class="admin-table-actions"><button class="admin-icon-action"><i class="bi bi-eye"></i></button><button class="admin-icon-action"><i class="bi bi-download"></i></button><button class="admin-icon-action danger"><i class="bi bi-trash"></i></button></div></td></tr>
+                  <tr><td><i class="bi bi-file-earmark-spreadsheet me-1 text-muted-hx"></i>Lithology_KaraDere.csv</td><td>Deniz Aktaş</td><td>384</td><td><span class="pill pill-success"><i class="bi bi-check-circle"></i> Doğrulandı</span></td><td>14.12.2025</td><td><div class="admin-table-actions"><button class="admin-icon-action"><i class="bi bi-eye"></i></button><button class="admin-icon-action"><i class="bi bi-download"></i></button><button class="admin-icon-action danger"><i class="bi bi-trash"></i></button></div></td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- ASSAY -->
+          <div class="tab-pane fade" id="assay" role="tabpanel">
+            <div class="admin-table-wrap">
+              <table class="admin-table admin-datatable" style="width:100%;">
+                <thead><tr><th>Dosya Adı</th><th>Kullanıcı</th><th>Satır</th><th>Durum</th><th>Yüklenme Tarihi</th><th>İşlemler</th></tr></thead>
+                <tbody>
+                  <tr><td><i class="bi bi-file-earmark-spreadsheet me-1 text-muted-hx"></i>Assay_KaraDere_07.xlsx</td><td>Can Korkmaz</td><td>318</td><td><span class="pill pill-warning"><i class="bi bi-exclamation-triangle"></i> Uyarı (3)</span></td><td>03.01.2026</td><td><div class="admin-table-actions"><button class="admin-icon-action"><i class="bi bi-eye"></i></button><button class="admin-icon-action"><i class="bi bi-download"></i></button><button class="admin-icon-action danger"><i class="bi bi-trash"></i></button></div></td></tr>
+                  <tr><td><i class="bi bi-file-earmark-spreadsheet me-1 text-muted-hx"></i>Assay_EgeMaden_02.csv</td><td>Emre Yıldız</td><td>221</td><td><span class="pill pill-success"><i class="bi bi-check-circle"></i> Doğrulandı</span></td><td>27.12.2025</td><td><div class="admin-table-actions"><button class="admin-icon-action"><i class="bi bi-eye"></i></button><button class="admin-icon-action"><i class="bi bi-download"></i></button><button class="admin-icon-action danger"><i class="bi bi-trash"></i></button></div></td></tr>
+                  <tr><td><i class="bi bi-file-earmark-spreadsheet me-1 text-muted-hx"></i>Assay_KonyaKarapinar.xlsx</td><td>Kemal Öztürk</td><td>445</td><td><span class="pill pill-success"><i class="bi bi-check-circle"></i> Doğrulandı</span></td><td>09.12.2025</td><td><div class="admin-table-actions"><button class="admin-icon-action"><i class="bi bi-eye"></i></button><button class="admin-icon-action"><i class="bi bi-download"></i></button><button class="admin-icon-action danger"><i class="bi bi-trash"></i></button></div></td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </main>
+
+    <footer class="text-center py-4 text-muted-hx small">JeoValid Admin Panel © 2026 — Statik demo arayüzdür.</footer>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="https://cdn.datatables.net/1.13.8/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.13.8/js/dataTables.bootstrap5.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
+<script src="js/admin.js"></script>
+</body>
+</html>

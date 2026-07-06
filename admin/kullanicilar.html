@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<title>Kullanıcılar — JeoValid Admin</title>
+<link rel="icon" href="../images/favicon-32x32.png" sizes="32x32">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+<link href="https://cdn.datatables.net/1.13.8/css/dataTables.bootstrap5.min.css" rel="stylesheet">
+<link href="../css/style.css" rel="stylesheet">
+<link href="css/admin.css" rel="stylesheet">
+</head>
+<body class="admin-body">
+
+<div class="admin-backdrop"></div>
+<div class="admin-wrapper">
+
+  <!-- ============ SIDEBAR ============ -->
+  <aside class="admin-sidebar" id="adminSidebar">
+    <div class="admin-sidebar-brand">
+      <a href="index.html" class="admin-brand"><img src="../images/jeovalid-logo.webp" alt="JeoValid logosu"><span>JeoValid<small>Admin Panel</small></span></a>
+      <button class="admin-sidebar-close d-lg-none" aria-label="Menüyü kapat"><i class="bi bi-x-lg"></i></button>
+    </div>
+
+    <div class="admin-sidebar-user">
+      <div class="admin-avatar">MY</div>
+      <div class="flex-grow-1 overflow-hidden">
+        <div class="admin-sidebar-user-name">Mehmet Yılmaz</div>
+        <div class="admin-sidebar-user-role"><span class="dot"></span> Süper Yönetici</div>
+      </div>
+    </div>
+
+    <nav class="admin-nav">
+      <span class="admin-nav-label">Genel</span>
+      <ul class="admin-nav-list">
+        <li><a href="index.html" data-page="index.html" class="admin-nav-link"><i class="bi bi-speedometer2 bi-nav-ico"></i><span class="label">Kontrol Paneli</span></a></li>
+      </ul>
+
+      <span class="admin-nav-label">Yönetim</span>
+      <ul class="admin-nav-list">
+        <li><a href="kullanicilar.html" data-page="kullanicilar.html" class="admin-nav-link"><i class="bi bi-people bi-nav-ico"></i><span class="label">Kullanıcılar</span><span class="admin-nav-badge">2.847</span></a></li>
+
+        <li>
+          <a href="#" class="admin-nav-link" data-bs-toggle="collapse" data-bs-target="#menuVeri" data-page="veri-setleri.html" aria-expanded="false">
+            <i class="bi bi-database bi-nav-ico"></i><span class="label">Veri Setleri</span><i class="bi bi-chevron-right chevron"></i>
+          </a>
+          <div class="collapse" id="menuVeri">
+            <ul class="admin-subnav">
+              <li><a href="veri-setleri.html#tumu" data-page="veri-setleri.html#tumu">Tümü</a></li>
+              <li><a href="veri-setleri.html#collar" data-page="veri-setleri.html#collar">Collar</a></li>
+              <li><a href="veri-setleri.html#survey" data-page="veri-setleri.html#survey">Survey</a></li>
+              <li><a href="veri-setleri.html#lithology" data-page="veri-setleri.html#lithology">Lithology</a></li>
+              <li><a href="veri-setleri.html#assay" data-page="veri-setleri.html#assay">Assay</a></li>
+            </ul>
+          </div>
+        </li>
+
+        <li>
+          <a href="#" class="admin-nav-link" data-bs-toggle="collapse" data-bs-target="#menuIcerik" data-page="icerik.html" aria-expanded="false">
+            <i class="bi bi-file-earmark-richtext bi-nav-ico"></i><span class="label">İçerik Yönetimi</span><i class="bi bi-chevron-right chevron"></i>
+          </a>
+          <div class="collapse" id="menuIcerik">
+            <ul class="admin-subnav">
+              <li><a href="icerik.html#ozellikler" data-page="icerik.html#ozellikler">Özellikler</a></li>
+              <li><a href="icerik.html#sss" data-page="icerik.html#sss">SSS</a></li>
+              <li><a href="icerik.html#vaka" data-page="icerik.html#vaka">Vaka Çalışmaları</a></li>
+              <li><a href="icerik.html#ortaklar" data-page="icerik.html#ortaklar">İş Ortakları</a></li>
+              <li><a href="icerik.html#yorumlar" data-page="icerik.html#yorumlar">Müşteri Yorumları</a></li>
+            </ul>
+          </div>
+        </li>
+
+        <li>
+          <a href="#" class="admin-nav-link" data-bs-toggle="collapse" data-bs-target="#menuPro" data-page="pro.html" aria-expanded="false">
+            <i class="bi bi-gem bi-nav-ico"></i><span class="label">JeoValid PRO</span><i class="bi bi-chevron-right chevron"></i>
+          </a>
+          <div class="collapse" id="menuPro">
+            <ul class="admin-subnav">
+              <li><a href="pro.html#planlar" data-page="pro.html#planlar">Planlar</a></li>
+              <li><a href="pro.html#abonelikler" data-page="pro.html#abonelikler">Abonelikler</a></li>
+            </ul>
+          </div>
+        </li>
+
+        <li>
+          <a href="#" class="admin-nav-link" data-bs-toggle="collapse" data-bs-target="#menuMesaj" data-page="mesajlar.html" aria-expanded="false">
+            <i class="bi bi-envelope bi-nav-ico"></i><span class="label">Mesajlar</span><span class="admin-nav-badge admin-nav-badge-danger">23</span><i class="bi bi-chevron-right chevron"></i>
+          </a>
+          <div class="collapse" id="menuMesaj">
+            <ul class="admin-subnav">
+              <li><a href="mesajlar.html#iletisim" data-page="mesajlar.html#iletisim">İletişim Formu</a></li>
+              <li><a href="mesajlar.html#bulten" data-page="mesajlar.html#bulten">Bülten Aboneleri</a></li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+
+      <span class="admin-nav-label">Sistem</span>
+      <ul class="admin-nav-list">
+        <li>
+          <a href="#" class="admin-nav-link" data-bs-toggle="collapse" data-bs-target="#menuAyar" data-page="ayarlar.html" aria-expanded="false">
+            <i class="bi bi-gear bi-nav-ico"></i><span class="label">Ayarlar</span><i class="bi bi-chevron-right chevron"></i>
+          </a>
+          <div class="collapse" id="menuAyar">
+            <ul class="admin-subnav">
+              <li><a href="ayarlar.html#profil" data-page="ayarlar.html#profil">Profil</a></li>
+              <li><a href="ayarlar.html#site" data-page="ayarlar.html#site">Site Ayarları</a></li>
+              <li><a href="ayarlar.html#bildirimler" data-page="ayarlar.html#bildirimler">Bildirimler</a></li>
+              <li><a href="ayarlar.html#guvenlik" data-page="ayarlar.html#guvenlik">Güvenlik</a></li>
+            </ul>
+          </div>
+        </li>
+        <li><a href="../index.html" class="admin-nav-link" target="_blank"><i class="bi bi-box-arrow-up-right bi-nav-ico"></i><span class="label">Siteyi Görüntüle</span></a></li>
+        <li><a href="login.html" class="admin-nav-link" style="color:#f87171;"><i class="bi bi-box-arrow-right bi-nav-ico"></i><span class="label">Çıkış Yap</span></a></li>
+      </ul>
+    </nav>
+
+    <div class="admin-sidebar-footer">JeoValid Admin v1.0</div>
+  </aside>
+
+  <!-- ============ CONTENT ============ -->
+  <div class="admin-content">
+
+    <!-- ============ TOPBAR ============ -->
+    <header class="admin-topbar">
+      <button class="admin-topbar-btn admin-mobile-toggle" aria-label="Menüyü aç"><i class="bi bi-list"></i></button>
+      <button class="admin-topbar-btn admin-desktop-toggle" aria-label="Menüyü daralt"><i class="bi bi-layout-sidebar"></i></button>
+
+      <div class="admin-topbar-search">
+        <i class="bi bi-search"></i>
+        <input type="text" placeholder="Kullanıcı, veri seti, mesaj ara...">
+      </div>
+
+      <div class="admin-topbar-right">
+        <a href="../index.html" target="_blank" class="admin-topbar-btn d-none d-md-inline-flex" title="Siteyi Görüntüle"><i class="bi bi-globe2"></i></a>
+
+        <div class="dropdown">
+          <button class="admin-topbar-btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="bi bi-bell"></i><span class="admin-badge-dot">5</span>
+          </button>
+          <div class="dropdown-menu dropdown-menu-end admin-dropdown-menu" style="width:340px;">
+            <h6 class="dropdown-header">Bildirimler</h6>
+            <a class="dropdown-item" href="mesajlar.html#iletisim">
+              <span class="admin-notif-ico" style="background:#0F766E;"><i class="bi bi-envelope"></i></span>
+              <span><strong class="d-block">Yeni iletişim mesajı</strong><span class="admin-row-sub">Ahmet Demir bir mesaj gönderdi · 12 dk önce</span></span>
+            </a>
+            <a class="dropdown-item" href="kullanicilar.html">
+              <span class="admin-notif-ico" style="background:#0284C7;"><i class="bi bi-person-plus"></i></span>
+              <span><strong class="d-block">Yeni kullanıcı kaydı</strong><span class="admin-row-sub">Elif Şahin uygulamaya katıldı · 40 dk önce</span></span>
+            </a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item justify-content-center fw-bold" href="mesajlar.html">Tüm bildirimleri gör</a>
+          </div>
+        </div>
+
+        <div class="dropdown">
+          <button class="admin-user-btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <span class="admin-avatar sm">MY</span>
+            <span class="d-none d-sm-block text-start">
+              <span class="name d-block">Mehmet Yılmaz</span>
+              <span class="role d-block">Süper Yönetici</span>
+            </span>
+            <i class="bi bi-chevron-down small d-none d-sm-inline"></i>
+          </button>
+          <div class="dropdown-menu dropdown-menu-end admin-dropdown-menu" style="width:230px;">
+            <a class="dropdown-item" href="ayarlar.html#profil"><i class="bi bi-person"></i> Profilim</a>
+            <a class="dropdown-item" href="ayarlar.html#guvenlik"><i class="bi bi-shield-lock"></i> Güvenlik</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="login.html" style="color:#f87171;"><i class="bi bi-box-arrow-right" style="color:#f87171;"></i> Çıkış Yap</a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- ============ MAIN ============ -->
+    <main class="admin-main">
+
+      <div class="admin-page-header">
+        <div>
+          <div class="admin-breadcrumb"><a href="index.html">Yönetim</a><span class="sep">/</span>Kullanıcılar</div>
+          <h1 class="admin-page-title">Kullanıcılar</h1>
+        </div>
+        <div class="d-flex gap-2">
+          <button class="admin-btn admin-btn-outline"><i class="bi bi-download"></i> Dışa Aktar</button>
+          <button class="admin-btn" data-bs-toggle="modal" data-bs-target="#newUserModal"><i class="bi bi-plus-lg"></i> Yeni Kullanıcı</button>
+        </div>
+      </div>
+
+      <!-- MINI STATS -->
+      <div class="row g-3 mb-3">
+        <div class="col-6 col-lg-3">
+          <div class="admin-mini-stat"><span class="dot" style="background:#38BDF8;"></span><div><div class="val">2.847</div><div class="lbl">Toplam Kullanıcı</div></div></div>
+        </div>
+        <div class="col-6 col-lg-3">
+          <div class="admin-mini-stat"><span class="dot" style="background:#22c55e;"></span><div><div class="val">2.361</div><div class="lbl">Aktif</div></div></div>
+        </div>
+        <div class="col-6 col-lg-3">
+          <div class="admin-mini-stat"><span class="dot" style="background:#FFD700;"></span><div><div class="val">486</div><div class="lbl">PRO Abone</div></div></div>
+        </div>
+        <div class="col-6 col-lg-3">
+          <div class="admin-mini-stat"><span class="dot" style="background:#8791a8;"></span><div><div class="val">486</div><div class="lbl">Pasif</div></div></div>
+        </div>
+      </div>
+
+      <div class="admin-card">
+        <div class="admin-card-header">
+          <h2 class="admin-card-title"><i class="bi bi-people"></i>Tüm Kullanıcılar</h2>
+          <div class="d-flex gap-2 flex-wrap">
+            <span class="pill pill-info"><i class="bi bi-apple"></i> iOS: 1.204</span>
+            <span class="pill pill-success"><i class="bi bi-android2"></i> Android: 1.643</span>
+          </div>
+        </div>
+        <div class="admin-table-wrap">
+          <table class="admin-table admin-datatable" style="width:100%;">
+            <thead>
+              <tr><th>Kullanıcı</th><th>Platform</th><th>Plan</th><th>Veri Seti</th><th>Kayıt Tarihi</th><th>Durum</th><th>İşlemler</th></tr>
+            </thead>
+            <tbody>
+              <!-- rows injected below (static demo data) -->
+              <tr>
+                <td><div class="d-flex align-items-center gap-2"><span class="admin-avatar sm" style="background:linear-gradient(90deg,#0F766E,#38BDF8);">AK</span><div><div class="admin-row-title">Ayşe Kaya</div><div class="admin-row-sub">ayse.kaya@example.com</div></div></div></td>
+                <td><i class="bi bi-apple"></i> iOS</td>
+                <td><span class="pill pill-gold"><i class="bi bi-gem"></i> PRO</span></td>
+                <td>142</td>
+                <td>04.01.2026</td>
+                <td><span class="pill pill-success"><i class="bi bi-check-circle"></i> Aktif</span></td>
+                <td>
+                  <div class="admin-table-actions">
+                    <button class="admin-icon-action" data-bs-toggle="modal" data-bs-target="#viewUserModal" title="Görüntüle"><i class="bi bi-eye"></i></button>
+                    <button class="admin-icon-action" title="Düzenle"><i class="bi bi-pencil"></i></button>
+                    <button class="admin-icon-action danger" title="Sil"><i class="bi bi-trash"></i></button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td><div class="d-flex align-items-center gap-2"><span class="admin-avatar sm" style="background:linear-gradient(90deg,#0284C7,#38BDF8);">AD</span><div><div class="admin-row-title">Ahmet Demir</div><div class="admin-row-sub">ahmet.demir@example.com</div></div></div></td>
+                <td><i class="bi bi-android2"></i> Android</td>
+                <td><span class="pill pill-muted">Free</span></td>
+                <td>28</td>
+                <td>22.12.2025</td>
+                <td><span class="pill pill-success"><i class="bi bi-check-circle"></i> Aktif</span></td>
+                <td>
+                  <div class="admin-table-actions">
+                    <button class="admin-icon-action" data-bs-toggle="modal" data-bs-target="#viewUserModal" title="Görüntüle"><i class="bi bi-eye"></i></button>
+                    <button class="admin-icon-action" title="Düzenle"><i class="bi bi-pencil"></i></button>
+                    <button class="admin-icon-action danger" title="Sil"><i class="bi bi-trash"></i></button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td><div class="d-flex align-items-center gap-2"><span class="admin-avatar sm" style="background:linear-gradient(90deg,#8B5CF6,#38BDF8);">EŞ</span><div><div class="admin-row-title">Elif Şahin</div><div class="admin-row-sub">elif.sahin@example.com</div></div></div></td>
+                <td><i class="bi bi-apple"></i> iOS</td>
+                <td><span class="pill pill-gold"><i class="bi bi-gem"></i> PRO</span></td>
+                <td>96</td>
+                <td>15.12.2025</td>
+                <td><span class="pill pill-success"><i class="bi bi-check-circle"></i> Aktif</span></td>
+                <td>
+                  <div class="admin-table-actions">
+                    <button class="admin-icon-action" data-bs-toggle="modal" data-bs-target="#viewUserModal" title="Görüntüle"><i class="bi bi-eye"></i></button>
+                    <button class="admin-icon-action" title="Düzenle"><i class="bi bi-pencil"></i></button>
+                    <button class="admin-icon-action danger" title="Sil"><i class="bi bi-trash"></i></button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td><div class="d-flex align-items-center gap-2"><span class="admin-avatar sm" style="background:linear-gradient(90deg,#10B981,#38BDF8);">CK</span><div><div class="admin-row-title">Can Korkmaz</div><div class="admin-row-sub">can.korkmaz@example.com</div></div></div></td>
+                <td><i class="bi bi-android2"></i> Android</td>
+                <td><span class="pill pill-muted">Free</span></td>
+                <td>11</td>
+                <td>02.12.2025</td>
+                <td><span class="pill pill-muted"><i class="bi bi-dash-circle"></i> Pasif</span></td>
+                <td>
+                  <div class="admin-table-actions">
+                    <button class="admin-icon-action" data-bs-toggle="modal" data-bs-target="#viewUserModal" title="Görüntüle"><i class="bi bi-eye"></i></button>
+                    <button class="admin-icon-action" title="Düzenle"><i class="bi bi-pencil"></i></button>
+                    <button class="admin-icon-action danger" title="Sil"><i class="bi bi-trash"></i></button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td><div class="d-flex align-items-center gap-2"><span class="admin-avatar sm" style="background:linear-gradient(90deg,#F97316,#38BDF8);">ZA</span><div><div class="admin-row-title">Zeynep Arslan</div><div class="admin-row-sub">zeynep.arslan@example.com</div></div></div></td>
+                <td><i class="bi bi-apple"></i> iOS</td>
+                <td><span class="pill pill-gold"><i class="bi bi-gem"></i> PRO</span></td>
+                <td>203</td>
+                <td>19.11.2025</td>
+                <td><span class="pill pill-success"><i class="bi bi-check-circle"></i> Aktif</span></td>
+                <td>
+                  <div class="admin-table-actions">
+                    <button class="admin-icon-action" data-bs-toggle="modal" data-bs-target="#viewUserModal" title="Görüntüle"><i class="bi bi-eye"></i></button>
+                    <button class="admin-icon-action" title="Düzenle"><i class="bi bi-pencil"></i></button>
+                    <button class="admin-icon-action danger" title="Sil"><i class="bi bi-trash"></i></button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td><div class="d-flex align-items-center gap-2"><span class="admin-avatar sm" style="background:linear-gradient(90deg,#0F766E,#8B5CF6);">MÇ</span><div><div class="admin-row-title">Mustafa Çelik</div><div class="admin-row-sub">mustafa.celik@example.com</div></div></div></td>
+                <td><i class="bi bi-android2"></i> Android</td>
+                <td><span class="pill pill-muted">Free</span></td>
+                <td>7</td>
+                <td>08.11.2025</td>
+                <td><span class="pill pill-success"><i class="bi bi-check-circle"></i> Aktif</span></td>
+                <td>
+                  <div class="admin-table-actions">
+                    <button class="admin-icon-action" data-bs-toggle="modal" data-bs-target="#viewUserModal" title="Görüntüle"><i class="bi bi-eye"></i></button>
+                    <button class="admin-icon-action" title="Düzenle"><i class="bi bi-pencil"></i></button>
+                    <button class="admin-icon-action danger" title="Sil"><i class="bi bi-trash"></i></button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td><div class="d-flex align-items-center gap-2"><span class="admin-avatar sm" style="background:linear-gradient(90deg,#38BDF8,#0284C7);">FA</span><div><div class="admin-row-title">Fatma Aydın</div><div class="admin-row-sub">fatma.aydin@example.com</div></div></div></td>
+                <td><i class="bi bi-apple"></i> iOS</td>
+                <td><span class="pill pill-muted">Free</span></td>
+                <td>34</td>
+                <td>27.10.2025</td>
+                <td><span class="pill pill-success"><i class="bi bi-check-circle"></i> Aktif</span></td>
+                <td>
+                  <div class="admin-table-actions">
+                    <button class="admin-icon-action" data-bs-toggle="modal" data-bs-target="#viewUserModal" title="Görüntüle"><i class="bi bi-eye"></i></button>
+                    <button class="admin-icon-action" title="Düzenle"><i class="bi bi-pencil"></i></button>
+                    <button class="admin-icon-action danger" title="Sil"><i class="bi bi-trash"></i></button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td><div class="d-flex align-items-center gap-2"><span class="admin-avatar sm" style="background:linear-gradient(90deg,#8B5CF6,#F97316);">EY</span><div><div class="admin-row-title">Emre Yıldız</div><div class="admin-row-sub">emre.yildiz@example.com</div></div></div></td>
+                <td><i class="bi bi-android2"></i> Android</td>
+                <td><span class="pill pill-gold"><i class="bi bi-gem"></i> PRO</span></td>
+                <td>167</td>
+                <td>14.10.2025</td>
+                <td><span class="pill pill-muted"><i class="bi bi-dash-circle"></i> Pasif</span></td>
+                <td>
+                  <div class="admin-table-actions">
+                    <button class="admin-icon-action" data-bs-toggle="modal" data-bs-target="#viewUserModal" title="Görüntüle"><i class="bi bi-eye"></i></button>
+                    <button class="admin-icon-action" title="Düzenle"><i class="bi bi-pencil"></i></button>
+                    <button class="admin-icon-action danger" title="Sil"><i class="bi bi-trash"></i></button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td><div class="d-flex align-items-center gap-2"><span class="admin-avatar sm" style="background:linear-gradient(90deg,#10B981,#0F766E);">SD</span><div><div class="admin-row-title">Selin Doğan</div><div class="admin-row-sub">selin.dogan@example.com</div></div></div></td>
+                <td><i class="bi bi-apple"></i> iOS</td>
+                <td><span class="pill pill-muted">Free</span></td>
+                <td>19</td>
+                <td>02.10.2025</td>
+                <td><span class="pill pill-success"><i class="bi bi-check-circle"></i> Aktif</span></td>
+                <td>
+                  <div class="admin-table-actions">
+                    <button class="admin-icon-action" data-bs-toggle="modal" data-bs-target="#viewUserModal" title="Görüntüle"><i class="bi bi-eye"></i></button>
+                    <button class="admin-icon-action" title="Düzenle"><i class="bi bi-pencil"></i></button>
+                    <button class="admin-icon-action danger" title="Sil"><i class="bi bi-trash"></i></button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td><div class="d-flex align-items-center gap-2"><span class="admin-avatar sm" style="background:linear-gradient(90deg,#F97316,#8B5CF6);">BA</span><div><div class="admin-row-title">Burak Aksoy</div><div class="admin-row-sub">burak.aksoy@example.com</div></div></div></td>
+                <td><i class="bi bi-android2"></i> Android</td>
+                <td><span class="pill pill-gold"><i class="bi bi-gem"></i> PRO</span></td>
+                <td>88</td>
+                <td>19.09.2025</td>
+                <td><span class="pill pill-success"><i class="bi bi-check-circle"></i> Aktif</span></td>
+                <td>
+                  <div class="admin-table-actions">
+                    <button class="admin-icon-action" data-bs-toggle="modal" data-bs-target="#viewUserModal" title="Görüntüle"><i class="bi bi-eye"></i></button>
+                    <button class="admin-icon-action" title="Düzenle"><i class="bi bi-pencil"></i></button>
+                    <button class="admin-icon-action danger" title="Sil"><i class="bi bi-trash"></i></button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td><div class="d-flex align-items-center gap-2"><span class="admin-avatar sm" style="background:linear-gradient(90deg,#38BDF8,#10B981);">GK</span><div><div class="admin-row-title">Gizem Kurt</div><div class="admin-row-sub">gizem.kurt@example.com</div></div></div></td>
+                <td><i class="bi bi-apple"></i> iOS</td>
+                <td><span class="pill pill-muted">Free</span></td>
+                <td>5</td>
+                <td>30.08.2025</td>
+                <td><span class="pill pill-success"><i class="bi bi-check-circle"></i> Aktif</span></td>
+                <td>
+                  <div class="admin-table-actions">
+                    <button class="admin-icon-action" data-bs-toggle="modal" data-bs-target="#viewUserModal" title="Görüntüle"><i class="bi bi-eye"></i></button>
+                    <button class="admin-icon-action" title="Düzenle"><i class="bi bi-pencil"></i></button>
+                    <button class="admin-icon-action danger" title="Sil"><i class="bi bi-trash"></i></button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td><div class="d-flex align-items-center gap-2"><span class="admin-avatar sm" style="background:linear-gradient(90deg,#0284C7,#8B5CF6);">OP</span><div><div class="admin-row-title">Onur Polat</div><div class="admin-row-sub">onur.polat@example.com</div></div></div></td>
+                <td><i class="bi bi-android2"></i> Android</td>
+                <td><span class="pill pill-muted">Free</span></td>
+                <td>21</td>
+                <td>11.08.2025</td>
+                <td><span class="pill pill-muted"><i class="bi bi-dash-circle"></i> Pasif</span></td>
+                <td>
+                  <div class="admin-table-actions">
+                    <button class="admin-icon-action" data-bs-toggle="modal" data-bs-target="#viewUserModal" title="Görüntüle"><i class="bi bi-eye"></i></button>
+                    <button class="admin-icon-action" title="Düzenle"><i class="bi bi-pencil"></i></button>
+                    <button class="admin-icon-action danger" title="Sil"><i class="bi bi-trash"></i></button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td><div class="d-flex align-items-center gap-2"><span class="admin-avatar sm" style="background:linear-gradient(90deg,#8B5CF6,#0F766E);">DA</span><div><div class="admin-row-title">Deniz Aktaş</div><div class="admin-row-sub">deniz.aktas@example.com</div></div></div></td>
+                <td><i class="bi bi-apple"></i> iOS</td>
+                <td><span class="pill pill-gold"><i class="bi bi-gem"></i> PRO</span></td>
+                <td>112</td>
+                <td>25.07.2025</td>
+                <td><span class="pill pill-success"><i class="bi bi-check-circle"></i> Aktif</span></td>
+                <td>
+                  <div class="admin-table-actions">
+                    <button class="admin-icon-action" data-bs-toggle="modal" data-bs-target="#viewUserModal" title="Görüntüle"><i class="bi bi-eye"></i></button>
+                    <button class="admin-icon-action" title="Düzenle"><i class="bi bi-pencil"></i></button>
+                    <button class="admin-icon-action danger" title="Sil"><i class="bi bi-trash"></i></button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td><div class="d-flex align-items-center gap-2"><span class="admin-avatar sm" style="background:linear-gradient(90deg,#10B981,#F97316);">ET</span><div><div class="admin-row-title">Ece Türkmen</div><div class="admin-row-sub">ece.turkmen@example.com</div></div></div></td>
+                <td><i class="bi bi-android2"></i> Android</td>
+                <td><span class="pill pill-muted">Free</span></td>
+                <td>3</td>
+                <td>09.07.2025</td>
+                <td><span class="pill pill-success"><i class="bi bi-check-circle"></i> Aktif</span></td>
+                <td>
+                  <div class="admin-table-actions">
+                    <button class="admin-icon-action" data-bs-toggle="modal" data-bs-target="#viewUserModal" title="Görüntüle"><i class="bi bi-eye"></i></button>
+                    <button class="admin-icon-action" title="Düzenle"><i class="bi bi-pencil"></i></button>
+                    <button class="admin-icon-action danger" title="Sil"><i class="bi bi-trash"></i></button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td><div class="d-flex align-items-center gap-2"><span class="admin-avatar sm" style="background:linear-gradient(90deg,#F97316,#0284C7);">KÖ</span><div><div class="admin-row-title">Kemal Öztürk</div><div class="admin-row-sub">kemal.ozturk@example.com</div></div></div></td>
+                <td><i class="bi bi-apple"></i> iOS</td>
+                <td><span class="pill pill-gold"><i class="bi bi-gem"></i> PRO</span></td>
+                <td>256</td>
+                <td>22.06.2025</td>
+                <td><span class="pill pill-success"><i class="bi bi-check-circle"></i> Aktif</span></td>
+                <td>
+                  <div class="admin-table-actions">
+                    <button class="admin-icon-action" data-bs-toggle="modal" data-bs-target="#viewUserModal" title="Görüntüle"><i class="bi bi-eye"></i></button>
+                    <button class="admin-icon-action" title="Düzenle"><i class="bi bi-pencil"></i></button>
+                    <button class="admin-icon-action danger" title="Sil"><i class="bi bi-trash"></i></button>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </main>
+
+    <footer class="text-center py-4 text-muted-hx small">JeoValid Admin Panel © 2026 — Statik demo arayüzdür.</footer>
+  </div>
+</div>
+
+<!-- ============ YENİ KULLANICI MODAL ============ -->
+<div class="modal fade" id="newUserModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title"><i class="bi bi-person-plus me-2"></i>Yeni Kullanıcı Ekle</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <form class="admin-demo-form" data-success-msg="Kullanıcı başarıyla eklendi (statik demo).">
+        <div class="modal-body">
+          <div class="mb-3"><label class="form-label">Ad Soyad</label><input type="text" class="form-control" placeholder="Örn. Ayşe Kaya" required></div>
+          <div class="mb-3"><label class="form-label">E-posta</label><input type="email" class="form-control" placeholder="ornek@mail.com" required></div>
+          <div class="row g-3">
+            <div class="col-6">
+              <label class="form-label">Platform</label>
+              <select class="form-select"><option>iOS</option><option>Android</option></select>
+            </div>
+            <div class="col-6">
+              <label class="form-label">Plan</label>
+              <select class="form-select"><option>Free</option><option>PRO</option></select>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="admin-btn admin-btn-outline" data-bs-dismiss="modal">Vazgeç</button>
+          <button type="submit" class="admin-btn"><i class="bi bi-check-lg"></i> Kaydet</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- ============ KULLANICI GÖRÜNTÜLE MODAL ============ -->
+<div class="modal fade" id="viewUserModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title"><i class="bi bi-person me-2"></i>Kullanıcı Detayı</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <div class="d-flex align-items-center gap-3 mb-3">
+          <span class="admin-avatar" style="width:56px;height:56px;font-size:1.2rem;">AK</span>
+          <div><div class="fw-800">Ayşe Kaya</div><div class="admin-row-sub">ayse.kaya@example.com</div></div>
+        </div>
+        <div class="row g-3 small">
+          <div class="col-6"><span class="text-muted-hx d-block">Platform</span><strong>iOS</strong></div>
+          <div class="col-6"><span class="text-muted-hx d-block">Plan</span><strong class="pill pill-gold"><i class="bi bi-gem"></i> PRO</strong></div>
+          <div class="col-6"><span class="text-muted-hx d-block">Yüklenen Veri Seti</span><strong>142</strong></div>
+          <div class="col-6"><span class="text-muted-hx d-block">Kayıt Tarihi</span><strong>04.01.2026</strong></div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="admin-btn admin-btn-outline" data-bs-dismiss="modal">Kapat</button>
+        <button type="button" class="admin-btn"><i class="bi bi-pencil"></i> Düzenle</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="https://cdn.datatables.net/1.13.8/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.13.8/js/dataTables.bootstrap5.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
+<script src="js/admin.js"></script>
+</body>
+</html>

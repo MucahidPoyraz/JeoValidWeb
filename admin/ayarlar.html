@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<title>Ayarlar — JeoValid Admin</title>
+<link rel="icon" href="../images/favicon-32x32.png" sizes="32x32">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+<link href="../css/style.css" rel="stylesheet">
+<link href="css/admin.css" rel="stylesheet">
+</head>
+<body class="admin-body">
+
+<div class="admin-backdrop"></div>
+<div class="admin-wrapper">
+
+  <!-- ============ SIDEBAR ============ -->
+  <aside class="admin-sidebar" id="adminSidebar">
+    <div class="admin-sidebar-brand">
+      <a href="index.html" class="admin-brand"><img src="../images/jeovalid-logo.webp" alt="JeoValid logosu"><span>JeoValid<small>Admin Panel</small></span></a>
+      <button class="admin-sidebar-close d-lg-none" aria-label="Menüyü kapat"><i class="bi bi-x-lg"></i></button>
+    </div>
+
+    <div class="admin-sidebar-user">
+      <div class="admin-avatar">MY</div>
+      <div class="flex-grow-1 overflow-hidden">
+        <div class="admin-sidebar-user-name">Mehmet Yılmaz</div>
+        <div class="admin-sidebar-user-role"><span class="dot"></span> Süper Yönetici</div>
+      </div>
+    </div>
+
+    <nav class="admin-nav">
+      <span class="admin-nav-label">Genel</span>
+      <ul class="admin-nav-list">
+        <li><a href="index.html" data-page="index.html" class="admin-nav-link"><i class="bi bi-speedometer2 bi-nav-ico"></i><span class="label">Kontrol Paneli</span></a></li>
+      </ul>
+
+      <span class="admin-nav-label">Yönetim</span>
+      <ul class="admin-nav-list">
+        <li><a href="kullanicilar.html" data-page="kullanicilar.html" class="admin-nav-link"><i class="bi bi-people bi-nav-ico"></i><span class="label">Kullanıcılar</span><span class="admin-nav-badge">2.847</span></a></li>
+
+        <li>
+          <a href="#" class="admin-nav-link" data-bs-toggle="collapse" data-bs-target="#menuVeri" data-page="veri-setleri.html" aria-expanded="false">
+            <i class="bi bi-database bi-nav-ico"></i><span class="label">Veri Setleri</span><i class="bi bi-chevron-right chevron"></i>
+          </a>
+          <div class="collapse" id="menuVeri">
+            <ul class="admin-subnav">
+              <li><a href="veri-setleri.html#tumu" data-page="veri-setleri.html#tumu">Tümü</a></li>
+              <li><a href="veri-setleri.html#collar" data-page="veri-setleri.html#collar">Collar</a></li>
+              <li><a href="veri-setleri.html#survey" data-page="veri-setleri.html#survey">Survey</a></li>
+              <li><a href="veri-setleri.html#lithology" data-page="veri-setleri.html#lithology">Lithology</a></li>
+              <li><a href="veri-setleri.html#assay" data-page="veri-setleri.html#assay">Assay</a></li>
+            </ul>
+          </div>
+        </li>
+
+        <li>
+          <a href="#" class="admin-nav-link" data-bs-toggle="collapse" data-bs-target="#menuIcerik" data-page="icerik.html" aria-expanded="false">
+            <i class="bi bi-file-earmark-richtext bi-nav-ico"></i><span class="label">İçerik Yönetimi</span><i class="bi bi-chevron-right chevron"></i>
+          </a>
+          <div class="collapse" id="menuIcerik">
+            <ul class="admin-subnav">
+              <li><a href="icerik.html#ozellikler" data-page="icerik.html#ozellikler">Özellikler</a></li>
+              <li><a href="icerik.html#sss" data-page="icerik.html#sss">SSS</a></li>
+              <li><a href="icerik.html#vaka" data-page="icerik.html#vaka">Vaka Çalışmaları</a></li>
+              <li><a href="icerik.html#ortaklar" data-page="icerik.html#ortaklar">İş Ortakları</a></li>
+              <li><a href="icerik.html#yorumlar" data-page="icerik.html#yorumlar">Müşteri Yorumları</a></li>
+            </ul>
+          </div>
+        </li>
+
+        <li>
+          <a href="#" class="admin-nav-link" data-bs-toggle="collapse" data-bs-target="#menuPro" data-page="pro.html" aria-expanded="false">
+            <i class="bi bi-gem bi-nav-ico"></i><span class="label">JeoValid PRO</span><i class="bi bi-chevron-right chevron"></i>
+          </a>
+          <div class="collapse" id="menuPro">
+            <ul class="admin-subnav">
+              <li><a href="pro.html#planlar" data-page="pro.html#planlar">Planlar</a></li>
+              <li><a href="pro.html#abonelikler" data-page="pro.html#abonelikler">Abonelikler</a></li>
+            </ul>
+          </div>
+        </li>
+
+        <li>
+          <a href="#" class="admin-nav-link" data-bs-toggle="collapse" data-bs-target="#menuMesaj" data-page="mesajlar.html" aria-expanded="false">
+            <i class="bi bi-envelope bi-nav-ico"></i><span class="label">Mesajlar</span><span class="admin-nav-badge admin-nav-badge-danger">23</span><i class="bi bi-chevron-right chevron"></i>
+          </a>
+          <div class="collapse" id="menuMesaj">
+            <ul class="admin-subnav">
+              <li><a href="mesajlar.html#iletisim" data-page="mesajlar.html#iletisim">İletişim Formu</a></li>
+              <li><a href="mesajlar.html#bulten" data-page="mesajlar.html#bulten">Bülten Aboneleri</a></li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+
+      <span class="admin-nav-label">Sistem</span>
+      <ul class="admin-nav-list">
+        <li>
+          <a href="#" class="admin-nav-link" data-bs-toggle="collapse" data-bs-target="#menuAyar" data-page="ayarlar.html" aria-expanded="false">
+            <i class="bi bi-gear bi-nav-ico"></i><span class="label">Ayarlar</span><i class="bi bi-chevron-right chevron"></i>
+          </a>
+          <div class="collapse" id="menuAyar">
+            <ul class="admin-subnav">
+              <li><a href="ayarlar.html#profil" data-page="ayarlar.html#profil">Profil</a></li>
+              <li><a href="ayarlar.html#site" data-page="ayarlar.html#site">Site Ayarları</a></li>
+              <li><a href="ayarlar.html#bildirimler" data-page="ayarlar.html#bildirimler">Bildirimler</a></li>
+              <li><a href="ayarlar.html#guvenlik" data-page="ayarlar.html#guvenlik">Güvenlik</a></li>
+            </ul>
+          </div>
+        </li>
+        <li><a href="../index.html" class="admin-nav-link" target="_blank"><i class="bi bi-box-arrow-up-right bi-nav-ico"></i><span class="label">Siteyi Görüntüle</span></a></li>
+        <li><a href="login.html" class="admin-nav-link" style="color:#f87171;"><i class="bi bi-box-arrow-right bi-nav-ico"></i><span class="label">Çıkış Yap</span></a></li>
+      </ul>
+    </nav>
+
+    <div class="admin-sidebar-footer">JeoValid Admin v1.0</div>
+  </aside>
+
+  <!-- ============ CONTENT ============ -->
+  <div class="admin-content">
+
+    <!-- ============ TOPBAR ============ -->
+    <header class="admin-topbar">
+      <button class="admin-topbar-btn admin-mobile-toggle" aria-label="Menüyü aç"><i class="bi bi-list"></i></button>
+      <button class="admin-topbar-btn admin-desktop-toggle" aria-label="Menüyü daralt"><i class="bi bi-layout-sidebar"></i></button>
+      <div class="admin-topbar-search"><i class="bi bi-search"></i><input type="text" placeholder="Ayarlarda ara..."></div>
+      <div class="admin-topbar-right">
+        <a href="../index.html" target="_blank" class="admin-topbar-btn d-none d-md-inline-flex" title="Siteyi Görüntüle"><i class="bi bi-globe2"></i></a>
+        <div class="dropdown">
+          <button class="admin-user-btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <span class="admin-avatar sm">MY</span>
+            <span class="d-none d-sm-block text-start"><span class="name d-block">Mehmet Yılmaz</span><span class="role d-block">Süper Yönetici</span></span>
+            <i class="bi bi-chevron-down small d-none d-sm-inline"></i>
+          </button>
+          <div class="dropdown-menu dropdown-menu-end admin-dropdown-menu" style="width:230px;">
+            <a class="dropdown-item" href="ayarlar.html#profil"><i class="bi bi-person"></i> Profilim</a>
+            <a class="dropdown-item" href="ayarlar.html#guvenlik"><i class="bi bi-shield-lock"></i> Güvenlik</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="login.html" style="color:#f87171;"><i class="bi bi-box-arrow-right" style="color:#f87171;"></i> Çıkış Yap</a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- ============ MAIN ============ -->
+    <main class="admin-main">
+
+      <div class="admin-page-header">
+        <div>
+          <div class="admin-breadcrumb"><a href="index.html">Yönetim</a><span class="sep">/</span>Ayarlar</div>
+          <h1 class="admin-page-title">Ayarlar</h1>
+        </div>
+      </div>
+
+      <div class="row g-3">
+        <div class="col-lg-3">
+          <div class="admin-card p-2">
+            <ul class="nav flex-lg-column admin-tabs nav-tabs" role="tablist" style="border-bottom:0;">
+              <li class="nav-item flex-fill"><button class="nav-link active w-100 text-lg-start" data-bs-toggle="tab" data-bs-target="#profil" type="button"><i class="bi bi-person"></i> Profil</button></li>
+              <li class="nav-item flex-fill"><button class="nav-link w-100 text-lg-start" data-bs-toggle="tab" data-bs-target="#site" type="button"><i class="bi bi-globe2"></i> Site Ayarları</button></li>
+              <li class="nav-item flex-fill"><button class="nav-link w-100 text-lg-start" data-bs-toggle="tab" data-bs-target="#bildirimler" type="button"><i class="bi bi-bell"></i> Bildirimler</button></li>
+              <li class="nav-item flex-fill"><button class="nav-link w-100 text-lg-start" data-bs-toggle="tab" data-bs-target="#guvenlik" type="button"><i class="bi bi-shield-lock"></i> Güvenlik</button></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="col-lg-9">
+          <div class="tab-content">
+
+            <!-- PROFİL -->
+            <div class="tab-pane fade show active" id="profil" role="tabpanel">
+              <div class="admin-card">
+                <div class="admin-card-header"><h2 class="admin-card-title"><i class="bi bi-person"></i>Profil Bilgileri</h2></div>
+                <div class="d-flex align-items-center gap-3 mb-4">
+                  <span class="admin-avatar" style="width:64px;height:64px;font-size:1.4rem;">MY</span>
+                  <div>
+                    <button type="button" class="admin-btn admin-btn-outline admin-btn-sm"><i class="bi bi-upload"></i> Fotoğraf Değiştir</button>
+                    <div class="text-muted-hx small mt-1">JPG, PNG — maks. 2MB</div>
+                  </div>
+                </div>
+                <form class="admin-demo-form" data-success-msg="Profil bilgileri güncellendi (statik demo).">
+                  <div class="row g-3">
+                    <div class="col-md-6"><label class="form-label">Ad Soyad</label><input type="text" class="form-control" value="Mehmet Yılmaz"></div>
+                    <div class="col-md-6"><label class="form-label">Rol</label><input type="text" class="form-control" value="Süper Yönetici" disabled></div>
+                    <div class="col-md-6"><label class="form-label">E-posta</label><input type="email" class="form-control" value="mehmet.yilmaz@jeovalid.com"></div>
+                    <div class="col-md-6"><label class="form-label">Telefon</label><input type="tel" class="form-control" value="+90 555 123 45 67"></div>
+                    <div class="col-12"><label class="form-label">Hakkında</label><textarea class="form-control" rows="3">JeoValid ekibinde ürün ve içerik yönetiminden sorumlu.</textarea></div>
+                  </div>
+                  <div class="text-end mt-3"><button type="submit" class="admin-btn"><i class="bi bi-check-lg"></i> Değişiklikleri Kaydet</button></div>
+                </form>
+              </div>
+            </div>
+
+            <!-- SİTE AYARLARI -->
+            <div class="tab-pane fade" id="site" role="tabpanel">
+              <div class="admin-card">
+                <div class="admin-card-header"><h2 class="admin-card-title"><i class="bi bi-globe2"></i>Site Ayarları</h2></div>
+                <form class="admin-demo-form" data-success-msg="Site ayarları kaydedildi (statik demo).">
+                  <div class="row g-3">
+                    <div class="col-md-6"><label class="form-label">Site Adı</label><input type="text" class="form-control" value="JeoValid"></div>
+                    <div class="col-md-6"><label class="form-label">Destek E-postası</label><input type="email" class="form-control" value="destek@jeovalid.com"></div>
+                    <div class="col-md-6"><label class="form-label">Google Play Paket Adı</label><input type="text" class="form-control" value="com.jeovalid.app"></div>
+                    <div class="col-md-6"><label class="form-label">App Store Bağlantısı</label><input type="text" class="form-control" placeholder="https://apps.apple.com/..."></div>
+                    <div class="col-12">
+                      <label class="form-label">Logo</label>
+                      <div class="admin-upload-box"><i class="bi bi-cloud-arrow-up"></i>Yüklemek için tıklayın veya dosyayı buraya sürükleyin<div class="small mt-1">SVG, PNG veya WEBP — maks. 1MB</div></div>
+                    </div>
+                  </div>
+                  <hr style="border-color:var(--hx-border);margin:1.5rem 0;">
+                  <div class="d-flex align-items-center justify-content-between admin-switch mb-2">
+                    <div><strong class="d-block small">Bakım Modu</strong><span class="text-muted-hx small">Etkinleştirildiğinde site ziyaretçilere bakım sayfası gösterir.</span></div>
+                    <div class="form-check form-switch"><input class="form-check-input" type="checkbox"></div>
+                  </div>
+                  <div class="d-flex align-items-center justify-content-between admin-switch">
+                    <div><strong class="d-block small">Bülten Kayıtları</strong><span class="text-muted-hx small">Ana sayfadaki bülten formundan yeni abone kabul edilsin.</span></div>
+                    <div class="form-check form-switch"><input class="form-check-input" type="checkbox" checked></div>
+                  </div>
+                  <div class="text-end mt-3"><button type="submit" class="admin-btn"><i class="bi bi-check-lg"></i> Değişiklikleri Kaydet</button></div>
+                </form>
+              </div>
+            </div>
+
+            <!-- BİLDİRİMLER -->
+            <div class="tab-pane fade" id="bildirimler" role="tabpanel">
+              <div class="admin-card">
+                <div class="admin-card-header"><h2 class="admin-card-title"><i class="bi bi-bell"></i>Bildirim Tercihleri</h2></div>
+                <form class="admin-demo-form" data-success-msg="Bildirim tercihleri kaydedildi (statik demo).">
+                  <div class="d-flex align-items-center justify-content-between admin-switch py-2" style="border-bottom:1px solid var(--hx-border);">
+                    <div><strong class="d-block small">Yeni Kullanıcı Kaydı</strong><span class="text-muted-hx small">Uygulamaya yeni bir kullanıcı katıldığında bildirim al.</span></div>
+                    <div class="form-check form-switch"><input class="form-check-input" type="checkbox" checked></div>
+                  </div>
+                  <div class="d-flex align-items-center justify-content-between admin-switch py-2" style="border-bottom:1px solid var(--hx-border);">
+                    <div><strong class="d-block small">Yeni İletişim Mesajı</strong><span class="text-muted-hx small">İletişim formundan yeni bir mesaj geldiğinde bildirim al.</span></div>
+                    <div class="form-check form-switch"><input class="form-check-input" type="checkbox" checked></div>
+                  </div>
+                  <div class="d-flex align-items-center justify-content-between admin-switch py-2" style="border-bottom:1px solid var(--hx-border);">
+                    <div><strong class="d-block small">Yeni PRO Aboneliği</strong><span class="text-muted-hx small">Bir kullanıcı PRO'ya yükseldiğinde veya iptal ettiğinde bildirim al.</span></div>
+                    <div class="form-check form-switch"><input class="form-check-input" type="checkbox" checked></div>
+                  </div>
+                  <div class="d-flex align-items-center justify-content-between admin-switch py-2" style="border-bottom:1px solid var(--hx-border);">
+                    <div><strong class="d-block small">Veri Doğrulama Hataları</strong><span class="text-muted-hx small">Bir veri setinde kritik doğrulama hatası tespit edildiğinde bildirim al.</span></div>
+                    <div class="form-check form-switch"><input class="form-check-input" type="checkbox" checked></div>
+                  </div>
+                  <div class="d-flex align-items-center justify-content-between admin-switch py-2">
+                    <div><strong class="d-block small">Haftalık Özet E-postası</strong><span class="text-muted-hx small">Her Pazartesi haftalık istatistik özeti al.</span></div>
+                    <div class="form-check form-switch"><input class="form-check-input" type="checkbox"></div>
+                  </div>
+                  <div class="text-end mt-3"><button type="submit" class="admin-btn"><i class="bi bi-check-lg"></i> Değişiklikleri Kaydet</button></div>
+                </form>
+              </div>
+            </div>
+
+            <!-- GÜVENLİK -->
+            <div class="tab-pane fade" id="guvenlik" role="tabpanel">
+              <div class="admin-card mb-3">
+                <div class="admin-card-header"><h2 class="admin-card-title"><i class="bi bi-key"></i>Şifre Değiştir</h2></div>
+                <form class="admin-demo-form" data-success-msg="Şifreniz güncellendi (statik demo).">
+                  <div class="row g-3">
+                    <div class="col-md-6"><label class="form-label">Mevcut Şifre</label><input type="password" class="form-control" placeholder="••••••••"></div>
+                    <div class="col-md-6"></div>
+                    <div class="col-md-6"><label class="form-label">Yeni Şifre</label><input type="password" class="form-control" placeholder="••••••••"></div>
+                    <div class="col-md-6"><label class="form-label">Yeni Şifre (Tekrar)</label><input type="password" class="form-control" placeholder="••••••••"></div>
+                  </div>
+                  <div class="text-end mt-3"><button type="submit" class="admin-btn"><i class="bi bi-check-lg"></i> Şifreyi Güncelle</button></div>
+                </form>
+              </div>
+              <div class="admin-card">
+                <div class="admin-card-header"><h2 class="admin-card-title"><i class="bi bi-shield-check"></i>İki Aşamalı Doğrulama</h2></div>
+                <div class="d-flex align-items-center justify-content-between admin-switch">
+                  <div><strong class="d-block small">2FA (SMS / Uygulama)</strong><span class="text-muted-hx small">Girişlerde ek bir doğrulama adımı iste.</span></div>
+                  <div class="form-check form-switch"><input class="form-check-input" type="checkbox"></div>
+                </div>
+                <hr style="border-color:var(--hx-border);">
+                <h3 class="small fw-800 mb-2">Aktif Oturumlar</h3>
+                <div class="d-flex align-items-center justify-content-between py-2" style="border-bottom:1px solid var(--hx-border);">
+                  <div class="d-flex align-items-center gap-2"><i class="bi bi-laptop fs-5 text-muted-hx"></i><div><div class="small fw-700">Windows · Chrome</div><div class="admin-row-sub">İstanbul, Türkiye · Şu an aktif</div></div></div>
+                  <span class="pill pill-success">Bu cihaz</span>
+                </div>
+                <div class="d-flex align-items-center justify-content-between py-2">
+                  <div class="d-flex align-items-center gap-2"><i class="bi bi-phone fs-5 text-muted-hx"></i><div><div class="small fw-700">iPhone · Safari</div><div class="admin-row-sub">İzmir, Türkiye · 2 gün önce</div></div></div>
+                  <button class="admin-btn admin-btn-outline admin-btn-sm">Oturumu Sonlandır</button>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </main>
+
+    <footer class="text-center py-4 text-muted-hx small">JeoValid Admin Panel © 2026 — Statik demo arayüzdür.</footer>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
+<script src="js/admin.js"></script>
+</body>
+</html>

@@ -16,49 +16,90 @@
 <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet">
 <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
 <link href="css/style.css" rel="stylesheet">
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    corePlugins: { preflight: false },
+    theme: {
+      extend: {
+        colors: {
+          jvbg: '#0B1628',
+          jvbgalt: '#0F1F35',
+          jvcard: '#152A47',
+          jvcyan: '#38BDF8',
+          jvcyan2: '#0284C7',
+          jvteal: '#14B8A6',
+          jvtealdark: '#0F766E',
+          jvmuted: '#8791a8'
+        },
+        fontFamily: { mulish: ['Mulish', 'sans-serif'] }
+      }
+    }
+  }
+</script>
 </head>
 <body>
 
-<!-- ============ NAVBAR ============ -->
-<nav class="navbar navbar-expand-lg hx-navbar">
-  <div class="container">
-    <a class="navbar-brand hx-brand" href="#home"><img src="images/jeovalid-logo.webp" alt="JeoValid logosu"> JeoValid</a>
-    <button class="navbar-toggler text-white border-0" type="button" data-bs-toggle="collapse" data-bs-target="#hxNav">
-      <i class="bi bi-list fs-1 text-white"></i>
-    </button>
-    <div class="collapse navbar-collapse" id="hxNav">
-      <ul class="navbar-nav mx-auto">
-        <li class="nav-item"><a class="nav-link active" href="#home">Ana Sayfa</a></li>
-        <li class="nav-item"><a class="nav-link" href="about.html">Hakkımızda</a></li>
-        <li class="nav-item"><a class="nav-link" href="features.html">Özellikler</a></li>
-        <li class="nav-item"><a class="nav-link" href="nasil-calisir.html">Nasıl Çalışır</a></li>
-        <li class="nav-item"><a class="nav-link" href="pro.html">JeoValid PRO</a></li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Kaynaklar</a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="getting-started.html">Başlangıç Rehberi</a></li>
-            <li><a class="dropdown-item" href="wiki.html">Bilgi Bankası</a></li>
-            <li><a class="dropdown-item" href="community.html">Topluluk</a></li>
-          </ul>
-        </li>
-        <li class="nav-item"><a class="nav-link" href="sss.html">SSS</a></li>
-        <li class="nav-item"><a class="nav-link" href="contact.html">İletişim</a></li>
-      </ul>
-      <div class="d-flex align-items-center gap-3">
-        <a href="#indir" class="hx-btn hx-btn-sm"><i class="bi bi-download"></i> Uygulamayı İndir</a>
-      </div>
-      <!-- ARŞİV — eski şablondan (kullanılmıyor, tasarımdan kaldırıldı ama ileride gerekirse diye saklandı):
-      <select class="hx-lang-select d-none d-lg-inline-block">
-        <option>English</option>
-        <option>Spanish</option>
-      </select>
-      <a href="#" class="hx-btn hx-btn-outline hx-btn-sm d-none d-md-inline-flex">Whitepaper</a>
-      <a href="#" class="hx-btn hx-btn-sm"><i class="bi bi-person"></i> Login</a>
-      -->
+<!-- ============ NAVBAR (Tailwind — Layout 3: Sol Sidebar) ============ -->
+<div class="hx-navbar" style="display:none" aria-hidden="true"></div>
 
+<button id="sidebarToggleV6" type="button" aria-label="Menü" class="lg:hidden fixed top-4 left-4 z-[1040] w-11 h-11 rounded-full bg-jvcard border border-white/10 text-white inline-flex items-center justify-center text-2xl">
+  <i class="bi bi-list"></i>
+</button>
+
+<div id="sidebarBackdropV6" class="hidden fixed inset-0 bg-black/60 z-[1035] lg:hidden"></div>
+
+<aside id="sidebarV6" class="fixed top-0 left-0 h-full w-72 bg-jvbgalt border-r border-white/10 z-[1038] flex flex-col -translate-x-full lg:translate-x-0 transition-transform duration-300 overflow-y-auto">
+  <a href="#home" class="flex items-center gap-2 text-white font-extrabold text-xl px-6 pt-6 pb-4">
+    <img src="images/jeovalid-logo.webp" alt="JeoValid logosu" class="h-9 w-auto">
+    JeoValid
+  </a>
+
+  <div class="px-6 pb-4">
+    <div class="relative">
+      <i class="bi bi-search absolute left-4 top-1/2 -translate-y-1/2 text-jvmuted"></i>
+      <input type="text" placeholder="Sitede ara..." aria-label="Sitede ara" class="w-full rounded-full bg-jvcard border border-white/10 text-white pl-11 pr-4 py-2.5 text-sm focus:outline-none focus:border-jvcyan">
     </div>
   </div>
-</nav>
+
+  <nav class="flex-1 px-3 flex flex-col gap-1">
+    <a href="#home" class="px-3 py-2.5 rounded-lg text-sm font-semibold text-jvcyan bg-jvteal/10">Ana Sayfa</a>
+    <a href="about.html" class="px-3 py-2.5 rounded-lg text-sm font-semibold text-white/85 hover:bg-white/5 hover:text-jvcyan">Hakkımızda</a>
+    <a href="features.html" class="px-3 py-2.5 rounded-lg text-sm font-semibold text-white/85 hover:bg-white/5 hover:text-jvcyan">Özellikler</a>
+    <a href="nasil-calisir.html" class="px-3 py-2.5 rounded-lg text-sm font-semibold text-white/85 hover:bg-white/5 hover:text-jvcyan">Nasıl Çalışır</a>
+    <a href="pro.html" class="px-3 py-2.5 rounded-lg text-sm font-semibold text-white/85 hover:bg-white/5 hover:text-jvcyan">JeoValid PRO</a>
+    <details>
+      <summary class="px-3 py-2.5 rounded-lg text-sm font-semibold text-white/85 hover:bg-white/5 hover:text-jvcyan cursor-pointer list-none flex items-center justify-between">Kaynaklar <i class="bi bi-chevron-down text-xs"></i></summary>
+      <div class="pl-4 flex flex-col gap-1 mt-1">
+        <a href="getting-started.html" class="px-3 py-2 rounded-lg text-sm text-slate-300 hover:bg-white/5 hover:text-jvcyan">Başlangıç Rehberi</a>
+        <a href="wiki.html" class="px-3 py-2 rounded-lg text-sm text-slate-300 hover:bg-white/5 hover:text-jvcyan">Bilgi Bankası</a>
+        <a href="community.html" class="px-3 py-2 rounded-lg text-sm text-slate-300 hover:bg-white/5 hover:text-jvcyan">Topluluk</a>
+      </div>
+    </details>
+    <a href="sss.html" class="px-3 py-2.5 rounded-lg text-sm font-semibold text-white/85 hover:bg-white/5 hover:text-jvcyan">SSS</a>
+    <a href="contact.html" class="px-3 py-2.5 rounded-lg text-sm font-semibold text-white/85 hover:bg-white/5 hover:text-jvcyan">İletişim</a>
+  </nav>
+
+  <div class="px-6 py-5 border-t border-white/10 flex flex-col gap-3">
+    <a href="#" class="inline-flex items-center gap-2 text-white/90 font-semibold text-sm hover:text-jvcyan"><i class="bi bi-person-circle text-lg"></i> Giriş Yap</a>
+    <a href="#indir" class="inline-flex items-center justify-center gap-2 rounded-full px-5 py-2.5 text-sm font-bold text-white bg-gradient-to-r from-jvtealdark to-jvcyan shadow-[0_10px_20px_-8px_rgba(20,184,166,0.55)]"><i class="bi bi-download"></i> Uygulamayı İndir</a>
+  </div>
+</aside>
+
+<script>
+(function(){
+  var sidebar = document.getElementById('sidebarV6');
+  var backdrop = document.getElementById('sidebarBackdropV6');
+  var toggle = document.getElementById('sidebarToggleV6');
+  function openSidebar(){ sidebar.classList.remove('-translate-x-full'); backdrop.classList.remove('hidden'); }
+  function closeSidebar(){ sidebar.classList.add('-translate-x-full'); backdrop.classList.add('hidden'); }
+  if (toggle) toggle.addEventListener('click', function(){ sidebar.classList.contains('-translate-x-full') ? openSidebar() : closeSidebar(); });
+  if (backdrop) backdrop.addEventListener('click', closeSidebar);
+})();
+</script>
+
+<div id="mainContentV6" class="lg:pl-72">
 
 <!-- ============ HERO ============ -->
 <header id="home" class="hx-hero">
@@ -893,6 +934,8 @@
     </div>
   </div>
 </div>
+
+</div><!-- /#mainContentV6 -->
 
 <!-- ARŞİV — arşivlenen "Token/Funds Allocation" pasta grafik bölümü aktif edilirse bu script de aktif edilmeli:
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.5.0/chart.umd.min.js"></script>

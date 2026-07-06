@@ -198,6 +198,50 @@ document.addEventListener('DOMContentLoaded', function () {
     testiPlay();
   }
 
+  /* Ana Banner Slider: klasik arka plan görselli, başlık/açıklamalı carousel;
+     Neden JeoValid carousel'indeki gibi masaüstünde fare ile de sürüklenebilir */
+  var bannerCarouselEl = document.getElementById('bannerCarousel');
+  if (bannerCarouselEl && window.bootstrap) {
+    var bannerInner = bannerCarouselEl.querySelector('.carousel-inner');
+    var bannerDown = false, bannerStartX = 0, bannerMoved = false;
+    bannerInner.addEventListener('mousedown', function (e) {
+      bannerDown = true; bannerMoved = false; bannerStartX = e.clientX;
+      bannerInner.style.cursor = 'grabbing';
+    });
+    window.addEventListener('mousemove', function (e) {
+      if (!bannerDown) return;
+      if (Math.abs(e.clientX - bannerStartX) > 8) bannerMoved = true;
+    });
+    window.addEventListener('mouseup', function (e) {
+      if (!bannerDown) return;
+      bannerDown = false;
+      bannerInner.style.cursor = '';
+      var dx = e.clientX - bannerStartX;
+      if (Math.abs(dx) > 45) {
+        var instance = bootstrap.Carousel.getOrCreateInstance(bannerCarouselEl);
+        if (dx < 0) { instance.next(); } else { instance.prev(); }
+      }
+    });
+    bannerInner.addEventListener('dragstart', function (e) { e.preventDefault(); });
+    bannerInner.style.cursor = 'grab';
+  }
+
+  /* Karşılama modalı: yenilikler + hızlı gezinme, yalnızca ilk ziyarette gösterilir.
+     Yeni bir duyuru eklendiğinde WELCOME_KEY'deki sürüm numarasını artırmak modalı tekrar gösterir. */
+  var welcomeModalEl = document.getElementById('welcomeModal');
+  if (welcomeModalEl && window.bootstrap) {
+    var WELCOME_KEY = 'jv_welcome_seen_v1';
+    try {
+      if (!localStorage.getItem(WELCOME_KEY)) {
+        var welcomeModal = new bootstrap.Modal(welcomeModalEl);
+        setTimeout(function () { welcomeModal.show(); }, 1200);
+        welcomeModalEl.addEventListener('hidden.bs.modal', function () {
+          localStorage.setItem(WELCOME_KEY, '1');
+        });
+      }
+    } catch (e) { /* localStorage kullanılamıyorsa (gizli sekme vb.) modal hiç gösterilmez */ }
+  }
+
   /* Subscribe form (static demo, no backend) */
   var subscribeForm = document.querySelector('.hx-subscribe');
   if (subscribeForm) {

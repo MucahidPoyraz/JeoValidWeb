@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<title>JeoValid PRO & Abonelikler — JeoValid Admin</title>
+<link rel="icon" href="../images/favicon-32x32.png" sizes="32x32">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+<link href="https://cdn.datatables.net/1.13.8/css/dataTables.bootstrap5.min.css" rel="stylesheet">
+<link href="../css/style.css" rel="stylesheet">
+<link href="css/admin.css" rel="stylesheet">
+</head>
+<body class="admin-body">
+
+<div class="admin-backdrop"></div>
+<div class="admin-wrapper">
+
+  <!-- ============ SIDEBAR ============ -->
+  <aside class="admin-sidebar" id="adminSidebar">
+    <div class="admin-sidebar-brand">
+      <a href="index.html" class="admin-brand"><img src="../images/jeovalid-logo.webp" alt="JeoValid logosu"><span>JeoValid<small>Admin Panel</small></span></a>
+      <button class="admin-sidebar-close d-lg-none" aria-label="Menüyü kapat"><i class="bi bi-x-lg"></i></button>
+    </div>
+
+    <div class="admin-sidebar-user">
+      <div class="admin-avatar">MY</div>
+      <div class="flex-grow-1 overflow-hidden">
+        <div class="admin-sidebar-user-name">Mehmet Yılmaz</div>
+        <div class="admin-sidebar-user-role"><span class="dot"></span> Süper Yönetici</div>
+      </div>
+    </div>
+
+    <nav class="admin-nav">
+      <span class="admin-nav-label">Genel</span>
+      <ul class="admin-nav-list">
+        <li><a href="index.html" data-page="index.html" class="admin-nav-link"><i class="bi bi-speedometer2 bi-nav-ico"></i><span class="label">Kontrol Paneli</span></a></li>
+      </ul>
+
+      <span class="admin-nav-label">Yönetim</span>
+      <ul class="admin-nav-list">
+        <li><a href="kullanicilar.html" data-page="kullanicilar.html" class="admin-nav-link"><i class="bi bi-people bi-nav-ico"></i><span class="label">Kullanıcılar</span><span class="admin-nav-badge">2.847</span></a></li>
+
+        <li>
+          <a href="#" class="admin-nav-link" data-bs-toggle="collapse" data-bs-target="#menuVeri" data-page="veri-setleri.html" aria-expanded="false">
+            <i class="bi bi-database bi-nav-ico"></i><span class="label">Veri Setleri</span><i class="bi bi-chevron-right chevron"></i>
+          </a>
+          <div class="collapse" id="menuVeri">
+            <ul class="admin-subnav">
+              <li><a href="veri-setleri.html#tumu" data-page="veri-setleri.html#tumu">Tümü</a></li>
+              <li><a href="veri-setleri.html#collar" data-page="veri-setleri.html#collar">Collar</a></li>
+              <li><a href="veri-setleri.html#survey" data-page="veri-setleri.html#survey">Survey</a></li>
+              <li><a href="veri-setleri.html#lithology" data-page="veri-setleri.html#lithology">Lithology</a></li>
+              <li><a href="veri-setleri.html#assay" data-page="veri-setleri.html#assay">Assay</a></li>
+            </ul>
+          </div>
+        </li>
+
+        <li>
+          <a href="#" class="admin-nav-link" data-bs-toggle="collapse" data-bs-target="#menuIcerik" data-page="icerik.html" aria-expanded="false">
+            <i class="bi bi-file-earmark-richtext bi-nav-ico"></i><span class="label">İçerik Yönetimi</span><i class="bi bi-chevron-right chevron"></i>
+          </a>
+          <div class="collapse" id="menuIcerik">
+            <ul class="admin-subnav">
+              <li><a href="icerik.html#ozellikler" data-page="icerik.html#ozellikler">Özellikler</a></li>
+              <li><a href="icerik.html#sss" data-page="icerik.html#sss">SSS</a></li>
+              <li><a href="icerik.html#vaka" data-page="icerik.html#vaka">Vaka Çalışmaları</a></li>
+              <li><a href="icerik.html#ortaklar" data-page="icerik.html#ortaklar">İş Ortakları</a></li>
+              <li><a href="icerik.html#yorumlar" data-page="icerik.html#yorumlar">Müşteri Yorumları</a></li>
+            </ul>
+          </div>
+        </li>
+
+        <li>
+          <a href="#" class="admin-nav-link active" data-bs-toggle="collapse" data-bs-target="#menuPro" data-page="pro.html" aria-expanded="true">
+            <i class="bi bi-gem bi-nav-ico"></i><span class="label">JeoValid PRO</span><i class="bi bi-chevron-right chevron"></i>
+          </a>
+          <div class="collapse show" id="menuPro">
+            <ul class="admin-subnav">
+              <li><a href="pro.html#planlar" data-page="pro.html#planlar">Planlar</a></li>
+              <li><a href="pro.html#abonelikler" data-page="pro.html#abonelikler">Abonelikler</a></li>
+            </ul>
+          </div>
+        </li>
+
+        <li>
+          <a href="#" class="admin-nav-link" data-bs-toggle="collapse" data-bs-target="#menuMesaj" data-page="mesajlar.html" aria-expanded="false">
+            <i class="bi bi-envelope bi-nav-ico"></i><span class="label">Mesajlar</span><span class="admin-nav-badge admin-nav-badge-danger">23</span><i class="bi bi-chevron-right chevron"></i>
+          </a>
+          <div class="collapse" id="menuMesaj">
+            <ul class="admin-subnav">
+              <li><a href="mesajlar.html#iletisim" data-page="mesajlar.html#iletisim">İletişim Formu</a></li>
+              <li><a href="mesajlar.html#bulten" data-page="mesajlar.html#bulten">Bülten Aboneleri</a></li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+
+      <span class="admin-nav-label">Sistem</span>
+      <ul class="admin-nav-list">
+        <li>
+          <a href="#" class="admin-nav-link" data-bs-toggle="collapse" data-bs-target="#menuAyar" data-page="ayarlar.html" aria-expanded="false">
+            <i class="bi bi-gear bi-nav-ico"></i><span class="label">Ayarlar</span><i class="bi bi-chevron-right chevron"></i>
+          </a>
+          <div class="collapse" id="menuAyar">
+            <ul class="admin-subnav">
+              <li><a href="ayarlar.html#profil" data-page="ayarlar.html#profil">Profil</a></li>
+              <li><a href="ayarlar.html#site" data-page="ayarlar.html#site">Site Ayarları</a></li>
+              <li><a href="ayarlar.html#bildirimler" data-page="ayarlar.html#bildirimler">Bildirimler</a></li>
+              <li><a href="ayarlar.html#guvenlik" data-page="ayarlar.html#guvenlik">Güvenlik</a></li>
+            </ul>
+          </div>
+        </li>
+        <li><a href="../index.html" class="admin-nav-link" target="_blank"><i class="bi bi-box-arrow-up-right bi-nav-ico"></i><span class="label">Siteyi Görüntüle</span></a></li>
+        <li><a href="login.html" class="admin-nav-link" style="color:#f87171;"><i class="bi bi-box-arrow-right bi-nav-ico"></i><span class="label">Çıkış Yap</span></a></li>
+      </ul>
+    </nav>
+
+    <div class="admin-sidebar-footer">JeoValid Admin v1.0</div>
+  </aside>
+
+  <!-- ============ CONTENT ============ -->
+  <div class="admin-content">
+
+    <!-- ============ TOPBAR ============ -->
+    <header class="admin-topbar">
+      <button class="admin-topbar-btn admin-mobile-toggle" aria-label="Menüyü aç"><i class="bi bi-list"></i></button>
+      <button class="admin-topbar-btn admin-desktop-toggle" aria-label="Menüyü daralt"><i class="bi bi-layout-sidebar"></i></button>
+      <div class="admin-topbar-search"><i class="bi bi-search"></i><input type="text" placeholder="Abone ara..."></div>
+      <div class="admin-topbar-right">
+        <a href="../index.html" target="_blank" class="admin-topbar-btn d-none d-md-inline-flex" title="Siteyi Görüntüle"><i class="bi bi-globe2"></i></a>
+        <div class="dropdown">
+          <button class="admin-user-btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <span class="admin-avatar sm">MY</span>
+            <span class="d-none d-sm-block text-start"><span class="name d-block">Mehmet Yılmaz</span><span class="role d-block">Süper Yönetici</span></span>
+            <i class="bi bi-chevron-down small d-none d-sm-inline"></i>
+          </button>
+          <div class="dropdown-menu dropdown-menu-end admin-dropdown-menu" style="width:230px;">
+            <a class="dropdown-item" href="ayarlar.html#profil"><i class="bi bi-person"></i> Profilim</a>
+            <a class="dropdown-item" href="ayarlar.html#guvenlik"><i class="bi bi-shield-lock"></i> Güvenlik</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="login.html" style="color:#f87171;"><i class="bi bi-box-arrow-right" style="color:#f87171;"></i> Çıkış Yap</a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- ============ MAIN ============ -->
+    <main class="admin-main">
+
+      <div class="admin-page-header">
+        <div>
+          <div class="admin-breadcrumb"><a href="index.html">Yönetim</a><span class="sep">/</span>JeoValid PRO</div>
+          <h1 class="admin-page-title">JeoValid PRO &amp; Abonelikler</h1>
+        </div>
+        <button class="admin-btn"><i class="bi bi-plus-lg"></i> Plan Ekle</button>
+      </div>
+
+      <div class="row g-3 mb-3">
+        <div class="col-6 col-lg-3">
+          <div class="admin-stat-card">
+            <span class="admin-stat-ico" style="background:linear-gradient(90deg,#B8860B,#FFD700);"><i class="bi bi-gem"></i></span>
+            <div><div class="admin-stat-label">Aktif Abonelik</div><div class="admin-stat-value">486</div><div class="admin-stat-trend up"><i class="bi bi-arrow-up-short"></i> %8,2 bu ay</div></div>
+          </div>
+        </div>
+        <div class="col-6 col-lg-3">
+          <div class="admin-stat-card">
+            <span class="admin-stat-ico" style="background:linear-gradient(90deg,#0F766E,#38BDF8);"><i class="bi bi-cash-coin"></i></span>
+            <div><div class="admin-stat-label">Aylık Gelir (tahmini)</div><div class="admin-stat-value">₺97.245</div><div class="admin-stat-trend up"><i class="bi bi-arrow-up-short"></i> %11,6 bu ay</div></div>
+          </div>
+        </div>
+        <div class="col-6 col-lg-3">
+          <div class="admin-stat-card">
+            <span class="admin-stat-ico" style="background:linear-gradient(90deg,#DC2626,#F97316);"><i class="bi bi-arrow-down-circle"></i></span>
+            <div><div class="admin-stat-label">İptal Oranı</div><div class="admin-stat-value">%3,1</div><div class="admin-stat-trend down"><i class="bi bi-arrow-down-short"></i> %0,4 azaldı</div></div>
+          </div>
+        </div>
+        <div class="col-6 col-lg-3">
+          <div class="admin-stat-card">
+            <span class="admin-stat-ico" style="background:linear-gradient(90deg,#8B5CF6,#38BDF8);"><i class="bi bi-hourglass-split"></i></span>
+            <div><div class="admin-stat-label">Haftalık Deneme Kullanıcısı</div><div class="admin-stat-value">67</div><div class="admin-stat-trend up"><i class="bi bi-arrow-up-short"></i> %5,0 bu ay</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="admin-card">
+        <ul class="nav admin-tabs nav-tabs mb-3" role="tablist">
+          <li class="nav-item"><button class="nav-link active" data-bs-toggle="tab" data-bs-target="#planlar" type="button"><i class="bi bi-list-check"></i>Planlar</button></li>
+          <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#abonelikler" type="button"><i class="bi bi-person-check"></i>Abonelikler</button></li>
+        </ul>
+
+        <div class="tab-content">
+          <!-- PLANLAR -->
+          <div class="tab-pane fade show active" id="planlar" role="tabpanel">
+            <div class="d-flex justify-content-end mb-3"><button class="admin-btn admin-btn-sm"><i class="bi bi-plus-lg"></i> Yeni Plan</button></div>
+            <div class="admin-table-wrap">
+              <table class="admin-table" style="width:100%;">
+                <thead><tr><th>Plan</th><th>Fiyat</th><th>Periyot</th><th>Abone Sayısı</th><th>Durum</th><th>İşlemler</th></tr></thead>
+                <tbody>
+                  <tr>
+                    <td><div class="admin-row-title">Haftalık</div><div class="admin-row-sub">Kısa süreli deneme planı</div></td>
+                    <td>₺79,99</td><td>/ hafta</td><td>67</td>
+                    <td><span class="pill pill-success"><i class="bi bi-check-circle"></i> Aktif</span></td>
+                    <td><div class="admin-table-actions"><button class="admin-icon-action"><i class="bi bi-pencil"></i></button><button class="admin-icon-action danger"><i class="bi bi-trash"></i></button></div></td>
+                  </tr>
+                  <tr>
+                    <td><div class="admin-row-title">Aylık</div><div class="admin-row-sub">Standart plan</div></td>
+                    <td>₺199,99</td><td>/ ay</td><td>212</td>
+                    <td><span class="pill pill-success"><i class="bi bi-check-circle"></i> Aktif</span></td>
+                    <td><div class="admin-table-actions"><button class="admin-icon-action"><i class="bi bi-pencil"></i></button><button class="admin-icon-action danger"><i class="bi bi-trash"></i></button></div></td>
+                  </tr>
+                  <tr>
+                    <td><div class="admin-row-title">Yıllık <span class="pill pill-gold ms-1"><i class="bi bi-star-fill"></i> En Popüler</span></div><div class="admin-row-sub">~₺83,33 / ay eşdeğeri</div></td>
+                    <td>₺999,99</td><td>/ yıl</td><td>178</td>
+                    <td><span class="pill pill-success"><i class="bi bi-check-circle"></i> Aktif</span></td>
+                    <td><div class="admin-table-actions"><button class="admin-icon-action"><i class="bi bi-pencil"></i></button><button class="admin-icon-action danger"><i class="bi bi-trash"></i></button></div></td>
+                  </tr>
+                  <tr>
+                    <td><div class="admin-row-title">Sınırsız</div><div class="admin-row-sub">Tek seferlik, ömür boyu erişim</div></td>
+                    <td>₺2.499,99</td><td>tek seferlik</td><td>29</td>
+                    <td><span class="pill pill-success"><i class="bi bi-check-circle"></i> Aktif</span></td>
+                    <td><div class="admin-table-actions"><button class="admin-icon-action"><i class="bi bi-pencil"></i></button><button class="admin-icon-action danger"><i class="bi bi-trash"></i></button></div></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- ABONELİKLER -->
+          <div class="tab-pane fade" id="abonelikler" role="tabpanel">
+            <div class="admin-table-wrap">
+              <table class="admin-table admin-datatable" style="width:100%;">
+                <thead><tr><th>Kullanıcı</th><th>Plan</th><th>Başlangıç</th><th>Yenileme / Bitiş</th><th>Ödeme Yöntemi</th><th>Durum</th></tr></thead>
+                <tbody>
+                  <tr><td>Ayşe Kaya</td><td><span class="pill pill-gold">Aylık</span></td><td>04.12.2025</td><td>04.02.2026</td><td><i class="bi bi-apple"></i> App Store</td><td><span class="pill pill-success"><i class="bi bi-check-circle"></i> Aktif</span></td></tr>
+                  <tr><td>Elif Şahin</td><td><span class="pill pill-gold">Yıllık</span></td><td>15.06.2025</td><td>15.06.2026</td><td><i class="bi bi-apple"></i> App Store</td><td><span class="pill pill-success"><i class="bi bi-check-circle"></i> Aktif</span></td></tr>
+                  <tr><td>Zeynep Arslan</td><td><span class="pill pill-gold">Yıllık</span></td><td>19.11.2025</td><td>19.11.2026</td><td><i class="bi bi-android2"></i> Google Play</td><td><span class="pill pill-success"><i class="bi bi-check-circle"></i> Aktif</span></td></tr>
+                  <tr><td>Emre Yıldız</td><td><span class="pill pill-gold">Aylık</span></td><td>14.10.2025</td><td>14.01.2026</td><td><i class="bi bi-android2"></i> Google Play</td><td><span class="pill pill-danger"><i class="bi bi-x-circle"></i> İptal Edildi</span></td></tr>
+                  <tr><td>Burak Aksoy</td><td><span class="pill pill-gold">Sınırsız</span></td><td>19.09.2025</td><td>—</td><td><i class="bi bi-android2"></i> Google Play</td><td><span class="pill pill-success"><i class="bi bi-check-circle"></i> Aktif</span></td></tr>
+                  <tr><td>Deniz Aktaş</td><td><span class="pill pill-gold">Aylık</span></td><td>25.06.2025</td><td>25.01.2026</td><td><i class="bi bi-apple"></i> App Store</td><td><span class="pill pill-success"><i class="bi bi-check-circle"></i> Aktif</span></td></tr>
+                  <tr><td>Kemal Öztürk</td><td><span class="pill pill-gold">Yıllık</span></td><td>22.06.2025</td><td>22.06.2026</td><td><i class="bi bi-apple"></i> App Store</td><td><span class="pill pill-warning"><i class="bi bi-hourglass-split"></i> Deneme</span></td></tr>
+                  <tr><td>Nazlı Er</td><td><span class="pill pill-gold">Haftalık</span></td><td>02.01.2026</td><td>09.01.2026</td><td><i class="bi bi-android2"></i> Google Play</td><td><span class="pill pill-warning"><i class="bi bi-hourglass-split"></i> Deneme</span></td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </main>
+
+    <footer class="text-center py-4 text-muted-hx small">JeoValid Admin Panel © 2026 — Statik demo arayüzdür.</footer>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="https://cdn.datatables.net/1.13.8/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.13.8/js/dataTables.bootstrap5.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
+<script src="js/admin.js"></script>
+</body>
+</html>

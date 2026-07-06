@@ -16,49 +16,167 @@
 <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet">
 <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
 <link href="css/style.css" rel="stylesheet">
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    corePlugins: { preflight: false },
+    theme: {
+      extend: {
+        colors: {
+          jvbg: '#0B1628',
+          jvbgalt: '#0F1F35',
+          jvcard: '#152A47',
+          jvcyan: '#38BDF8',
+          jvcyan2: '#0284C7',
+          jvteal: '#14B8A6',
+          jvtealdark: '#0F766E',
+          jvmuted: '#8791a8'
+        },
+        fontFamily: { mulish: ['Mulish', 'sans-serif'] }
+      }
+    }
+  }
+</script>
 </head>
 <body>
 
-<!-- ============ NAVBAR ============ -->
-<nav class="navbar navbar-expand-lg hx-navbar">
-  <div class="container">
-    <a class="navbar-brand hx-brand" href="#home"><img src="images/jeovalid-logo.webp" alt="JeoValid logosu"> JeoValid</a>
-    <button class="navbar-toggler text-white border-0" type="button" data-bs-toggle="collapse" data-bs-target="#hxNav">
-      <i class="bi bi-list fs-1 text-white"></i>
-    </button>
-    <div class="collapse navbar-collapse" id="hxNav">
-      <ul class="navbar-nav mx-auto">
-        <li class="nav-item"><a class="nav-link active" href="#home">Ana Sayfa</a></li>
-        <li class="nav-item"><a class="nav-link" href="about.html">Hakkımızda</a></li>
-        <li class="nav-item"><a class="nav-link" href="features.html">Özellikler</a></li>
-        <li class="nav-item"><a class="nav-link" href="nasil-calisir.html">Nasıl Çalışır</a></li>
-        <li class="nav-item"><a class="nav-link" href="pro.html">JeoValid PRO</a></li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Kaynaklar</a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="getting-started.html">Başlangıç Rehberi</a></li>
-            <li><a class="dropdown-item" href="wiki.html">Bilgi Bankası</a></li>
-            <li><a class="dropdown-item" href="community.html">Topluluk</a></li>
-          </ul>
-        </li>
-        <li class="nav-item"><a class="nav-link" href="sss.html">SSS</a></li>
-        <li class="nav-item"><a class="nav-link" href="contact.html">İletişim</a></li>
-      </ul>
-      <div class="d-flex align-items-center gap-3">
-        <a href="#indir" class="hx-btn hx-btn-sm"><i class="bi bi-download"></i> Uygulamayı İndir</a>
-      </div>
-      <!-- ARŞİV — eski şablondan (kullanılmıyor, tasarımdan kaldırıldı ama ileride gerekirse diye saklandı):
-      <select class="hx-lang-select d-none d-lg-inline-block">
-        <option>English</option>
-        <option>Spanish</option>
-      </select>
-      <a href="#" class="hx-btn hx-btn-outline hx-btn-sm d-none d-md-inline-flex">Whitepaper</a>
-      <a href="#" class="hx-btn hx-btn-sm"><i class="bi bi-person"></i> Login</a>
-      -->
+<!-- ============ NAVBAR (Tailwind — Layout 6: Mega Menü) ============ -->
+<nav class="hx-navbar" id="twNavV9">
+  <div class="max-w-[1320px] mx-auto px-4 flex items-center justify-between gap-6">
+    <a href="#home" class="flex items-center gap-2 text-white font-extrabold text-xl shrink-0">
+      <img src="images/jeovalid-logo.webp" alt="JeoValid logosu" class="h-9 w-auto">
+      JeoValid
+    </a>
 
+    <div class="hidden lg:flex lg:items-center lg:gap-1">
+      <a href="#home" class="px-3 py-2 text-sm font-semibold text-jvcyan">Ana Sayfa</a>
+      <a href="about.html" class="px-3 py-2 text-sm font-semibold text-white/85 hover:text-jvcyan">Hakkımızda</a>
+
+      <div class="group">
+        <button type="button" class="bg-transparent border-0 px-3 py-2 text-sm font-semibold text-white/85 hover:text-jvcyan inline-flex items-center gap-1">Özellikler <i class="bi bi-chevron-down text-xs"></i></button>
+        <div class="absolute left-0 right-0 top-full pt-2 hidden group-hover:block z-10">
+          <div class="max-w-[1320px] mx-auto px-4">
+            <div class="bg-jvcard border border-white/10 rounded-2xl p-6 shadow-2xl grid grid-cols-4 gap-6">
+              <a href="features.html#dogrulama" class="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5">
+                <i class="bi bi-clipboard2-check text-jvcyan text-xl"></i>
+                <span><span class="block text-sm font-bold text-white">Anında Doğrulama</span><span class="block text-xs text-jvmuted mt-0.5">Collar, Survey, Lithology, Assay</span></span>
+              </a>
+              <a href="features.html#3d" class="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5">
+                <i class="bi bi-boxes text-jvcyan text-xl"></i>
+                <span><span class="block text-sm font-bold text-white">3D Görüntüleme</span><span class="block text-xs text-jvmuted mt-0.5">Sondaj verisini üç boyutlu incele</span></span>
+              </a>
+              <a href="features.html#ai" class="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5">
+                <i class="bi bi-cpu text-jvcyan text-xl"></i>
+                <span><span class="block text-sm font-bold text-white">AI Destekli Analiz</span><span class="block text-xs text-jvmuted mt-0.5">Yapay zeka ile otomatik yorumlama</span></span>
+              </a>
+              <a href="features.html#dxf" class="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5">
+                <i class="bi bi-file-earmark-arrow-down text-jvcyan text-xl"></i>
+                <span><span class="block text-sm font-bold text-white">DXF Dışa Aktarım</span><span class="block text-xs text-jvmuted mt-0.5">CAD uyumlu dosya çıktısı al</span></span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <a href="nasil-calisir.html" class="px-3 py-2 text-sm font-semibold text-white/85 hover:text-jvcyan">Nasıl Çalışır</a>
+      <a href="pro.html" class="px-3 py-2 text-sm font-semibold text-white/85 hover:text-jvcyan">JeoValid PRO</a>
+
+      <div class="group">
+        <button type="button" class="bg-transparent border-0 px-3 py-2 text-sm font-semibold text-white/85 hover:text-jvcyan inline-flex items-center gap-1">Kaynaklar <i class="bi bi-chevron-down text-xs"></i></button>
+        <div class="absolute left-0 right-0 top-full pt-2 hidden group-hover:block z-10">
+          <div class="max-w-[1320px] mx-auto px-4">
+            <div class="bg-jvcard border border-white/10 rounded-2xl p-6 shadow-2xl grid grid-cols-3 gap-6">
+              <a href="getting-started.html" class="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5">
+                <i class="bi bi-rocket-takeoff text-jvcyan text-xl"></i>
+                <span><span class="block text-sm font-bold text-white">Başlangıç Rehberi</span><span class="block text-xs text-jvmuted mt-0.5">İlk kurulum ve temel ayarlar</span></span>
+              </a>
+              <a href="wiki.html" class="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5">
+                <i class="bi bi-journal-text text-jvcyan text-xl"></i>
+                <span><span class="block text-sm font-bold text-white">Bilgi Bankası</span><span class="block text-xs text-jvmuted mt-0.5">Detaylı dokümantasyon</span></span>
+              </a>
+              <a href="community.html" class="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5">
+                <i class="bi bi-people text-jvcyan text-xl"></i>
+                <span><span class="block text-sm font-bold text-white">Topluluk</span><span class="block text-xs text-jvmuted mt-0.5">Sorularını sor, deneyim paylaş</span></span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <a href="sss.html" class="px-3 py-2 text-sm font-semibold text-white/85 hover:text-jvcyan">SSS</a>
+      <a href="contact.html" class="px-3 py-2 text-sm font-semibold text-white/85 hover:text-jvcyan">İletişim</a>
+    </div>
+
+    <div class="hidden lg:flex items-center gap-3 shrink-0">
+      <button type="button" id="searchToggleV9" aria-label="Ara" class="w-10 h-10 rounded-full border border-white/10 bg-white/5 text-white inline-flex items-center justify-center hover:bg-jvteal/15 hover:border-jvcyan hover:text-jvcyan transition">
+        <i class="bi bi-search"></i>
+      </button>
+      <a href="#" class="inline-flex items-center gap-2 text-white/90 font-semibold text-sm hover:text-jvcyan"><i class="bi bi-person-circle text-lg"></i> Giriş Yap</a>
+      <a href="#indir" class="inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-bold text-white bg-gradient-to-r from-jvtealdark to-jvcyan shadow-[0_10px_20px_-8px_rgba(20,184,166,0.55)] hover:-translate-y-0.5 transition"><i class="bi bi-download"></i> Uygulamayı İndir</a>
+    </div>
+
+    <button id="navToggleV9" type="button" aria-label="Menü" class="lg:hidden bg-transparent border-0 text-white text-3xl leading-none">
+      <i class="bi bi-list"></i>
+    </button>
+  </div>
+
+  <div id="searchPanelV9" class="hidden">
+    <div class="max-w-[1320px] mx-auto px-4 pt-3">
+      <div class="relative max-w-md">
+        <i class="bi bi-search absolute left-4 top-1/2 -translate-y-1/2 text-jvmuted"></i>
+        <input type="text" placeholder="Sitede ara..." aria-label="Sitede ara" class="w-full rounded-full bg-jvcard border border-white/10 text-white pl-11 pr-4 py-2.5 text-sm focus:outline-none focus:border-jvcyan">
+      </div>
+    </div>
+  </div>
+
+  <div id="navMenuMobileV9" class="hidden lg:hidden bg-[rgba(5,5,15,0.97)] backdrop-blur border-t border-white/10 mt-4 mx-4 rounded-2xl px-5 py-5">
+    <div class="flex flex-col gap-1">
+      <a href="#home" class="py-2 text-jvcyan font-semibold">Ana Sayfa</a>
+      <a href="about.html" class="py-2 text-white/85 font-semibold">Hakkımızda</a>
+      <details class="py-1">
+        <summary class="py-1 text-white/85 font-semibold cursor-pointer list-none flex items-center justify-between">Özellikler <i class="bi bi-chevron-down text-xs"></i></summary>
+        <div class="pl-3 mt-1 flex flex-col gap-1">
+          <a href="features.html#dogrulama" class="py-1.5 text-slate-300 text-sm">Anında Doğrulama</a>
+          <a href="features.html#3d" class="py-1.5 text-slate-300 text-sm">3D Görüntüleme</a>
+          <a href="features.html#ai" class="py-1.5 text-slate-300 text-sm">AI Destekli Analiz</a>
+          <a href="features.html#dxf" class="py-1.5 text-slate-300 text-sm">DXF Dışa Aktarım</a>
+        </div>
+      </details>
+      <a href="nasil-calisir.html" class="py-2 text-white/85 font-semibold">Nasıl Çalışır</a>
+      <a href="pro.html" class="py-2 text-white/85 font-semibold">JeoValid PRO</a>
+      <details class="py-1">
+        <summary class="py-1 text-white/85 font-semibold cursor-pointer list-none flex items-center justify-between">Kaynaklar <i class="bi bi-chevron-down text-xs"></i></summary>
+        <div class="pl-3 mt-1 flex flex-col gap-1">
+          <a href="getting-started.html" class="py-1.5 text-slate-300 text-sm">Başlangıç Rehberi</a>
+          <a href="wiki.html" class="py-1.5 text-slate-300 text-sm">Bilgi Bankası</a>
+          <a href="community.html" class="py-1.5 text-slate-300 text-sm">Topluluk</a>
+        </div>
+      </details>
+      <a href="sss.html" class="py-2 text-white/85 font-semibold">SSS</a>
+      <a href="contact.html" class="py-2 text-white/85 font-semibold">İletişim</a>
+    </div>
+    <div class="mt-4 pt-4 border-t border-white/10 flex flex-col gap-3">
+      <div class="relative">
+        <i class="bi bi-search absolute left-4 top-1/2 -translate-y-1/2 text-jvmuted"></i>
+        <input type="text" placeholder="Sitede ara..." aria-label="Sitede ara" class="w-full rounded-full bg-jvcard border border-white/10 text-white pl-11 pr-4 py-2.5 text-sm focus:outline-none focus:border-jvcyan">
+      </div>
+      <a href="#" class="inline-flex items-center gap-2 text-white font-semibold text-sm"><i class="bi bi-person-circle text-lg"></i> Giriş Yap</a>
+      <a href="#indir" class="inline-flex items-center justify-center gap-2 rounded-full px-5 py-2.5 text-sm font-bold text-white bg-gradient-to-r from-jvtealdark to-jvcyan"><i class="bi bi-download"></i> Uygulamayı İndir</a>
     </div>
   </div>
 </nav>
+
+<script>
+(function(){
+  var toggle = document.getElementById('navToggleV9');
+  var menu = document.getElementById('navMenuMobileV9');
+  if (toggle && menu) toggle.addEventListener('click', function(){ menu.classList.toggle('hidden'); });
+  var sBtn = document.getElementById('searchToggleV9');
+  var sPanel = document.getElementById('searchPanelV9');
+  if (sBtn && sPanel) sBtn.addEventListener('click', function(){ sPanel.classList.toggle('hidden'); });
+})();
+</script>
 
 <!-- ============ HERO ============ -->
 <header id="home" class="hx-hero">

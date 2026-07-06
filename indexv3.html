@@ -19,15 +19,11 @@
 </head>
 <body>
 
-<!-- ============ NAVBAR ============ -->
-<nav class="navbar navbar-expand-lg hx-navbar">
+<!-- ============ NAVBAR (v3 — ayna düzen: menü solda, logo sağda) ============ -->
+<nav class="navbar navbar-expand-lg hx-navbar hx-navbar-v3">
   <div class="container">
-    <a class="navbar-brand hx-brand" href="#home"><img src="images/jeovalid-logo.webp" alt="JeoValid logosu"> JeoValid</a>
-    <button class="navbar-toggler text-white border-0" type="button" data-bs-toggle="collapse" data-bs-target="#hxNav">
-      <i class="bi bi-list fs-1 text-white"></i>
-    </button>
-    <div class="collapse navbar-collapse" id="hxNav">
-      <ul class="navbar-nav mx-auto">
+    <div class="collapse navbar-collapse order-3 order-lg-1" id="hxNav">
+      <ul class="navbar-nav">
         <li class="nav-item"><a class="nav-link active" href="#home">Ana Sayfa</a></li>
         <li class="nav-item"><a class="nav-link" href="about.html">Hakkımızda</a></li>
         <li class="nav-item"><a class="nav-link" href="features.html">Özellikler</a></li>
@@ -44,19 +40,30 @@
         <li class="nav-item"><a class="nav-link" href="sss.html">SSS</a></li>
         <li class="nav-item"><a class="nav-link" href="contact.html">İletişim</a></li>
       </ul>
-      <div class="d-flex align-items-center gap-3">
-        <a href="#indir" class="hx-btn hx-btn-sm"><i class="bi bi-download"></i> Uygulamayı İndir</a>
-      </div>
-      <!-- ARŞİV — eski şablondan (kullanılmıyor, tasarımdan kaldırıldı ama ileride gerekirse diye saklandı):
-      <select class="hx-lang-select d-none d-lg-inline-block">
-        <option>English</option>
-        <option>Spanish</option>
-      </select>
-      <a href="#" class="hx-btn hx-btn-outline hx-btn-sm d-none d-md-inline-flex">Whitepaper</a>
-      <a href="#" class="hx-btn hx-btn-sm"><i class="bi bi-person"></i> Login</a>
-      -->
-
     </div>
+
+    <div class="hx-navbar-v3-actions order-2">
+      <button class="navbar-toggler text-white border-0" type="button" data-bs-toggle="collapse" data-bs-target="#hxNav">
+        <i class="bi bi-list fs-1 text-white"></i>
+      </button>
+      <button class="hx-icon-btn" type="button" data-bs-toggle="collapse" data-bs-target="#navSearchV3" aria-expanded="false" aria-controls="navSearchV3" aria-label="Ara">
+        <i class="bi bi-search"></i>
+      </button>
+      <div class="collapse collapse-horizontal" id="navSearchV3">
+        <div class="hx-search-box hx-search-box-inline">
+          <i class="bi bi-search"></i>
+          <input type="text" placeholder="Sitede ara..." aria-label="Sitede ara">
+        </div>
+      </div>
+      <a href="#" class="hx-login-link" aria-label="Giriş Yap">
+        <i class="bi bi-person-circle"></i><span class="d-none d-md-inline">Giriş Yap</span>
+      </a>
+      <a href="#indir" class="hx-icon-btn hx-icon-btn-accent" aria-label="Uygulamayı İndir" title="Uygulamayı İndir">
+        <i class="bi bi-download"></i>
+      </a>
+    </div>
+
+    <a class="navbar-brand hx-brand order-1 order-lg-3 ms-lg-4" href="#home"><img src="images/jeovalid-logo.webp" alt="JeoValid logosu"> JeoValid</a>
   </div>
 </nav>
 
@@ -899,6 +906,7 @@
 -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
 <script src="js/main.js"></script>
+
 <script>
   var tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
   tooltipTriggerList.forEach(function (el) { new bootstrap.Tooltip(el); });

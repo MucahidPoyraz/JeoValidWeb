@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<title>Giriş Yap — JeoValid Admin Panel</title>
+<link rel="icon" href="../images/favicon-32x32.png" sizes="32x32">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+<link href="../css/style.css" rel="stylesheet">
+<link href="css/admin.css" rel="stylesheet">
+</head>
+<body class="admin-body">
+
+<div class="admin-login-wrap">
+  <div class="admin-login-card">
+    <div class="admin-login-logo">
+      <img src="../images/jeovalid-logo.webp" alt="JeoValid logosu"> JeoValid <span class="text-muted-hx" style="font-weight:600;font-size:.95rem;">Admin</span>
+    </div>
+
+    <h1 class="h4 fw-800 text-center mb-1">Yönetim Paneline Giriş</h1>
+    <p class="text-muted-hx text-center small mb-4">Hesabınıza giriş yaparak kontrol paneline erişin.</p>
+
+    <form class="admin-demo-form" data-success-msg="Giriş başarılı! (statik demo)">
+      <div class="mb-3">
+        <label class="form-label">E-posta Adresi</label>
+        <div class="position-relative">
+          <i class="bi bi-envelope position-absolute" style="left:14px;top:50%;transform:translateY(-50%);color:var(--hx-text-muted);"></i>
+          <input type="email" class="form-control" style="padding-left:2.4rem;" placeholder="ornek@jeovalid.com" value="admin@jeovalid.com" required>
+        </div>
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Şifre</label>
+        <div class="position-relative">
+          <i class="bi bi-lock position-absolute" style="left:14px;top:50%;transform:translateY(-50%);color:var(--hx-text-muted);"></i>
+          <input type="password" class="form-control" style="padding-left:2.4rem;" placeholder="••••••••" value="jeovalid2026" required>
+        </div>
+      </div>
+      <div class="d-flex align-items-center justify-content-between mb-4">
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="rememberMe" checked>
+          <label class="form-check-label" for="rememberMe">Beni hatırla</label>
+        </div>
+        <a href="#" class="small">Şifremi unuttum</a>
+      </div>
+      <button type="submit" class="admin-btn w-100 justify-content-center mb-3" onclick="window.location.href='index.html'; return false;">
+        <i class="bi bi-box-arrow-in-right"></i> Giriş Yap
+      </button>
+      <div class="admin-login-demo text-center">
+        <i class="bi bi-info-circle me-1"></i> Bu statik bir demo panelidir; herhangi bir bilgiyle giriş yapabilirsiniz.
+      </div>
+    </form>
+
+    <div class="text-center mt-4">
+      <a href="../index.html" class="small"><i class="bi bi-arrow-left"></i> Siteye geri dön</a>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
+<script>
+  document.querySelector('.admin-demo-form').addEventListener('submit', function(e){
+    e.preventDefault();
+    window.location.href = 'index.html';
+  });
+</script>
+</body>
+</html>
